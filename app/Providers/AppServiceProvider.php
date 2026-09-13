@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Repositories\Interfaces\CategoryInterface;
+use App\Repositories\Interfaces\ContactInterface;
 use App\Repositories\Interfaces\ProductInterface;
 use App\Repositories\Services\CategoryService;
+use App\Repositories\Services\ContactService;
 use App\Repositories\Services\ProductService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
@@ -19,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(CategoryInterface::class, CategoryService::class);
         $this->app->bind(ProductInterface::class, ProductService::class);
+        $this->app->bind(ContactInterface::class, ContactService::class);
     }
 
     /**

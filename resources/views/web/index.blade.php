@@ -153,7 +153,7 @@
                         @foreach ($categories as $category)
                             <div class="swiper-slide wow fadeInUp">
                                 <a
-                                    href="{{ route('shop-by-categories', $category->slug) }}"
+                                    href="{{ route('web.shop-by-categories', $category->slug) }}"
                                     class="category-v01 hover-img"
                                 >
                                     <div class="cate-image img-style">

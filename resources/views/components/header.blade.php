@@ -535,6 +535,16 @@
                                 </div>
                             </div> --}}
                         </li>
+                        <li class="menu-item">
+                            <a href="{{ route('web.contact') }}" class="item-link">
+                                <span class="text cus-text"> Contact Us </span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{ route('web.about') }}" class="item-link">
+                                <span class="text cus-text"> About Us </span>
+                            </a>
+                        </li>
                         {{-- <li class="menu-item">
                             <a href="#" class="item-link">
                                 <span class="text cus-text">

@@ -11,9 +11,7 @@ class ShopCategoriesController extends Controller
 
     public function shopByCategories($slug)
     {
-        // return $slug;
         $products = $this->productRepo->getShopCategoryProducts($slug);
-        // return $products;
-        return view('website.shop-by-categories', compact('products'));
+        return view('web.shop-by-categories', compact('products'));
     }
 }

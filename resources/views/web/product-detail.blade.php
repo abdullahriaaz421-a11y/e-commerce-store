@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="main-page-title">
                     <div class="breadcrumbs">
-                        <a href="{{ route('dashboard') }}" class="text-caption-01 cl-text-3 link">Home</a>
+                        <a href="{{ route('web.home') }}" class="text-caption-01 cl-text-3 link">Home</a>
                         <i class="icon icon-CaretRightThin cl-text-3"></i>
                         <a href="shop-default.html" class="text-caption-01 cl-text-3 link">Shop</a>
                         <i class="icon icon-CaretRightThin cl-text-3"></i>
@@ -42,166 +42,28 @@
                                         data-spacing="0"
                                     >
                                         <div class="swiper-wrapper">
-                                            <!-- item 1 -->
-                                            <div class="swiper-slide" data-color="green" data-size="L">
-                                                <a
-                                                    href="{{ asset('website/assets/images/product/single/detail-1.jpg') }}"
-                                                    target="_blank"
-                                                    class="item"
-                                                    data-pswp-width="576px"
-                                                    data-pswp-height="768px"
-                                                >
-                                                    <img
-                                                        loading="lazy"
-                                                        width="576"
-                                                        height="768"
-                                                        class="tf-image-zoom"
-                                                        data-zoom="{{ asset('website/assets/images/product/single/detail-1.jpg') }}"
-                                                        src="{{ asset('website/assets/images/product/single/detail-1.jpg') }}"
-                                                        alt="img-product"
-                                                    />
-                                                </a>
-                                            </div>
-                                            <!-- item 2 -->
-                                            <div class="swiper-slide" data-color="green" data-size="S">
-                                                <a
-                                                    href="{{ asset('website/assets/images/product/single/detail-1_2.jpg') }}"
-                                                    target="_blank"
-                                                    class="item"
-                                                    data-pswp-width="576px"
-                                                    data-pswp-height="768px"
-                                                >
-                                                    <img
-                                                        loading="lazy"
-                                                        width="576"
-                                                        height="768"
-                                                        class="tf-image-zoom"
-                                                        data-zoom="{{ asset('website/assets/images/product/single/detail-1_2.jpg') }}"
-                                                        src="{{ asset('website/assets/images/product/single/detail-1_2.jpg') }}"
-                                                        alt="img-product"
-                                                    />
-                                                </a>
-                                            </div>
-                                            <!-- item 3 -->
-                                            <div class="swiper-slide" data-color="green" data-size="M">
-                                                <a
-                                                    href="{{ asset('website/assets/images/product/single/detail-1_3.jpg') }}"
-                                                    target="_blank"
-                                                    class="item"
-                                                    data-pswp-width="576px"
-                                                    data-pswp-height="768px"
-                                                >
-                                                    <img
-                                                        loading="lazy"
-                                                        width="576"
-                                                        height="768"
-                                                        class="tf-image-zoom"
-                                                        data-zoom="{{ asset('website/assets/images/product/single/detail-1_3.jpg') }}"
-                                                        src="{{ asset('website/assets/images/product/single/detail-1_3.jpg') }}"
-                                                        alt="img-product"
-                                                    />
-                                                </a>
-                                            </div>
-                                            <!-- item 4 -->
-                                            <div class="swiper-slide" data-color="green" data-size="XL">
-                                                <a
-                                                    href="{{ asset('website/assets/images/product/single/detail-1_4.jpg') }}"
-                                                    target="_blank"
-                                                    class="item"
-                                                    data-pswp-width="576px"
-                                                    data-pswp-height="768px"
-                                                >
-                                                    <img
-                                                        loading="lazy"
-                                                        width="576"
-                                                        height="768"
-                                                        class="tf-image-zoom"
-                                                        data-zoom="{{ asset('website/assets/images/product/single/detail-1_4.jpg') }}"
-                                                        src="{{ asset('website/assets/images/product/single/detail-1_4.jpg') }}"
-                                                        alt="img-product"
-                                                    />
-                                                </a>
-                                            </div>
-                                            <!-- item 5 -->
-                                            <div class="swiper-slide" data-color="gray" data-size="M">
-                                                <a
-                                                    href="{{ asset('website/assets/images/product/single/detail-1_5.jpg') }}"
-                                                    target="_blank"
-                                                    class="item"
-                                                    data-pswp-width="576px"
-                                                    data-pswp-height="768px"
-                                                >
-                                                    <img
-                                                        loading="lazy"
-                                                        width="576"
-                                                        height="768"
-                                                        class="tf-image-zoom"
-                                                        data-zoom="{{ asset('website/assets/images/product/single/detail-1_5.jpg') }}"
-                                                        src="{{ asset('website/assets/images/product/single/detail-1_5.jpg') }}"
-                                                        alt="img-product"
-                                                    />
-                                                </a>
-                                            </div>
-                                            <!-- item 6 -->
-                                            <div class="swiper-slide" data-color="gray" data-size="M">
-                                                <a
-                                                    href="{{ asset('website/assets/images/product/single/detail-1_6.jpg') }}"
-                                                    target="_blank"
-                                                    class="item"
-                                                    data-pswp-width="576px"
-                                                    data-pswp-height="768px"
-                                                >
-                                                    <img
-                                                        loading="lazy"
-                                                        width="576"
-                                                        height="768"
-                                                        class="tf-image-zoom"
-                                                        data-zoom="{{ asset('website/assets/images/product/single/detail-1_6.jpg') }}"
-                                                        src="{{ asset('website/assets/images/product/single/detail-1_6.jpg') }}"
-                                                        alt="img-product"
-                                                    />
-                                                </a>
-                                            </div>
-                                            <!-- item 7 -->
-                                            <div class="swiper-slide" data-color="black" data-size="L">
-                                                <a
-                                                    href="{{ asset('website/assets/images/product/single/detail-1_7.jpg') }}"
-                                                    target="_blank"
-                                                    class="item"
-                                                    data-pswp-width="576px"
-                                                    data-pswp-height="768px"
-                                                >
-                                                    <img
-                                                        loading="lazy"
-                                                        width="576"
-                                                        height="768"
-                                                        class="tf-image-zoom"
-                                                        data-zoom="{{ asset('website/assets/images/product/single/detail-1_7.jpg') }}"
-                                                        src="{{ asset('website/assets/images/product/single/detail-1_7.jpg') }}"
-                                                        alt="img-product"
-                                                    />
-                                                </a>
-                                            </div>
-                                            <!-- item 8 -->
-                                            <div class="swiper-slide" data-color="black" data-size="L">
-                                                <a
-                                                    href="{{ asset('website/assets/images/product/single/detail-1_8.jpg') }}"
-                                                    target="_blank"
-                                                    class="item"
-                                                    data-pswp-width="576px"
-                                                    data-pswp-height="768px"
-                                                >
-                                                    <img
-                                                        loading="lazy"
-                                                        width="576"
-                                                        height="768"
-                                                        class="tf-image-zoom"
-                                                        data-zoom="{{ asset('website/assets/images/product/single/detail-1_8.jpg') }}"
-                                                        src="{{ asset('website/assets/images/product/single/detail-1_8.jpg') }}"
-                                                        alt="img-product"
-                                                    />
-                                                </a>
-                                            </div>
+                                            @foreach ($product->images as $image)
+                                                <!-- item 1 -->
+                                                <div class="swiper-slide" data-color="green" data-size="L">
+                                                    <a
+                                                        href="{{ asset('storage/uploads/' . $image->image_name) }}"
+                                                        target="_blank"
+                                                        class="item"
+                                                        data-pswp-width="576px"
+                                                        data-pswp-height="768px"
+                                                    >
+                                                        <img
+                                                            loading="lazy"
+                                                            width="576"
+                                                            height="768"
+                                                            class="tf-image-zoom"
+                                                            data-zoom="{{ asset('storage/uploads/' . $image->image_name) }}"
+                                                            src="{{ asset('storage/uploads/' . $image->image_name) }}"
+                                                            alt="img-product"
+                                                        />
+                                                    </a>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -213,101 +75,21 @@
                                 >
                                     <div class="swiper-wrapper stagger-wrap">
                                         <!-- item 1 -->
-                                        <div class="swiper-slide stagger-item">
-                                            <div class="item">
-                                                <img
-                                                    loading="lazy"
-                                                    width="82"
-                                                    height="110"
-                                                    src="{{ asset('website/assets/images/product/single/detail-1.jpg') }}"
-                                                    alt="Image"
-                                                />
+
+                                        @foreach ($product->images as $image)    
+                                            <div class="swiper-slide stagger-item">
+                                                <div class="item">
+                                                    <img
+                                                        loading="lazy"
+                                                        width="82"
+                                                        height="110"
+                                                        src="{{ asset('storage/uploads/' . $image->image_name) }}"
+                                                        alt="Image"
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- item 2 -->
-                                        <div class="swiper-slide stagger-item">
-                                            <div class="item">
-                                                <img
-                                                    loading="lazy"
-                                                    width="82"
-                                                    height="110"
-                                                    src="{{ asset('website/assets/images/product/single/detail-1_2.jpg') }}"
-                                                    alt="Image"
-                                                />
-                                            </div>
-                                        </div>
-                                        <!-- item 3 -->
-                                        <div class="swiper-slide stagger-item">
-                                            <div class="item">
-                                                <img
-                                                    loading="lazy"
-                                                    width="82"
-                                                    height="110"
-                                                    src="{{ asset('website/assets/images/product/single/detail-1_3.jpg') }}"
-                                                    alt="Image"
-                                                />
-                                            </div>
-                                        </div>
-                                        <!-- item 4 -->
-                                        <div class="swiper-slide stagger-item">
-                                            <div class="item">
-                                                <img
-                                                    loading="lazy"
-                                                    width="82"
-                                                    height="110"
-                                                    src="{{ asset('website/assets/images/product/single/detail-1_4.jpg') }}"
-                                                    alt="Image"
-                                                />
-                                            </div>
-                                        </div>
-                                        <!-- item 5 -->
-                                        <div class="swiper-slide stagger-item">
-                                            <div class="item">
-                                                <img
-                                                    loading="lazy"
-                                                    width="82"
-                                                    height="110"
-                                                    src="{{ asset('website/assets/images/product/single/detail-1_5.jpg') }}"
-                                                    alt="Image"
-                                                />
-                                            </div>
-                                        </div>
-                                        <!-- item 6 -->
-                                        <div class="swiper-slide stagger-item">
-                                            <div class="item">
-                                                <img
-                                                    loading="lazy"
-                                                    width="82"
-                                                    height="110"
-                                                    src="{{ asset('website/assets/images/product/single/detail-1_6.jpg') }}"
-                                                    alt="Image"
-                                                />
-                                            </div>
-                                        </div>
-                                        <!-- item 7 -->
-                                        <div class="swiper-slide stagger-item">
-                                            <div class="item">
-                                                <img
-                                                    loading="lazy"
-                                                    width="82"
-                                                    height="110"
-                                                    src="{{ asset('website/assets/images/product/single/detail-1_7.jpg') }}"
-                                                    alt="Image"
-                                                />
-                                            </div>
-                                        </div>
-                                        <!-- item 8 -->
-                                        <div class="swiper-slide stagger-item">
-                                            <div class="item">
-                                                <img
-                                                    loading="lazy"
-                                                    width="82"
-                                                    height="110"
-                                                    src="{{ asset('website/assets/images/product/single/detail-1_8.jpg') }}"
-                                                    alt="Image"
-                                                />
-                                            </div>
-                                        </div>
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>
@@ -319,7 +101,7 @@
                             <div class="tf-product-info-list other-image-zoom">
                                 <div class="tf-product-info-heading">
                                     <p class="product-infor-cate text-caption-01 mb-4">Clothing</p>
-                                    <h3 class="product-infor-name mb-12">Lyocell Wrap Top</h3>
+                                    <h3 class="product-infor-name mb-12">{{ $product->name }}</h3>
                                     <div class="product-infor-meta mb-20">
                                         <div class="meta_rate">
                                             <div class="star-wrap normal d-flex align-items-center">
@@ -343,33 +125,22 @@
                                         </div>
                                     </div>
                                     <div class="product-infor-price mb-12">
-                                        <h4 class="price-on-sale">$79.99</h4>
+                                        <h4 class="price-on-sale">{{ $product->sale_price }}</h4>
                                         <div class="br-line type-vertical"></div>
-                                        <p class="cl-text-3 text-decoration-line-through">$98.99</p>
-                                        <span class="badge-sale fw-semibold text-caption-02 text-white"> -25% </span>
+                                        <p class="cl-text-3 text-decoration-line-through">{{ $product->price }}</p>
+
+                                        @php
+                                            $discountPercentage = 0;
+                                            if($product->price > $product->sale_price){
+                                                $discountPercentage = (($product->price - $product->sale_price) / $product->price) * 100;
+                                        @endphp
+                                            <span class="badge-sale fw-semibold text-caption-02 text-white"> -{{ number_format($discountPercentage, 0) }}% </span>
+                                            
+                                        @php  }  @endphp
                                     </div>
                                     <p class="product-infor-desc cl-text-2 mb-12">
-                                        The garments labelled as Committed are products that have been produced using
-                                        sustainable fibres or processes, reducing their environmental impact.
+                                        {{ $product->details }}
                                     </p>
-                                    <div class="product-infor-reality lh-24">
-                                        <div class="ic d-flex">
-                                            <svg
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <rect width="24" height="24" rx="4" fill="#101010" />
-                                                <path
-                                                    d="M19.4569 11.7975C19.435 11.7481 18.9056 10.5738 17.7287 9.39687C16.1606 7.82875 14.18 7 12 7C9.81999 7 7.83937 7.82875 6.27124 9.39687C5.09437 10.5738 4.56249 11.75 4.54312 11.7975C4.51469 11.8614 4.5 11.9306 4.5 12.0006C4.5 12.0706 4.51469 12.1398 4.54312 12.2037C4.56499 12.2531 5.09437 13.4269 6.27124 14.6038C7.83937 16.1713 9.81999 17 12 17C14.18 17 16.1606 16.1713 17.7287 14.6038C18.9056 13.4269 19.435 12.2531 19.4569 12.2037C19.4853 12.1398 19.5 12.0706 19.5 12.0006C19.5 11.9306 19.4853 11.8614 19.4569 11.7975ZM12 14.5C11.5055 14.5 11.0222 14.3534 10.6111 14.0787C10.1999 13.804 9.87951 13.4135 9.69029 12.9567C9.50107 12.4999 9.45157 11.9972 9.54803 11.5123C9.64449 11.0273 9.88259 10.5819 10.2322 10.2322C10.5819 9.8826 11.0273 9.6445 11.5123 9.54804C11.9972 9.45157 12.4999 9.50108 12.9567 9.6903C13.4135 9.87952 13.804 10.2 14.0787 10.6111C14.3534 11.0222 14.5 11.5055 14.5 12C14.5 12.663 14.2366 13.2989 13.7678 13.7678C13.2989 14.2366 12.663 14.5 12 14.5Z"
-                                                    fill="white"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <span class="text-caption-01"> 28 people are viewing this right now </span>
-                                    </div>
                                 </div>
                                 <div class="br-line"></div>
                                 <div class="tf-product-variant">
@@ -435,7 +206,7 @@
                                         <div class="variant-picker-label">
                                             <div>
                                                 Size:
-                                                <span class="variant-picker-label-value value-currentSize text-capitalize fw-medium">M</span>
+                                                <span class="variant-picker-label-value value-currentSize text-capitalize fw-medium">{{ implode(',', $product->sizes) }}</span>
                                             </div>
                                             <a
                                                 href="#findSize"
@@ -587,7 +358,7 @@
                                             <div class="card-product_wrapper">
                                                 {{-- Product Image --}}
                                                 <a
-                                                    href="{{ route('product-detail', $relatedProduct->slug) }}"
+                                                    href="{{ route('web.product.show', $relatedProduct->slug) }}"
                                                     class="product-img"
                                                 >
                                                     @if ($relatedProduct->images->count() > 0)
@@ -659,7 +430,7 @@
                                             <div class="card-product_info">
                                                 {{-- Product Name --}}
                                                 <a
-                                                    href="{{ route('product-detail', $relatedProduct->slug) }}"
+                                                    href="{{ route('web.product.show', $relatedProduct->slug) }}"
                                                     class="name-product lh-24 fw-medium link-underline-text"
                                                 >
                                                     {{ $relatedProduct->name }}

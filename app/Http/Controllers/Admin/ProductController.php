@@ -21,7 +21,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = $this->productRepo->allCategories();
-        return view('admin.products.create', compact('categories'));
+        $colors = $this->productRepo->getAllColors();
+        return view('admin.products.create', compact('categories', 'colors'));
     }
 
     public function store(ProductRequest $request)
@@ -36,16 +37,19 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('admin.products.edit', compact('product'));
+        $categories = $this->productRepo->allCategories();
+        $colors = $this->productRepo->getAllColors();
+        return view('admin.products.edit', compact('product', 'categories', 'colors'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(ProductRequest $request, string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return $this->productRepo->updateProduct($product, $request->validated());
     }
 
     public function destroy(Product $product)
     {
-        return $this->productRepo->deletProduct($product);
+        return $this->productRepo->deleteProduct($product);
     }
 }

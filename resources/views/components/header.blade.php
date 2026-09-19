@@ -545,6 +545,11 @@
                                 <span class="text cus-text"> About Us </span>
                             </a>
                         </li>
+                        <li class="menu-item">
+                            <a href="{{ route('web.track-order') }}" class="item-link">
+                                <span class="text cus-text"> Track Your Order </span>
+                            </a>
+                        </li>
                         {{-- <li class="menu-item">
                             <a href="#" class="item-link">
                                 <span class="text cus-text">

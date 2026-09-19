@@ -35,57 +35,37 @@
                         <div class="tf-product-media-wrap sticky-top">
                             <div class="product-thumbs-slider style-row row_left">
                                 <div class="flat-wrap-media-product">
-                                    <div
-                                        dir="ltr"
-                                        class="swiper tf-product-media-main"
-                                        id="gallery-swiper-started"
-                                        data-spacing="0"
-                                    >
+                                    <div dir="ltr" class="swiper tf-product-media-main" id="gallery-swiper-started"
+                                        data-spacing="0">
                                         <div class="swiper-wrapper">
                                             @foreach ($product->images as $image)
                                                 <!-- item 1 -->
                                                 <div class="swiper-slide" data-color="green" data-size="L">
-                                                    <a
-                                                        href="{{ asset('storage/uploads/' . $image->image_name) }}"
-                                                        target="_blank"
-                                                        class="item"
-                                                        data-pswp-width="576px"
-                                                        data-pswp-height="768px"
-                                                    >
-                                                        <img
-                                                            loading="lazy"
-                                                            width="576"
-                                                            height="768"
+                                                    <a href="{{ asset('storage/uploads/' . $image->image_name) }}"
+                                                        target="_blank" class="item" data-pswp-width="576px"
+                                                        data-pswp-height="768px">
+                                                        <img loading="lazy" width="576" height="768"
                                                             class="tf-image-zoom"
                                                             data-zoom="{{ asset('storage/uploads/' . $image->image_name) }}"
                                                             src="{{ asset('storage/uploads/' . $image->image_name) }}"
-                                                            alt="img-product"
-                                                        />
+                                                            alt="img-product" />
                                                     </a>
                                                 </div>
                                             @endforeach
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    dir="ltr"
-                                    class="swiper tf-product-media-thumbs other-image-zoom"
-                                    data-direction="vertical"
-                                    data-preview="7"
-                                >
+                                <div dir="ltr" class="swiper tf-product-media-thumbs other-image-zoom"
+                                    data-direction="vertical" data-preview="7">
                                     <div class="swiper-wrapper stagger-wrap">
                                         <!-- item 1 -->
 
-                                        @foreach ($product->images as $image)    
+                                        @foreach ($product->images as $image)
                                             <div class="swiper-slide stagger-item">
                                                 <div class="item">
-                                                    <img
-                                                        loading="lazy"
-                                                        width="82"
-                                                        height="110"
+                                                    <img loading="lazy" width="82" height="110"
                                                         src="{{ asset('storage/uploads/' . $image->image_name) }}"
-                                                        alt="Image"
-                                                    />
+                                                        alt="Image" />
                                                 </div>
                                             </div>
                                         @endforeach
@@ -125,18 +105,23 @@
                                         </div>
                                     </div>
                                     <div class="product-infor-price mb-12">
-                                        <h4 class="price-on-sale">{{ $product->sale_price }}</h4>
+                                        <h4 class="price-on-sale">{{ $product->price }}</h4>
                                         <div class="br-line type-vertical"></div>
-                                        <p class="cl-text-3 text-decoration-line-through">{{ $product->price }}</p>
-
+                                        <p class="cl-text-3 text-decoration-line-through">
+                                            {{ $product->sale_price }}
+                                        </p>
                                         @php
                                             $discountPercentage = 0;
-                                            if($product->price > $product->sale_price){
-                                                $discountPercentage = (($product->price - $product->sale_price) / $product->price) * 100;
+                                            if ($product->price > $product->sale_price) {
+                                                $discountPercentage =
+                                                    (($product->price - $product->sale_price) / $product->price) * 100;
+                                            }
                                         @endphp
-                                            <span class="badge-sale fw-semibold text-caption-02 text-white"> -{{ number_format($discountPercentage, 0) }}% </span>
-                                            
-                                        @php  }  @endphp
+                                        @if ($discountPercentage > 0)
+                                            <span class="badge-sale fw-semibold text-caption-02 text-white">
+                                                -{{ number_format($discountPercentage, 0) }}%
+                                            </span>
+                                        @endif
                                     </div>
                                     <p class="product-infor-desc cl-text-2 mb-12">
                                         {{ $product->details }}
@@ -144,111 +129,82 @@
                                 </div>
                                 <div class="br-line"></div>
                                 <div class="tf-product-variant">
+                                    {{-- Colors --}}
                                     <div class="variant-picker-item variant-color">
                                         <div class="variant-picker-label">
                                             <div>
-                                                Colors:
-                                                <span class="variant-picker-label-value value-currentColor text-capitalize fw-medium">Gray</span>
+                                                Color:
+                                                <span class="variant-picker-label-value value-currentColor"
+                                                    id="currentColor" active-color="{{ $product['colors'][0] }}">
+                                                    Select Color
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="variant-picker-values">
-                                            <div
-                                                class="hover-tooltip tooltip-bot color-btn style-image active"
-                                                data-color="green"
-                                            >
-                                                <div class="img">
-                                                    <img
-                                                        loading="lazy"
-                                                        width="60"
-                                                        height="60"
-                                                        src="{{ asset('website/assets/images/product/single/img_square/detail-1_2.jpg') }}"
-                                                        data-src="{{ asset('website/assets/images/product/single/img_square/detail-1_2.jpg') }}"
-                                                        alt="img"
-                                                    />
-                                                </div>
-                                                <span class="tooltip">Green</span>
-                                            </div>
-                                            <div
-                                                class="hover-tooltip tooltip-bot color-btn style-image"
-                                                data-color="gray"
-                                            >
-                                                <div class="img">
-                                                    <img
-                                                        loading="lazy"
-                                                        width="60"
-                                                        height="60"
-                                                        src="{{ asset('website/assets/images/product/single/img_square/detail-1_5.jpg') }}"
-                                                        data-src="{{ asset('website/assets/images/product/single/img_square/detail-1_5.jpg') }}"
-                                                        alt="img"
-                                                    />
-                                                </div>
-                                                <span class="tooltip">Gray</span>
-                                            </div>
-                                            <div
-                                                class="hover-tooltip tooltip-bot color-btn style-image"
-                                                data-color="black"
-                                            >
-                                                <div class="img">
-                                                    <img
-                                                        loading="lazy"
-                                                        width="60"
-                                                        height="60"
-                                                        src="{{ asset('website/assets/images/product/single/img_square/detail-1_7.jpg') }}"
-                                                        data-src="{{ asset('website/assets/images/product/single/img_square/detail-1_7.jpg') }}"
-                                                        alt="img"
-                                                    />
-                                                </div>
-                                                <span class="tooltip">Black</span>
-                                            </div>
+                                            @foreach ($product->colors as $color)
+                                                <span class="color-btn" data-color="{{ $color }}"
+                                                    style="background-color: {{ $color }};">
+                                                </span>
+                                            @endforeach
                                         </div>
                                     </div>
+                                    {{-- Size --}}
                                     <div class="variant-picker-item variant-size">
                                         <div class="variant-picker-label">
                                             <div>
                                                 Size:
-                                                <span class="variant-picker-label-value value-currentSize text-capitalize fw-medium">{{ implode(',', $product->sizes) }}</span>
+                                                <span class="variant-picker-label-value value-currentSize" id="currentSize">
+                                                    Select Size
+                                                </span>
                                             </div>
-                                            <a
-                                                href="#findSize"
-                                                data-bs-toggle="modal"
-                                                class="tf-btn-line-2 style-primary text-caption-01 fw-semibold"
-                                            >
-                                                Size Guide
-                                            </a>
                                         </div>
                                         <div class="variant-picker-values">
-                                            <span class="size-btn" data-size="S" data-price="39.99">S</span>
-                                            <span class="size-btn active" data-size="M" data-price="59.99">M</span>
-                                            <span class="size-btn" data-size="L" data-price="79.99">L</span>
-                                            <span class="size-btn" data-size="XL" data-price="89.99">XL</span>
-                                            <span class="size-btn disabled" data-size="XX" data-price="99.99">XXL</span>
+                                            @foreach ($product->sizes as $size)
+                                                <span class="size-btn" data-size="{{ $size }}">
+                                                    {{ $size }}
+                                                </span>
+                                            @endforeach
                                         </div>
                                     </div>
+                                    {{-- Quantity + Cart --}}
                                     <div class="tf-product-total-quantity">
-                                        <p class="">Quantity:</p>
-                                        <div class="group-action">
-                                            <div class="wg-quantity">
-                                                <button class="btn-quantity btn-decrease">
-                                                    <i class="icon icon-minus"></i>
-                                                </button>
-                                                <input class="quantity-product" type="text" name="number" value="1" />
-                                                <button class="btn-quantity btn-increase">
-                                                    <i class="icon icon-plus"></i>
+                                        <p>Quantity:</p>
+                                        <form action="{{ route('web.cart.store', $product->slug) }}" method="POST">
+                                            @csrf
+                                            {{-- Selected Size --}}
+                                            <input type="hidden" name="size" value="" id="selectedSize">
+                                            <input type="hidden" name="color" value="" id="selectedColor">
+                                            <div class="group-action">
+                                                {{-- Quantity --}}
+                                                <div class="wg-quantity">
+                                                    <button type="button" class="btn-quantity btn-decrease">
+                                                        <i class="icon icon-minus"></i>
+                                                    </button>
+                                                    <input class="quantity-product" type="text" name="quantity"
+                                                        value="1" />
+                                                    <button type="button" class="btn-quantity btn-increase">
+                                                        <i class="icon icon-plus"></i>
+                                                    </button>
+                                                </div>
+                                                {{-- Add To Cart --}}
+                                                <button type="submit"
+                                                    class="btn-action-price tf-btn type-xl animate-btn w-100">
+                                                    Add To Cart
+                                                    <span class="d-none d-sm-block d-md-none d-lg-block">
+                                                        &nbsp;-&nbsp;
+                                                    </span>
+                                                    <span class="">
+                                                        {{ number_format($product->price, 2) }}
+                                                    </span>
+                                                    {{-- <span class="price-add">
+                                                        {{ number_format($product->price, 2) }}
+                                                    </span> --}}
                                                 </button>
                                             </div>
-                                            <a
-                                                href="#shoppingCart"
-                                                data-bs-toggle="offcanvas"
-                                                class="btn-action-price tf-btn type-xl animate-btn w-100"
-                                            >
-                                                Add To Cart
-                                                <span class="d-none d-sm-block d-md-none d-lg-block">&nbsp;-&nbsp;</span>
-                                                <span class="price-add d-none d-sm-block d-md-none d-lg-block">$79.99</span>
+                                            <a href="checkout.html" class="tf-btn type-xl btn-primary animate-btn w-100 mt-2">
+                                                Buy It Now
                                             </a>
-                                        </div>
-                                        <a href="checkout.html" class="tf-btn type-xl btn-primary animate-btn w-100">
-                                            Buy It Now
-                                        </a>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="tf-product-extra-link">
@@ -290,33 +246,6 @@
                                         </p>
                                     </div>
                                 </div>
-                                {{-- <div class="tf-product-trust-seal">
-                                        <p class="h6 text-seal">Guranteed Safe Checkout:</p>
-                                        <ul class="list-card">
-                                            <li class="card-item">
-                                                <img width="50" height="32" src="assets/images/payment/visa.svg" alt="card">
-                                            </li>
-                                            <li class="card-item">
-                                                <img width="50" height="32" src="assets/images/payment/master-card.svg"
-                                                    alt="card">
-                                            </li>
-                                            <li class="card-item">
-                                                <img width="50" height="32" src="assets/images/payment/amex.svg" alt="card">
-                                            </li>
-                                            <li class="card-item">
-                                                <img width="50" height="32" src="assets/images/payment/paypal.svg"
-                                                    alt="card">
-                                            </li>
-                                            <li class="card-item">
-                                                <img width="50" height="32" src="assets/images/payment/water.svg"
-                                                    alt="card">
-                                            </li>
-                                            <li class="card-item">
-                                                <img width="50" height="32" src="assets/images/payment/discover.svg"
-                                                    alt="card">
-                                            </li>
-                                        </ul>
-                                    </div> --}}
                             </div>
                         </div>
                     </div>
@@ -336,49 +265,27 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active show" id="related" role="tabpanel">
-                        <div
-                            dir="ltr"
-                            class="swiper tf-swiper wrap-sw-over"
-                            data-preview="4"
-                            data-tablet="3"
-                            data-mobile-sm="2"
-                            data-mobile="2"
-                            data-space-lg="30"
-                            data-space-md="20"
-                            data-space="10"
-                            data-pagination="2"
-                            data-pagination-sm="2"
-                            data-pagination-md="3"
-                            data-pagination-lg="4"
-                        >
+                        <div dir="ltr" class="swiper tf-swiper wrap-sw-over" data-preview="4" data-tablet="3"
+                            data-mobile-sm="2" data-mobile="2" data-space-lg="30" data-space-md="20" data-space="10"
+                            data-pagination="2" data-pagination-sm="2" data-pagination-md="3" data-pagination-lg="4">
                             <div class="swiper-wrapper">
                                 @foreach ($relatedProducts as $relatedProduct)
                                     <div class="swiper-slide">
                                         <div class="card-product">
                                             <div class="card-product_wrapper">
                                                 {{-- Product Image --}}
-                                                <a
-                                                    href="{{ route('web.product.show', $relatedProduct->slug) }}"
-                                                    class="product-img"
-                                                >
+                                                <a href="{{ route('web.product.show', $relatedProduct->slug) }}"
+                                                    class="product-img">
                                                     @if ($relatedProduct->images->count() > 0)
-                                                        <img
-                                                            class="img-product"
-                                                            loading="lazy"
-                                                            width="330"
+                                                        <img class="img-product" loading="lazy" width="330"
                                                             height="440"
                                                             src="{{ asset('storage/uploads/' . $relatedProduct->images->first()->image_name) }}"
-                                                            alt="{{ $relatedProduct->name }}"
-                                                        />
+                                                            alt="{{ $relatedProduct->name }}" />
 
-                                                        <img
-                                                            class="img-hover"
-                                                            loading="lazy"
-                                                            width="330"
+                                                        <img class="img-hover" loading="lazy" width="330"
                                                             height="440"
                                                             src="{{ asset('storage/uploads/' . $relatedProduct->images->first()->image_name) }}"
-                                                            alt="{{ $relatedProduct->name }}"
-                                                        />
+                                                            alt="{{ $relatedProduct->name }}" />
                                                     @endif
                                                 </a>
 
@@ -391,21 +298,15 @@
                                                         </a>
                                                     </li>
                                                     <li class="compare">
-                                                        <a
-                                                            href="#compare"
-                                                            data-bs-toggle="offcanvas"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                        >
+                                                        <a href="#compare" data-bs-toggle="offcanvas"
+                                                            class="hover-tooltip tooltip-left box-icon">
                                                             <span class="icon icon-ArrowsLeftRight"></span>
                                                             <span class="tooltip"> Compare </span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a
-                                                            href="#quickView"
-                                                            data-bs-toggle="offcanvas"
-                                                            class="hover-tooltip tooltip-left box-icon"
-                                                        >
+                                                        <a href="#quickView" data-bs-toggle="offcanvas"
+                                                            class="hover-tooltip tooltip-left box-icon">
                                                             <span class="icon icon-Eye"></span>
                                                             <span class="tooltip"> Quick view </span>
                                                         </a>
@@ -417,11 +318,8 @@
                                                 </ul>
                                                 {{-- Quick Add --}}
                                                 <div class="product-action_bot">
-                                                    <a
-                                                        href="#quickAdd"
-                                                        data-bs-toggle="modal"
-                                                        class="tf-btn btn-white small w-100"
-                                                    >
+                                                    <a href="#quickAdd" data-bs-toggle="modal"
+                                                        class="tf-btn btn-white small w-100">
                                                         Quick Add
                                                     </a>
                                                 </div>
@@ -429,10 +327,8 @@
                                             {{-- Product Information --}}
                                             <div class="card-product_info">
                                                 {{-- Product Name --}}
-                                                <a
-                                                    href="{{ route('web.product.show', $relatedProduct->slug) }}"
-                                                    class="name-product lh-24 fw-medium link-underline-text"
-                                                >
+                                                <a href="{{ route('web.product.show', $relatedProduct->slug) }}"
+                                                    class="name-product lh-24 fw-medium link-underline-text">
                                                     {{ $relatedProduct->name }}
                                                 </a>
                                                 {{-- Rating --}}

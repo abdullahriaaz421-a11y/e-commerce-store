@@ -24,6 +24,7 @@
             <!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
+        <div class="notification" id="notification"></div>
 
         <!-- Main content -->
         <section class="content">

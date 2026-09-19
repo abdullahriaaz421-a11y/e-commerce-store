@@ -226,7 +226,7 @@
                                                     loading="lazy"
                                                     width="330"
                                                     height="440"
-                                                    src="{{ asset('storage/uploads/' . $product['images'][0]['image_name']) }}"
+                                                    src="{{ asset('storage/uploads/' . ($product['images'][1]['image_name'] ?? $product['images'][0]['image_name'])) }}"
                                                     alt="{{ $product['name'] }}"
                                                 />
                                             </a>
@@ -302,8 +302,18 @@
                                                 </span>
                                             @endif
                                         </div>
-                                        {{-- <ul class="product-color_list">
-                                            <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                        <ul class="product-color_list">
+                                            @foreach ($product['colors'] as $color)
+                                                <li>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="mr-2" style="width: 30px; height: 30px; 
+                                                        background-color: {{ $color }}; 
+                                                        border: 1px solid #ccc; border-radius: 50%;"></div>
+                                                        
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                            {{-- <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
                                                 <span class="tooltip color-filter">Brown</span>
                                                 <span class="swatch-value bg-warm-beige"></span>
                                                 <img src="{{ asset('website/assets/images/product/product-1.jpg') }}"
@@ -323,8 +333,8 @@
                                                 <img src="{{ asset('website/assets/images/product/product-1_4.jpg') }}"
                                                     data-src="{{ asset('website/assets/images/product/product-1_4.jpg') }}"
                                                     alt="Image">
-                                            </li>
-                                        </ul> --}}
+                                            </li> --}}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

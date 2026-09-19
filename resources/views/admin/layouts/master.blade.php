@@ -40,10 +40,36 @@
     <link rel="stylesheet" href="{{ asset('admin-dashboard/plugins/daterangepicker/daterangepicker.css') }}" />
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('admin-dashboard/plugins/summernote/summernote-bs4.min.css') }}" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('head')
+   
 </head>
+<script type="module">
+    window.Echo
+        .private('order-created')
+        .listen('.order.created', (event) => {
+            console.log('New Order Event:', event);
+            // 🔔 Bell sound
+            let sound = document.getElementById('notificationSound');
 
+            sound.currentTime = 0;
+            sound.play();
+            var d1 = document.getElementById('notification');
+            d1.insertAdjacentHTML('beforeend', `
+                <div class="alert alert-success alert-dismissible fade show">
+                    <span>
+                        <i class="fa fa-circle-check"></i>
+                        ${event.message}
+                    </span>
+                    <button type="button" class="close" data-dismiss="alert">
+                        &times;
+                    </button>
+                </div>
+            `);
+        });
+</script>
 <body class="hold-transition sidebar-mini layout-fixed">
+    <audio id="notificationSound" preload="auto" src="{{ asset('sounds/alexis_gaming_cam-bell-notification-337658.mp3') }}"></audio>
     <div class="wrapper">
         {{-- <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
@@ -108,6 +134,14 @@
                         console.log('Something Went Wrong');
                     },
                 });
+            });
+
+            $('#color_picker').on('input', function() {
+
+                let colorCode = $(this).val();
+
+                $('#code').val(colorCode);
+
             });
         });
     </script>

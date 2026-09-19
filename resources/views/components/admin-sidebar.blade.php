@@ -76,7 +76,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link bg-dark">
-                        <i class="nav-icon fa fa-product-hunt"></i>
+                        <i class="nav-icon fa fa-box"></i>
                         <p>
                             Products
                             <i class="right fas fa-angle-left"></i>
@@ -93,6 +93,35 @@
                             <a href="{{ route('admin.products.index') }}" class="nav-link">
                                 <i class="fa fa-list nav-icon"></i>
                                 <p>Product List</p>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a href="./index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Dashboard v3</p>
+                            </a>
+                        </li> --}}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link bg-dark">
+                        <i class="nav-icon fa fa-paint-brush"></i>
+                        <p>
+                            Colors
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.colors.create') }}" class="nav-link">
+                                <i class="fa fa-plus nav-icon"></i>
+                                <p>Add New Color</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.colors.index') }}" class="nav-link">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>Color List</p>
                             </a>
                         </li>
                         {{-- <li class="nav-item">

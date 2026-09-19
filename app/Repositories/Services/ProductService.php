@@ -4,6 +4,7 @@ namespace App\Repositories\Services;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Color;
 use App\Notifications\ProductNotification;
 use App\Repositories\Interfaces\ProductInterface;
 use Illuminate\Support\Facades\Cache;
@@ -15,6 +16,10 @@ class ProductService implements ProductInterface
     public function allCategories()
     {
         return Category::select('id', 'category_name', 'slug', 'status')->get();
+    }
+
+    public function getAllColors(){
+        return Color::select('id', 'name', 'code')->get();
     }
 
     public function getHomeProducts()
@@ -73,8 +78,32 @@ class ProductService implements ProductInterface
 
         return redirect()->route('admin.products.index')->withSuccess('Product Created Successfully!');
     }
+    public function updateProduct(Product $product, array $data)
+    {
+        $images = $data['images'] ?? [];
+        unset($data['images']);
 
-    public function deletProduct(Product $product)
+        $product->update($data);
+
+        if (!empty($images)) {
+            foreach ($images as $image) {
+                $imageName = $image->getClientOriginalName();
+                $image->storeAs('uploads', $imageName, 'public');
+                $product->images()->create([
+                    'image_name' => $imageName,
+                ]);
+            }
+        }
+
+        $user = auth()->user();
+        $user->notify(new ProductNotification(
+            $user->name . ' Updated Product "' . $product->name . '"',
+        ));
+
+        return redirect()->route('admin.products.index')->withSuccess('Product Updated Successfully!');
+    }
+
+    public function deleteProduct(Product $product)
     {
         $product->delete();
 

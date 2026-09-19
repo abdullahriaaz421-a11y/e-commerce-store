@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b30d945fb8f4f30d436e93bc02ea2c4",
+    "content-hash": "6a9e1e66bf0b129319efff75a5f7bb3a",
     "packages": [
         {
             "name": "brick/math",
@@ -3106,6 +3106,69 @@
             "time": "2026-06-29T15:41:09+00:00"
         },
         {
+            "name": "pusher/pusher-php-server",
+            "version": "7.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pusher/pusher-http-php.git",
+                "reference": "058d8464246118110a341fc2e6e70c7c8b6a7f2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/058d8464246118110a341fc2e6e70c7c8b6a7f2c",
+                "reference": "058d8464246118110a341fc2e6e70c7c8b6a7f2c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.8.2 || ^8.0",
+                "guzzlehttp/promises": "^2.0.3 || ^3.0",
+                "guzzlehttp/psr7": "^2.6.3 || ^3.0",
+                "php": "^7.3|^8.0",
+                "psr/http-client": "^1.0",
+                "psr/log": "^1.0 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^2.3",
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pusher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library for interacting with the Pusher REST API",
+            "keywords": [
+                "events",
+                "messaging",
+                "php-pusher-server",
+                "publish",
+                "push",
+                "pusher",
+                "real time",
+                "real-time",
+                "realtime",
+                "rest",
+                "trigger"
+            ],
+            "support": {
+                "issues": "https://github.com/pusher/pusher-http-php/issues",
+                "source": "https://github.com/pusher/pusher-http-php/tree/7.3.0"
+            },
+            "time": "2026-08-07T12:47:11+00:00"
+        },
+        {
             "name": "ramsey/collection",
             "version": "2.1.1",
             "source": {
@@ -6031,6 +6094,77 @@
                 }
             ],
             "time": "2026-04-26T05:33:54+00:00"
+        },
+        {
+            "name": "wearepixel/laravel-cart",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wearepixel/laravel-cart.git",
+                "reference": "d1169f502f911c75cbfd4965ba0f9f2de897574f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wearepixel/laravel-cart/zipball/d1169f502f911c75cbfd4965ba0f9f2de897574f",
+                "reference": "d1169f502f911c75cbfd4965ba0f9f2de897574f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^11.0|^12.0|^13.0",
+                "illuminate/container": "^11.0|^12.0|^13.0",
+                "illuminate/database": "^11.0|^12.0|^13.0",
+                "illuminate/support": "^11.0|^12.0|^13.0",
+                "illuminate/validation": "^11.0|^12.0|^13.0",
+                "php": ">=8.3"
+            },
+            "require-dev": {
+                "larapack/dd": "dev-master",
+                "laravel/pint": "^1.21",
+                "mockery/mockery": "^2.0",
+                "pestphp/pest": "^4.7",
+                "phpstan/phpstan": "2.2.x-dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Cart": "Wearepixel\\Cart\\Facades\\CartFacade"
+                    },
+                    "providers": [
+                        "Wearepixel\\Cart\\CartServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wearepixel\\Cart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darryl Fernandez",
+                    "email": "engrdarrylfernandez@gmail.com"
+                },
+                {
+                    "name": "Joel Male",
+                    "email": "joel@joelmale.com"
+                }
+            ],
+            "description": "A cart implementation for Laravel",
+            "keywords": [
+                "cart",
+                "laravel",
+                "shopping cart"
+            ],
+            "support": {
+                "issues": "https://github.com/wearepixel/laravel-cart/issues",
+                "source": "https://github.com/wearepixel/laravel-cart/tree/v3.0.0"
+            },
+            "time": "2026-06-13T05:57:26+00:00"
         }
     ],
     "packages-dev": [

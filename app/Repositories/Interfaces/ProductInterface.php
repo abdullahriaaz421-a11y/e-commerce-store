@@ -8,6 +8,8 @@ interface ProductInterface
 {
     public function allCategories();
 
+    public function getAllColors();
+
     public function getAllPaginatedProducts();
 
     public function getShopCategoryProducts($slug);
@@ -20,5 +22,7 @@ interface ProductInterface
 
     public function createProduct(array $data);
 
-    public function deletProduct(Product $product);
+    public function updateProduct(Product $product, array $data);
+
+    public function deleteProduct(Product $product);
 }

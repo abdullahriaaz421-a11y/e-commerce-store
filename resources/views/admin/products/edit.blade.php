@@ -112,34 +112,23 @@
                                                     <small class="text-danger">{{ $message }}</small>
                                                 @enderror
                                             </div>
-                                            {{-- Colors --}}
-                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label for="colors">Colors</label>
-                                                <input
-                                                    type="text"
-                                                    name="colors"
-                                                    id="colors"
-                                                    class="form-control @error('colors') is-invalid @enderror"
-                                                    value="{{ old('colors',$product->colors) }}"
-                                                    placeholder='Example: ["Red", "Black", "White"]'
-                                                />
-                                                @error('colors')
-                                                    <small class="text-danger">{{ $message }}</small>
-                                                @enderror
-                                            </div>
                                             {{-- Sizes --}}
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
-                                                <label for="sizes">Sizes</label>
-                                                <input
-                                                    type="text"
-                                                    name="sizes"
-                                                    id="sizes"
-                                                    class="form-control @error('sizes') is-invalid @enderror"
-                                                    value="{{ old('sizes', $product->sizes) }}"
-                                                    placeholder='Example: ["S", "M", "L", "XL"]'
-                                                />
+                                                <label class="d-block">Sizes</label>
+                                                @php
+                                                    $sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+                                                @endphp
+                                                @foreach ($sizes as $size)
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="checkbox" name="sizes[]" id="size_{{ $size }}"
+                                                            value="{{ $size }}" class="form-check-input" /><label
+                                                            class="form-check-label" for="size_{{ $size }}">
+                                                            {{ $size }}
+                                                        </label>
+                                                    </div>
+                                                @endforeach
                                                 @error('sizes')
-                                                    <small class="text-danger">{{ $message }}</small>
+                                                    <small class="text-danger d-block">{{ $message }}</small>
                                                 @enderror
                                             </div>
                                             {{-- Images --}}
@@ -174,6 +163,20 @@
                                                     </option>
                                                 </select>
                                                 @error('status')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>{{-- Colors --}}
+                                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                                                <label for="colors">Colors</label>
+                                                <select name="colors[]" id="colors" class="form-control @error('colors') is-invalid @enderror" multiple>
+                                                    <option selected disabled>Select Color</option>
+                                                    @foreach ($colors as $color)
+                                                        <option value="{{ $color->code }}" @selected(in_array($color->code, old('colors', [])))>
+                                                            {{ $color->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                                @error('colors')
                                                     <small class="text-danger">{{ $message }}</small>
                                                 @enderror
                                             </div>

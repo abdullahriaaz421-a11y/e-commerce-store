@@ -41,7 +41,14 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $product->name }}</td>
                                                     <td>{{ $product->price }}</td>
-                                                    <td>{{ $product->colors }}</td>
+                                                    <td>
+                                                        @foreach ($product->colors as $color)
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="mr-2" style="width: 20px; height: 20px; background-color: {{ $color }}; border: 1px solid #ccc;"></div>
+                                                                {{ $color }}
+                                                            </div>
+                                                        @endforeach
+                                                    </td>
                                                     <td>{{ implode(', ', $product->sizes) }}</td>
                                                     <td>
                                                         @if ($product->status == 1)

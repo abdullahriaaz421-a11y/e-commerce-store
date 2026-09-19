@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="wrapper-control-shop gridLayout-wrapper">
-                    <div class="tf-list-layout wrapper-shop" id="listLayout" style="display: none;">
+                    {{-- <div class="tf-list-layout wrapper-shop" id="listLayout" style="display: none;">
                         <!-- Product 1 -->
 
                         @foreach($products as $product)
@@ -34,7 +34,8 @@
                                         <img class="img-product" loading="lazy" width="330" height="440"
                                             src="{{ asset('storage/uploads/' . $product->images->first()->image_name) }}" alt="Product">
                                         <img class="img-hover" loading="lazy" width="330" height="440"
-                                            src="{{ asset('storage/uploads/' . $product->images->first()->image_name) }}" alt="Product">
+                                            src="{{ asset('storage/uploads/' . ($product->images->skip(1)->first()?->image_name ?? $product->images->first()->image_name)) }}"
+                                            alt="Product">
                                     </a>
                                 </div>
                                 <div class="card-product_info">
@@ -55,7 +56,19 @@
                                     <p class="description text-caption-01 mb-10">
                                         {{ $product->description }}
                                     </p>
-                                    {{-- <ul class="product-color_list">
+                                    <ul class="product-color_list">
+                                        <li>
+                                            @foreach ($product->colors as $color)
+                                                <li>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="mr-2" style="width: 30px; height: 30px; 
+                                                        background-color: {{ $color }}; 
+                                                        border: 1px solid #ccc; border-radius: 50%;"></div>
+                                                        
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </li>
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
                                             <span class="tooltip color-filter">Brown</span>
                                             <span class="swatch-value bg-muted-brown"></span>
@@ -73,8 +86,8 @@
                                             <span class="swatch-value bg-soft-gray"></span>
                                             <img src="assets/images/product/product-1_4.jpg"
                                                 data-src="assets/images/product/product-1_4.jpg" alt="Image">
-                                        </li>
-                                    </ul> --}}
+                                        </li> 
+                                    </ul>
                                     <ul class="product-size_list mb-10">
                                         <li class="size-item text-caption-01">{{ implode(',', $product->sizes) }}</li>
                                     </ul>
@@ -120,7 +133,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="wrapper-shop tf-grid-layout tf-col-4" id="gridLayout">
                         <!-- Product 1 -->
 
@@ -131,7 +144,8 @@
                                         <img class="img-product" loading="lazy" width="330" height="440"
                                             src="{{ asset('storage/uploads/' . $product->images->first()->image_name) }}" alt="Product">
                                         <img class="img-hover" loading="lazy" width="330" height="440"
-                                            src="{{ asset('storage/uploads/' . $product->images->first()->image_name) }}" alt="Product">
+                                            src="{{ asset('storage/uploads/' . ($product->images->skip(1)->first()?->image_name ?? $product->images->first()->image_name)) }}"
+                                            alt="Product Hover">
                                     </a>
                                     <ul class="product-action_list">
                                         <li class="wishlist">
@@ -180,7 +194,19 @@
                                         <span class="price-old text-caption-01 cl-text-3">${{ number_format($product->sale_price, 2) }}</span>
                                     </div>
                                     <ul class="product-color_list">
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
+                                        <li>
+                                            @foreach ($product->colors as $color)
+                                                <li>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="mr-2" style="width: 30px; height: 30px; 
+                                                        background-color: {{ $color }}; 
+                                                        border: 1px solid #ccc; border-radius: 50%;"></div>
+                                                        
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </li>
+                                        {{-- <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
                                             <span class="tooltip color-filter">Brown</span>
                                             <span class="swatch-value bg-muted-brown"></span>
                                             <img src="assets/images/product/product-1.jpg"
@@ -197,7 +223,7 @@
                                             <span class="swatch-value bg-soft-gray"></span>
                                             <img src="assets/images/product/product-1_4.jpg"
                                                 data-src="assets/images/product/product-1_4.jpg" alt="Image">
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>

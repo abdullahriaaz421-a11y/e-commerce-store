@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Interfaces\Interfaces\OrderInterface;
 use App\Repositories\Interfaces\CartInterface;
 use App\Repositories\Interfaces\CategoryInterface;
 use App\Repositories\Interfaces\CheckoutInterface;
@@ -14,6 +15,7 @@ use App\Repositories\Services\CheckoutService;
 use App\Repositories\Services\ContactService;
 use App\Repositories\Services\ProductService;
 use App\Repositories\Services\ColorService;
+use App\Repositories\Services\OrderService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -31,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ColorInterface::class, ColorService::class);
         $this->app->bind(CartInterface::class, CartService::class);
         $this->app->bind(CheckoutInterface::class, CheckoutService::class);
+        $this->app->bind(OrderInterface::class, OrderService::class);
     }
 
     /**

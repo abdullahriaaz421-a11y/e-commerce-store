@@ -136,7 +136,7 @@
                                                 Color:
                                                 <span class="variant-picker-label-value value-currentColor"
                                                     id="currentColor" active-color="{{ $product['colors'][0] }}">
-                                                    Select Color
+                                                    
                                                 </span>
                                             </div>
                                         </div>

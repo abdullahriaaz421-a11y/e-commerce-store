@@ -2,12 +2,15 @@
 
 namespace App\Repositories\Services;
 
+use App\Enums\OrderStatus;
 use App\Events\OrderCreatedEvent;
 use App\Http\Requests\CheckoutRequest;
 use App\Repositories\Interfaces\CheckoutInterface;
 use App\Mail\OrderMail;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\User;
+use App\Notifications\OrderNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -37,7 +40,7 @@ class CheckoutService implements CheckoutInterface
 
         DB::beginTransaction();
 
-        try {
+        // try {
 
             $cartTotal = Cart::getTotal();
             $shipping = 300;
@@ -60,6 +63,7 @@ class CheckoutService implements CheckoutInterface
                 'note' => $request->note,
                 'total_price' => $totalPrice,
                 // 'payment_method' => $request->payment_method,
+                // 'status' => OrderStatus::Pending,
                 'status' => 'pending',
             ]);
 
@@ -74,6 +78,16 @@ class CheckoutService implements CheckoutInterface
             }
 
             DB::commit();
+            // Send notification to admin
+            $admin = User::where('roll', 'admin')->first();
+
+            if ($admin) {
+                $admin->notify(
+                    new OrderNotification(
+                        "New order #{$order->order_number} has been placed By {$order->fname}{$order->lname}.",
+                    )
+                );
+            }
 
             event(new OrderCreatedEvent($order));
 
@@ -88,9 +102,9 @@ class CheckoutService implements CheckoutInterface
             ->route('web.thankyou', ['order' => $order->id])
             ->with('success', 'Your order has been placed successfully!');
 
-        } catch (\Throwable $e) {
+        // } catch (\Throwable $e) {
             DB::rollBack();
             return redirect()->back()->withInput()->with('error', 'Something went wrong while placing your order.');
-        }
+        // }
     }
 }

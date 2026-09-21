@@ -124,13 +124,17 @@
                                 <p>Color List</p>
                             </a>
                         </li>
-                        {{-- <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v3</p>
-                            </a>
-                        </li> --}}
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.orders.show') }}" class="nav-link bg-dark">
+                        <i class="nav-icon fa fa-shopping-bag"></i>
+                        <p>
+                            Orders
+                            {{-- <i class="right fas fa-angle-left"></i> --}}
+                        </p>
+                    </a>
+                    
                 </li>
                 {{-- <li class="nav-item">
                     <a href="pages/widgets.html" class="nav-link">

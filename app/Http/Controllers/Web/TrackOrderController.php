@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Web;
-
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TrackOrderRequest;
 use App\Models\Order;
@@ -17,13 +15,16 @@ class TrackOrderController extends Controller
 
     public function orderTracking(TrackOrderRequest $trackOrderRequest)
     {
-        $order = Order::where('email', $trackOrderRequest->email)
+        $order = Order::with('details.product')
+            ->where('email', $trackOrderRequest->email)
             ->where('order_number', $trackOrderRequest->order_number)
             ->first();
 
+        // return $order;
+
         if (!$order) {
             return redirect()
-                ->route('web.tracking-order')
+                ->route('web.track-order')
                 ->with('error', 'No Order Found');
         }
 

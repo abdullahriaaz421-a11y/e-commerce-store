@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Models;
+
+use App\Enums\OrderStatus;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -22,6 +24,12 @@ class Order extends Model
         // 'payment_method',
         'status',
     ];
+    protected function casts(): array
+    {
+        return [
+            'status' => OrderStatus::class,
+        ];
+    }
 
     public function details()
     {

@@ -1,24 +1,22 @@
-@extends('layouts.website');
-@section('title', 'Cart');
+@extends('layouts.website')
+;
+@section('title', 'Cart')
+;
 @section('content')
     <main id="wrapper">
         <!-- Page Title -->
-        <section class="section-page-title text-center flat-spacing-2 pb-0">
+        <section class="section-page-title flat-spacing-2 pb-0 text-center">
             <div class="container">
                 <div class="main-page-title">
                     <div class="breadcrumbs">
                         <a href="{{ route('web.home') }}" class="text-caption-01 cl-text-3 link">Home</a>
                         <i class="icon icon-CaretRightThin cl-text-3"></i>
-                        <P class="text-caption-01">
-                            Shopping Cart
-                        </P>
+                        <p class="text-caption-01">Shopping Cart</p>
                     </div>
-                    <h3>
-                        Shopping Cart
-                    </h3>
+                    <h3>Shopping Cart</h3>
                     <p class="text-body-1 cl-text-2">
                         Review your selected items, update quantities, and get ready for a smooth and
-                        <br class="d-none d-lg-block">
+                        <br class="d-none d-lg-block" />
                         easy checkout experience.
                     </p>
                 </div>
@@ -31,14 +29,14 @@
                 <div class="container">
                     <div class="tf-cart-notification">
                         <div class="count-text">
-                            <div class="ic">
-                                🔥
-                            </div>
+                            <div class="ic">🔥</div>
                             <div class="">
                                 Your cart will expire in&nbsp;
-                                <div class="js-countdown time-count cd-has-zero cd-no" data-timer="288"
-                                    data-labels=":,:,:,">
-                                </div>
+                                <div
+                                    class="js-countdown time-count cd-has-zero cd-no"
+                                    data-timer="288"
+                                    data-labels=":,:,:,"
+                                ></div>
                                 &nbsp;minutes! Please checkout now before your items sell out!
                             </div>
                         </div>
@@ -72,54 +70,63 @@
                                     <tbody>
                                         @php
                                             $items = Cart::getContent();
-                                            // dd($items); 
+                                            // dd($items);
                                         @endphp
 
-                                        @forelse ($items as $item)    
+                                        @forelse ($items as $item)
                                             <tr class="tf-cart_item each-prd file-delete">
                                                 <td class="cart_product">
                                                     <a href="#" class="img-prd">
-                                                        <img loading="lazy" width="100" height="133"
-                                                            src="{{ asset('storage/uploads/' . $item->attributes->image) }}" alt="Image">
+                                                        <img
+                                                            loading="lazy"
+                                                            width="100"
+                                                            height="133"
+                                                            src="{{ asset('storage/uploads/' . $item->attributes->image) }}"
+                                                            alt="Image"
+                                                        />
                                                     </a>
                                                     <div class="infor-prd">
-                                                        <a href="{{ route('web.product.show', $item->attributes->slug) }}" class="prd_name fw-medium link lh-24">
+                                                        <a
+                                                            href="{{ route('web.product.show', $item->attributes->slug) }}"
+                                                            class="prd_name fw-medium link lh-24"
+                                                        >
                                                             {{ $item->name }}
                                                         </a>
                                                         <div class="prd_select text-caption-01">
-                                                            <span class="type-text cl-text-3">
-                                                                Color:&nbsp;
-                                                            </span>
+                                                            <span class="type-text cl-text-3"> Color:&nbsp; </span>
                                                             <div class="type-select">
                                                                 <select class="bg-white">
-                                                                    <option selected="selected">{{ $item->attributes->color }}</option>
+                                                                    <option selected="selected">
+                                                                        {{ $item->attributes->color }}
+                                                                    </option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="prd_select text-caption-01">
-                                                            <span class="type-text cl-text-3">
-                                                                Size:&nbsp;
-                                                            </span>
+                                                            <span class="type-text cl-text-3"> Size:&nbsp; </span>
                                                             <div class="type-select">
                                                                 <select class="bg-white">
-                                                                    <option selected="selected">{{ $item->attributes->size }}</option>
-                                                                    
+                                                                    <option selected="selected">
+                                                                        {{ $item->attributes->size }}
+                                                                    </option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         {{-- Remove --}}
-                                                        
-                                                            <a href="{{ route('web.cart.remove', $item->id) }}" class=" tf-btn-line-3 type-primary ">
+
+                                                        <a
+                                                            href="{{ route('web.cart.remove', $item->id) }}"
+                                                            class="tf-btn-line-3 type-primary"
+                                                        >
                                                             {{-- <a href="{{ route('web.cart.remove', $item->id) }}" class="cart_remove tf-btn-line-3 type-primary remove"> --}}
-                                                                <span class="text-caption-01 fw-semibold">
-                                                                    Remove
-                                                                </span>
-                                                            </a>
-                                                        
+                                                            <span class="text-caption-01 fw-semibold"> Remove </span>
+                                                        </a>
                                                     </div>
                                                 </td>
-                                                <td class="cart_price each-price fw-semibold text-primary"
-                                                    data-cart-title="Price">
+                                                <td
+                                                    class="cart_price each-price fw-semibold text-primary"
+                                                    data-cart-title="Price"
+                                                >
                                                     {{ number_format($item->price, 2) }}
                                                 </td>
                                                 <td class="cart_quantity" data-cart-title="Quantity">
@@ -127,15 +134,19 @@
                                                         <button type="button" class="btn-quantity minus-quantity">
                                                             <i class="icon icon-minus"></i>
                                                         </button>
-                                                        <input class="quantity-product" type="text" name="quantity[{{ $item->id }}]" value="{{ $item->quantity }}">
+                                                        <input
+                                                            class="quantity-product"
+                                                            type="text"
+                                                            name="quantity[{{ $item->id }}]"
+                                                            value="{{ $item->quantity }}"
+                                                        />
                                                         <button type="button" class="btn-quantity plus-quantity">
                                                             <i class="icon icon-plus"></i>
                                                         </button>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div class="cart_total fw-semibold text-primary each-subtotal-price">
-                                                    </div>
+                                                    <div class="cart_total fw-semibold text-primary each-subtotal-price"></div>
                                                 </td>
                                             </tr>
                                         @empty
@@ -144,26 +155,22 @@
                                                     <p class="h6 fw-medium">Your cart is empty.</p>
                                                 </td>
                                             </tr>
-                                        @endforelse      
-                                        
+                                        @endforelse
                                     </tbody>
-                                    
                                 </table>
-                                <button type="submit" class="btn btn-dark mt-2 rounded-5 fw-bold p-3 pl-2 pr-2">
+                                <button type="submit" class="btn btn-dark rounded-5 fw-bold mt-2 p-3 pl-2 pr-2">
                                     Update Cart
                                 </button>
                             </div>
                             <div class="ip-discount-code">
-                                <input type="text" placeholder="Add voucher discount" >
-                                <button class="tf-btn animate-btn" type="submit">
-                                    Apply Code
-                                </button>
+                                <input type="text" placeholder="Add voucher discount" />
+                                <button class="tf-btn animate-btn" type="submit">Apply Code</button>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-4">
                         <div class="fl-sidebar-cart mt-lg-0 sticky-top">
-                            <div class="box-order-summary ">
+                            <div class="box-order-summary">
                                 {{-- <div class="notification-progress">
                                     <p>
                                         Buy
@@ -214,11 +221,11 @@
                                 </div>
                                 <h5 class="total-order d-flex justify-content-between align-items-center">
                                     <span>Total</span>
-                                    <span class="total ">{{ number_format(Cart::getSubTotal() + 300, 2) }}</span>
+                                    <span class="total">{{ number_format(Cart::getSubTotal() + 300, 2) }}</span>
                                     {{-- <span class="total each-total-price">{{}}</span> --}}
                                 </h5>
                                 <fieldset class="checkbox-wrap check-agree">
-                                    <input type="checkbox" name="agree" class="tf-check-rounded" id="checkOutAgree">
+                                    <input type="checkbox" name="agree" class="tf-check-rounded" id="checkOutAgree" />
                                     <label for="checkOutAgree">
                                         I agree with the
                                         <a href="#" class="fw-medium text-decoration-underline link">
@@ -227,17 +234,18 @@
                                     </label>
                                 </fieldset>
                                 <div class="list-ver text-center">
-                                    <a href="{{ route('web.checkout') }}" type="submit" id="checkout-btn"
-                                        class="action-checkout tf-btn w-100 animate-btn">
-                                        <span class="fw-semibold">
-                                            Process To Checkout
-                                        </span>
+                                    <a
+                                        href="{{ route('web.checkout') }}"
+                                        type="submit"
+                                        id="checkout-btn"
+                                        class="action-checkout tf-btn w-100 animate-btn"
+                                    >
+                                        <span class="fw-semibold"> Process To Checkout </span>
                                     </a>
                                     <a href="{{ route('web.home') }}" class="link-underline link">
-                                        <span class="fw-semibold ">Or Continue Shopping</span>
+                                        <span class="fw-semibold">Or Continue Shopping</span>
                                     </a>
                                 </div>
-
                             </div>
                         </div>
                     </div>

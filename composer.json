@@ -8,8 +8,10 @@
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.17",
+        "laravel/scout": "^11.7",
         "laravel/tinker": "^3.0",
         "pusher/pusher-php-server": "^7.3",
+        "stripe/stripe-php": "^21.3",
         "wearepixel/laravel-cart": "^3.0"
     },
     "require-dev": {

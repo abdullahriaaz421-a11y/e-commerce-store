@@ -38,21 +38,40 @@
                                                     <td>{{ $color->name }}</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
-                                                            <div class="mr-2" style="width: 20px; height: 20px; background-color: {{ $color->code }}; border: 1px solid #ccc;"></div>
+                                                            <div
+                                                                class="mr-2"
+                                                                style="width: 20px; height: 20px; background-color: {{ $color->code }}; border: 1px solid #ccc;"
+                                                            ></div>
                                                             {{ $color->code }}
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <form action="{{ route('admin.colors.destroy', $color->id) }}" method="post" style="display: inline;">
+                                                        <form
+                                                            action="{{ route('admin.colors.destroy', $color->id) }}"
+                                                            method="post"
+                                                            style="display: inline"
+                                                        >
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this color?')">Delete</button>
+                                                            <button
+                                                                type="submit"
+                                                                class="btn btn-sm btn-danger"
+                                                                onclick="
+                                                                    return confirm(
+                                                                        'Are you sure you want to delete this color?',
+                                                                    );
+                                                                "
+                                                            >
+                                                                Delete
+                                                            </button>
                                                         </form>
                                                     </td>
                                                 </tr>
                                             @empty
                                                 <tr>
-                                                    <td colspan="4" class="text-center fw-bold">No colors found......</td>
+                                                    <td colspan="4" class="fw-bold text-center">
+                                                        No colors found......
+                                                    </td>
                                                 </tr>
                                             @endforelse
                                         </tbody>

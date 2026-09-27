@@ -120,9 +120,13 @@
                                                 @endphp
                                                 @foreach ($sizes as $size)
                                                     <div class="form-check form-check-inline">
-                                                        <input type="checkbox" name="sizes[]" id="size_{{ $size }}"
-                                                            value="{{ $size }}" class="form-check-input" /><label
-                                                            class="form-check-label" for="size_{{ $size }}">
+                                                        <input
+                                                            type="checkbox"
+                                                            name="sizes[]"
+                                                            id="size_{{ $size }}"
+                                                            value="{{ $size }}"
+                                                            class="form-check-input"
+                                                        /><label class="form-check-label" for="size_{{ $size }}">
                                                             {{ $size }}
                                                         </label>
                                                     </div>
@@ -165,13 +169,22 @@
                                                 @error('status')
                                                     <small class="text-danger">{{ $message }}</small>
                                                 @enderror
-                                            </div>{{-- Colors --}}
+                                            </div>
+                                            {{-- Colors --}}
                                             <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                                                 <label for="colors">Colors</label>
-                                                <select name="colors[]" id="colors" class="form-control @error('colors') is-invalid @enderror" multiple>
+                                                <select
+                                                    name="colors[]"
+                                                    id="colors"
+                                                    class="form-control @error('colors') is-invalid @enderror"
+                                                    multiple
+                                                >
                                                     <option selected disabled>Select Color</option>
                                                     @foreach ($colors as $color)
-                                                        <option value="{{ $color->code }}" @selected(in_array($color->code, old('colors', [])))>
+                                                        <option
+                                                            value="{{ $color->code }}"
+                                                            @selected(in_array($color->code, old('colors', [])))
+                                                        >
                                                             {{ $color->name }}
                                                         </option>
                                                     @endforeach

@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ColorRequest;
 use App\Repositories\Interfaces\ColorInterface;
 
 class ColorController extends Controller
 {
-    public function __construct(private ColorInterface $colorRepo){}
+    public function __construct(private ColorInterface $colorRepo) {}
 
     public function index()
     {
@@ -24,7 +25,7 @@ class ColorController extends Controller
     {
         return $this->colorRepo->createColor($request->validated());
     }
-    
+
     public function destroy(string $id)
     {
         return $this->colorRepo->deleteColor($id);

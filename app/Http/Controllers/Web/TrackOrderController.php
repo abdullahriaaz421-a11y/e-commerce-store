@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Http\Controllers\Web;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TrackOrderRequest;
 use App\Models\Order;
-use Illuminate\Http\Request;
 
 class TrackOrderController extends Controller
 {

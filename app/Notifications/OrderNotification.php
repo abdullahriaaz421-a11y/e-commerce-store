@@ -3,8 +3,6 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 class OrderNotification extends Notification
@@ -32,7 +30,7 @@ class OrderNotification extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'message' =>$this->message,
+            'message' => $this->message,
         ];
     }
 }

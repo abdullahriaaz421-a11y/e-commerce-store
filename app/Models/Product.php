@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 class Product extends Model
 {
     protected $casts = [
-        'sizes' => 'array',
+        'sizes'  => 'array',
         'colors' => 'array',
     ];
 

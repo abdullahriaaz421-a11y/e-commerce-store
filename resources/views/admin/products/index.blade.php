@@ -44,7 +44,10 @@
                                                     <td>
                                                         @foreach ($product->colors as $color)
                                                             <div class="d-flex align-items-center">
-                                                                <div class="mr-2" style="width: 20px; height: 20px; background-color: {{ $color }}; border: 1px solid #ccc;"></div>
+                                                                <div
+                                                                    class="mr-2"
+                                                                    style="width: 20px; height: 20px; background-color: {{ $color }}; border: 1px solid #ccc;"
+                                                                ></div>
                                                                 {{ $color }}
                                                             </div>
                                                         @endforeach

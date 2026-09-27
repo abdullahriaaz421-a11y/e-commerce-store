@@ -16,8 +16,10 @@
                         <li class="tf-view-layout-switch sw-layout-3 d-none d-md-flex" data-value-layout="tf-col-3">
                             <i class="icon-grid-3"></i>
                         </li>
-                        <li class="tf-view-layout-switch sw-layout-4 active d-none d-lg-flex"
-                            data-value-layout="tf-col-4">
+                        <li
+                            class="tf-view-layout-switch sw-layout-4 active d-none d-lg-flex"
+                            data-value-layout="tf-col-4"
+                        >
                             <i class="icon-grid-4"></i>
                         </li>
                     </ul>
@@ -141,11 +143,22 @@
                             <div class="card-product grid" data-availability="In Stock" data-brand="Louis Vuitton">
                                 <div class="card-product_wrapper">
                                     <a href="{{ route('web.product.show', $product->slug) }}" class="product-img">
-                                        <img class="img-product" loading="lazy" width="330" height="440"
-                                            src="{{ asset('storage/uploads/' . $product->images->first()->image_name) }}" alt="Product">
-                                        <img class="img-hover" loading="lazy" width="330" height="440"
+                                        <img
+                                            class="img-product"
+                                            loading="lazy"
+                                            width="330"
+                                            height="440"
+                                            src="{{ asset('storage/uploads/' . $product->images->first()->image_name) }}"
+                                            alt="Product"
+                                        />
+                                        <img
+                                            class="img-hover"
+                                            loading="lazy"
+                                            width="330"
+                                            height="440"
                                             src="{{ asset('storage/uploads/' . ($product->images->skip(1)->first()?->image_name ?? $product->images->first()->image_name)) }}"
-                                            alt="Product Hover">
+                                            alt="Product Hover"
+                                        />
                                     </a>
                                     <ul class="product-action_list">
                                         <li class="wishlist">
@@ -155,15 +168,21 @@
                                             </a>
                                         </li>
                                         <li class="compare">
-                                            <a href="#compare" data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon">
+                                            <a
+                                                href="#compare"
+                                                data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon"
+                                            >
                                                 <span class="icon icon-ArrowsLeftRight"></span>
                                                 <span class="tooltip">Compare</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#quickView" data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon">
+                                            <a
+                                                href="#quickView"
+                                                data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon"
+                                            >
                                                 <span class="icon icon-Eye"></span>
                                                 <span class="tooltip">Quick view</span>
                                             </a>
@@ -173,13 +192,16 @@
                                         <li class="product-badge_item text-caption-01 new">NEW</li>
                                     </ul>
                                     <div class="product-action_bot">
-                                        <a href="#quickAdd" data-bs-toggle="modal" class="tf-btn btn-white small  w-100">
+                                        <a href="#quickAdd" data-bs-toggle="modal" class="tf-btn btn-white small w-100">
                                             Quick Add
                                         </a>
                                     </div>
                                 </div>
                                 <div class="card-product_info">
-                                    <a href="{{ route('web.product.show', $product->slug) }}" class="name-product lh-24 fw-medium link-underline-text">
+                                    <a
+                                        href="{{ route('web.product.show', $product->slug) }}"
+                                        class="name-product lh-24 fw-medium link-underline-text"
+                                    >
                                         {{ $product->name }}
                                     </a>
                                     <div class="star-wrap d-flex align-items-center">
@@ -196,15 +218,18 @@
                                     <ul class="product-color_list">
                                         <li>
                                             @foreach ($product->colors as $color)
-                                                <li>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="mr-2" style="width: 30px; height: 30px; 
+                                        <li>
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="mr-2"
+                                                    style="width: 30px; height: 30px; 
                                                         background-color: {{ $color }}; 
-                                                        border: 1px solid #ccc; border-radius: 50%;"></div>
-                                                        
-                                                    </div>
+                                                        border: 1px solid #ccc; border-radius: 50%;"
+                                                ></div>
+
+                                                </div>
                                                 </li>
-                                            @endforeach
+                                                @endforeach
                                         </li>
                                         {{-- <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
                                             <span class="tooltip color-filter">Brown</span>

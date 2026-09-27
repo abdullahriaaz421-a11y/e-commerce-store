@@ -14,13 +14,18 @@
                 </div>
             </div>
             <div class="container-fluid pl-3 pr-3">
-                <div class="row mb-3 align-items-center">
+                <div class="row align-items-center mb-3">
                     {{-- Left Side: Search --}}
                     <div class="col-md-7">
                         <form action="" method="GET">
                             <div class="input-group">
-                                <input type="text" name="search" class="form-control"
-                                    placeholder="Search Order #, Customer Name, Phone, Adress..." value="{{ request('search') }}">
+                                <input
+                                    type="text"
+                                    name="search"
+                                    class="form-control"
+                                    placeholder="Search Order #, Customer Name, Phone, Adress..."
+                                    value="{{ request('search') }}"
+                                />
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fa fa-search"></i> Search
@@ -29,23 +34,28 @@
                             </div>
                             {{-- Keep selected status --}}
                             @if (request('status'))
-                                <input type="hidden" name="status" value="{{ request('status') }}">
+                                <input type="hidden" name="status" value="{{ request('status') }}" />
                             @endif
                         </form>
                     </div>
-    
+
                     {{-- Right Side: Date --}}
                     <div class="col-md-3 ms-auto">
                         <form action="" method="GET">
-                            <input type="date" name="date" class="form-control" value="{{ request('date') }}"
-                                onchange="this.form.submit()">
+                            <input
+                                type="date"
+                                name="date"
+                                class="form-control"
+                                value="{{ request('date') }}"
+                                onchange="this.form.submit()"
+                            />
                             {{-- Keep selected status --}}
                             @if (request('status'))
-                                <input type="hidden" name="status" value="{{ request('status') }}">
+                                <input type="hidden" name="status" value="{{ request('status') }}" />
                             @endif
                             {{-- Keep search --}}
                             @if (request('search'))
-                                <input type="hidden" name="search" value="{{ request('search') }}">
+                                <input type="hidden" name="search" value="{{ request('search') }}" />
                             @endif
                         </form>
                     </div>
@@ -61,26 +71,44 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-1">
-                                        <a href="{{ route('admin.orders.show', ['status' => 'all']) }}"
-                                            class="btn bg-dark ml-2">All</a>
-                                        <a href="{{ route('admin.orders.show', ['status' => 'confirmed']) }}"
-                                            class="btn btn-primary ml-2">Confirmed</a>
-                                        <a href="{{ route('admin.orders.show', ['status' => 'pending']) }}"
-                                            class="btn btn-warning text-white ml-2">Pending</a>
-                                        <a href="{{ route('admin.orders.show', ['status' => 'order_processed']) }}"
-                                            class="btn bg-purple ml-2">Order Processed</a>
-                                        <a href="{{ route('admin.orders.show', ['status' => 'on_the_way']) }}"
-                                            class="btn bg-info ml-2">On The Way</a>
-                                        <a href="{{ route('admin.orders.show', ['status' => 'hold']) }}"
-                                            class="btn bg-orange text-white ml-2">Hold</a>
-                                        <a href="{{ route('admin.orders.show', ['status' => 'delivered']) }}"
-                                            class="btn bg-green ml-2">Delivered</a>
-                                        <a href="{{ route('admin.orders.show', ['status' => 'refund']) }}"
-                                            class="btn bg-secondary ml-2">Refund</a>
-                                        <a href="{{ route('admin.orders.show', ['status' => 'cancelled']) }}"
-                                            class="btn bg-danger ml-2">Cancelled</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'all']) }}"
+                                            class="btn bg-dark ml-2"
+                                        >All</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'confirmed']) }}"
+                                            class="btn btn-primary ml-2"
+                                        >Confirmed</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'pending']) }}"
+                                            class="btn btn-warning ml-2 text-white"
+                                        >Pending</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'order_processed']) }}"
+                                            class="btn bg-purple ml-2"
+                                        >Order Processed</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'on_the_way']) }}"
+                                            class="btn bg-info ml-2"
+                                        >On The Way</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'hold']) }}"
+                                            class="btn bg-orange ml-2 text-white"
+                                        >Hold</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'delivered']) }}"
+                                            class="btn bg-green ml-2"
+                                        >Delivered</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'refund']) }}"
+                                            class="btn bg-secondary ml-2"
+                                        >Refund</a>
+                                        <a
+                                            href="{{ route('admin.orders.show', ['status' => 'cancelled']) }}"
+                                            class="btn bg-danger ml-2"
+                                        >Cancelled</a>
                                     </div>
-                                    <table class="table table-bordered table-hover ">
+                                    <table class="table-bordered table-hover table">
                                         <thead class="bg-secondary">
                                             <tr>
                                                 <th>No#</th>
@@ -124,11 +152,13 @@
                                                     </td>
                                                     <td>{{ $order->created_at->format('d F Y') }}</td>
                                                     <td>
-                                                        <a href="" class="btn bg-purple"><i
-                                                                class="fa fa-eye"></i></a>
-                                                        <a href="{{ route('admin.invoice', $order->order_number) }}"
-                                                            target="blank" class="btn bg-primary"><i
-                                                                class="fa fa-file"></i></a>
+                                                        <a href="" class="btn bg-purple"><i class="fa fa-eye"></i></a>
+                                                        <a
+                                                            href="{{ route('admin.invoice', $order->order_number) }}"
+                                                            target="blank"
+                                                            class="btn bg-primary"
+                                                            ><i class="fa fa-file"></i
+                                                        ></a>
                                                     </td>
                                                 </tr>
 
@@ -139,7 +169,6 @@
                                                     </td>
                                                 </tr>
                                             @endforelse
-
                                         </tbody>
                                     </table>
                                     <div class="mt-2">{!! $orders->links('pagination::bootstrap-5') !!}</div>

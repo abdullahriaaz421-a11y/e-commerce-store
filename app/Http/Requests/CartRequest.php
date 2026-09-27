@@ -29,8 +29,8 @@ class CartRequest extends FormRequest
         }
         return [
             'quantity' => ['required', 'min:1'],
-            'size' => ['required'],
-            'color' => ['required']
+            'size'     => ['required'],
+            'color'    => ['required'],
         ];
     }
 }

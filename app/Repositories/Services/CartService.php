@@ -5,8 +5,8 @@ namespace App\Repositories\Services;
 use App\Http\Requests\CartRequest;
 use App\Models\Product;
 use App\Repositories\Interfaces\CartInterface;
-use Illuminate\Support\Str;
 use Cart;
+
 class CartService implements CartInterface
 {
     public function __construct()
@@ -28,26 +28,23 @@ class CartService implements CartInterface
         $item = Cart::get($product->id);
 
         if ($item) {
-
             // Already exists -> quantity increase
             Cart::update($product->id, [
                 'quantity' => [
                     'relative' => true,
-                    'value' => $quantity,
+                    'value'    => $quantity,
                 ],
             ]);
-
         } else {
-
             // New product -> add to cart
             Cart::add([
-                'id' => $product->id,
-                'name' => $product->name,
-                'price' => (int) $product->price,
-                'quantity' => $quantity,
+                'id'         => $product->id,
+                'name'       => $product->name,
+                'price'      => (int) $product->price,
+                'quantity'   => $quantity,
                 'attributes' => [
                     'image' => $product->images->first()->image_name ?? null,
-                    'size' => $request->size,
+                    'size'  => $request->size,
                     'color' => $request->color,
                     'slug'  => $product->slug,
                 ],
@@ -67,7 +64,7 @@ class CartService implements CartInterface
             Cart::update($itemId, [
                 'quantity' => [
                     'relative' => false,
-                    'value' => (int) $quantity,
+                    'value'    => (int) $quantity,
                 ],
             ]);
         }

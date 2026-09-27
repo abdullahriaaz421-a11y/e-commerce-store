@@ -11,7 +11,7 @@ class ProductController extends Controller
 
     public function getProductDetail($slug)
     {
-        $product = $this->productRepo->getProductDetail($slug);
+        $product         = $this->productRepo->getProductDetail($slug);
         $relatedProducts = $this->productRepo->getRelatedProducts($product->category_id, $product->id);
         return view('web.product-detail', compact('product', 'relatedProducts'));
     }

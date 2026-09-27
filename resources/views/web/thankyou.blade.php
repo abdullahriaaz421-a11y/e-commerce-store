@@ -1,5 +1,7 @@
-@extends('layouts.website');
-@section('title', 'Thank you');
+@extends('layouts.website')
+;
+@section('title', 'Thank you')
+;
 @section('content')
     <!-- Page Title -->
     <div class="flat-spacing pb-0">
@@ -35,7 +37,7 @@
                             </div>
                             <div class="order-progress-item payment-method text-center">
                                 <div class="title text-caption-01 fw-semibold">Payment method</div>
-                                <div class="fw-medium metod">Direct bank transfer</div>
+                                <div class="fw-medium metod">{{ $order->payment_method }}</div>
                             </div>
                         </div>
                         <div class="box-timeline-order">
@@ -45,7 +47,8 @@
                                 </div>
                                 <div class="content">
                                     <div class="title fw-medium">Confirmed</div>
-                                    <span class="date fw-medium text-caption-01 cl-text-2">{{ $order->created_at->format('d F Y') }}</span>
+                                    <span
+                                        class="date fw-medium text-caption-01 cl-text-2">{{ $order->created_at->format('d F Y') }}</span>
                                 </div>
                             </div>
                             <div class="line-time"></div>
@@ -72,7 +75,7 @@
                         <div class="map-order">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27294.62418958524!2d151.25730233429948!3d-33.82005608618041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ab8bc95a137f%3A0x358f04a7f6f5f6a6!2sGrotto%20Point%20Lighthouse!5e0!3m2!1sen!2s!4v1733976867160!5m2!1sen!2s"
-                                width="100%" height="499" style="border:none;" allowfullscreen="" loading="lazy"
+                                width="100%" height="499" style="border: none" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         <div class="box-ship-address">
@@ -81,34 +84,24 @@
                                     <div class="ship-address-item">
                                         <div class="text-body-1 fw-medium title">Shipping address</div>
                                         <ul class="list-address">
-                                        <li class="text-caption-01 cl-text-2">
-                                            {{ $order->fname }} {{ $order->lname }}
-                                        </li>
+                                            <li class="text-caption-01 cl-text-2">
+                                                {{ $order->fname }} {{ $order->lname }}
+                                            </li>
 
-                                        <li class="text-caption-01 cl-text-2">
-                                            {{ $order->street }}
-                                        </li>
+                                            <li class="text-caption-01 cl-text-2">{{ $order->street }}</li>
 
-                                        <li class="text-caption-01 cl-text-2">
-                                            {{ $order->city }}, {{ $order->state }}
-                                        </li>
+                                            <li class="text-caption-01 cl-text-2">
+                                                {{ $order->city }}, {{ $order->state }}
+                                            </li>
 
-                                        <li class="text-caption-01 cl-text-2">
-                                            {{ $order->country }}
-                                        </li>
+                                            <li class="text-caption-01 cl-text-2">{{ $order->country }}</li>
 
-                                        <li class="text-caption-01 cl-text-2">
-                                            {{ $order->postal_code }}
-                                        </li>
+                                            <li class="text-caption-01 cl-text-2">{{ $order->postal_code }}</li>
 
-                                        <li class="text-caption-01 cl-text-2">
-                                            {{ $order->email }}
-                                        </li>
+                                            <li class="text-caption-01 cl-text-2">{{ $order->email }}</li>
 
-                                        <li class="text-caption-01 cl-text-2">
-                                            {{ $order->phone }}
-                                        </li>
-                                    </ul>
+                                            <li class="text-caption-01 cl-text-2">{{ $order->phone }}</li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-5">
@@ -132,13 +125,13 @@
                                         <div class="box-order-tes text-center">
                                             <span class="icon icon-Quote"></span>
                                             <div class="content">
-                                                <div class="title text-uppercase fw-semibold">HAPPY CUSTOMERS
-                                                </div>
-                                                <p class="note h6 cl-text-2">"I’ve never felt more confident in
-                                                    my wardrobe! Every piece I’ve bought from here is high-quality,
-                                                    trendy, and fits perfectly. The entire shopping experience has
-                                                    been seamless from start to finish. Thank you for making fashion
-                                                    so easy!"</p>
+                                                <div class="title text-uppercase fw-semibold">HAPPY CUSTOMERS</div>
+                                                <p class="note h6 cl-text-2">
+                                                    "I’ve never felt more confident in my wardrobe! Every piece I’ve
+                                                    bought from here is high-quality, trendy, and fits perfectly. The
+                                                    entire shopping experience has been seamless from start to finish.
+                                                    Thank you for making fashion so easy!"
+                                                </p>
                                             </div>
                                             <span class="author font-2 fw-semibold">Amer P</span>
                                         </div>
@@ -147,13 +140,12 @@
                                         <div class="box-order-tes text-center">
                                             <span class="icon icon-Quote"></span>
                                             <div class="content">
-                                                <div class="title text-uppercase fw-semibold">HAPPY CUSTOMERS
-                                                </div>
+                                                <div class="title text-uppercase fw-semibold">HAPPY CUSTOMERS</div>
                                                 <p class="note h6 cl-text-2">
-                                                    I’ve never been happier with my wardrobe! Every piece I’ve
-                                                    bought is stylish, high-quality, and fits like a glove. The
-                                                    shopping process is so smooth and stress-free from beginning to
-                                                    end. Truly makes fashion effortless and fun!
+                                                    I’ve never been happier with my wardrobe! Every piece I’ve bought is
+                                                    stylish, high-quality, and fits like a glove. The shopping process
+                                                    is so smooth and stress-free from beginning to end. Truly makes
+                                                    fashion effortless and fun!
                                                 </p>
                                             </div>
                                             <span class="author font-2 fw-semibold">Mas P</span>
@@ -163,13 +155,12 @@
                                         <div class="box-order-tes text-center">
                                             <span class="icon icon-Quote"></span>
                                             <div class="content">
-                                                <div class="title text-uppercase fw-semibold">HAPPY CUSTOMERS
-                                                </div>
+                                                <div class="title text-uppercase fw-semibold">HAPPY CUSTOMERS</div>
                                                 <p class="note h6 cl-text-2">
-                                                    Shopping here has completely transformed my style! Every item
-                                                    I’ve received is beautiful, well-made, and fits me perfectly.
-                                                    From browsing to delivery, the entire process was quick and
-                                                    easy. I finally enjoy getting dressed every day!
+                                                    Shopping here has completely transformed my style! Every item I’ve
+                                                    received is beautiful, well-made, and fits me perfectly. From
+                                                    browsing to delivery, the entire process was quick and easy. I
+                                                    finally enjoy getting dressed every day!
                                                 </p>
                                             </div>
                                             <span class="author font-2 fw-semibold">Xiu P</span>
@@ -186,22 +177,17 @@
                         <div class="cart-box order-box">
                             <div class="title text-body-1 fw-medium">Order Details</div>
                             <ul class="list-order-product">
-                                @foreach ($orderDetails as $detail)
+                                @foreach ($order->details as $detail)
                                     <li class="order-item fw-medium">
                                         <a href="#" class="img-prd">
-                                            @if ($detail->images)
-                                                <img
-                                                    loading="lazy"
-                                                    width="100"
-                                                    height="133"
-                                                    src="{{ asset('storage/uploads/' . $detail->images->first()->image_name) }}"
-                                                    alt="{{ $detail->product->name }}"
-                                                >
+                                            @if ($detail->product && $detail->product->images->isNotEmpty())
+                                                <img loading="lazy" width="100" height="133"
+                                                    src="{{ asset('storage/uploads/' . $detail->product->images->first()->image_name) }}"
+                                                    alt="{{ $detail->product->name }}">
                                             @endif
                                         </a>
                                         <div class="infor-prd">
-                                            <a href="#"
-                                            class="prd_name fw-medium lh-24 link link-underline">
+                                            <a href="#" class="prd_name fw-medium lh-24 link link-underline">
                                                 {{ $detail->product->name }}
                                             </a>
                                             <div class="text-caption-01">
@@ -222,58 +208,6 @@
                                         </div>
                                     </li>
                                 @endforeach
-                                {{-- <li class="order-item fw-medium">
-                                    <a href="#" class="img-prd">
-                                        <img loading="lazy" width="100" height="133"
-                                            src="assets/images/product/product-6.jpg" alt="Image">
-                                    </a>
-                                    <div class="infor-prd">
-                                        <a href="#" class="prd_name fw-medium lh-24 link link-underline">
-                                            Oval shoulder bag
-                                        </a>
-                                        <div class="text-caption-01">
-                                            <span class="cl-text-2">
-                                                Color:
-                                            </span>
-                                            Light Gray
-                                        </div>
-                                        <div class="text-caption-01">
-                                            <span class="cl-text-2">
-                                                Size:
-                                            </span>
-                                            Small
-                                        </div>
-                                    </div>
-                                    <div class="quantity-price text-primary">
-                                        $69.99
-                                    </div>
-                                </li>
-                                <li class="order-item fw-medium">
-                                    <a href="#" class="img-prd">
-                                        <img loading="lazy" width="100" height="133"
-                                            src="assets/images/product/product-8.jpg" alt="Image">
-                                    </a>
-                                    <div class="infor-prd">
-                                        <a href="#" class="prd_name fw-medium lh-24 link link-underline">
-                                            V-neck cotton T-shirt
-                                        </a>
-                                        <div class="text-caption-01">
-                                            <span class="cl-text-2">
-                                                Color:
-                                            </span>
-                                            Light Gray
-                                        </div>
-                                        <div class="text-caption-01">
-                                            <span class="cl-text-2">
-                                                Size:
-                                            </span>
-                                            Small
-                                        </div>
-                                    </div>
-                                    <div class="quantity-price text-primary">
-                                        $49.99
-                                    </div>
-                                </li> --}}
                             </ul>
                             <ul class="list-total">
                                 <li class="total-item lh-24 fw-medium d-flex justify-content-between">
@@ -299,64 +233,61 @@
                             </div>
                         </div>
                         <div class="cart-box">
-
                             <form class="feedback-box">
                                 <h6 class="title">Give us a feedback</h6>
                                 <p class="text cl-text-2 text-caption-01">
-                                    Let us know what you think about the
-                                    shopping experience, and get a gift coupon for the next shopping.
+                                    Let us know what you think about the shopping experience, and get a gift coupon for
+                                    the next shopping.
                                 </p>
-                                <div class="form-content gap-16 mb-16">
+                                <div class="form-content mb-16 gap-16">
                                     <fieldset class="tf-field">
                                         <label for="fb_Name" class="tf-lable text-caption-01">Name <span
                                                 class="text-primary">*</span></label>
-                                        <input type="text" id="fb_Name" placeholder="Name" required="">
+                                        <input type="text" id="fb_Name" placeholder="Name" required="" />
                                     </fieldset>
                                     <fieldset class="tf-field">
                                         <label for="fb_Email" class="tf-lable text-caption-01">Email <span
                                                 class="text-primary">*</span></label>
-                                        <input type="text" id="fb_Email" placeholder="Email" required="">
+                                        <input type="text" id="fb_Email" placeholder="Email" required="" />
                                     </fieldset>
                                     <div class="box-exp">
-                                        <p class="mb-6 cl-text-2 text-caption-01">How was your experience?</p>
+                                        <p class="cl-text-2 text-caption-01 mb-6">How was your experience?</p>
                                         <div class="list-exp">
                                             <label for="exp1" class="check-exp">
                                                 <input type="radio" id="exp1" checked
-                                                    class="tf-check-rounded style-small" name="checkExperience">
+                                                    class="tf-check-rounded style-small" name="checkExperience" />
                                                 <span class="text-exp">1</span>
                                             </label>
                                             <label for="exp2" class="check-exp">
                                                 <input type="radio" id="exp2" class="tf-check-rounded style-small"
-                                                    name="checkExperience">
+                                                    name="checkExperience" />
                                                 <span class="text-exp">2</span>
                                             </label>
                                             <label for="exp3" class="check-exp">
                                                 <input type="radio" id="exp3" class="tf-check-rounded style-small"
-                                                    name="checkExperience">
+                                                    name="checkExperience" />
                                                 <span class="text-exp">3</span>
                                             </label>
                                             <label for="exp4" class="check-exp">
                                                 <input type="radio" id="exp4" class="tf-check-rounded style-small"
-                                                    name="checkExperience">
+                                                    name="checkExperience" />
                                                 <span class="text-exp">4</span>
                                             </label>
                                             <label for="exp5" class="check-exp">
                                                 <input type="radio" id="exp5" class="tf-check-rounded style-small"
-                                                    name="checkExperience">
+                                                    name="checkExperience" />
                                                 <span class="text-exp">5</span>
                                             </label>
                                         </div>
                                     </div>
                                     <fieldset class="tf-field">
-                                        <label for="fb_Area" class="tf-lable text-caption-01">Share your exprience
-                                            <span class="text-primary">*</span></label>
+                                        <label for="fb_Area" class="tf-lable text-caption-01">Share your exprience <span
+                                                class="text-primary">*</span></label>
                                         <textarea name="" id="fb_Area" placeholder="Share your exprience"></textarea>
                                     </fieldset>
                                 </div>
                                 <button type="submit" class="tf-btn w-100 animate-btn">
-                                    <span class="fw-semibold">
-                                        SEND
-                                    </span>
+                                    <span class="fw-semibold"> SEND </span>
                                 </button>
                             </form>
                             <div class="box-share-social">

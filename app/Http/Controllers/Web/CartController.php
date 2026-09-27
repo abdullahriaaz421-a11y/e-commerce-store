@@ -10,10 +10,8 @@ use Cart;
 
 class CartController extends Controller
 {
-    public function __construct(private CartInterface $cartrepo)
-    {
-        
-    }
+    public function __construct(private CartInterface $cartrepo) {}
+
     public function index()
     {
         return view('web.cart');
@@ -23,6 +21,7 @@ class CartController extends Controller
     {
         return $this->cartrepo->addToCart($request, $slug);
     }
+
     public function update(CartRequest $request)
     {
         return $this->cartrepo->updateCart($request);

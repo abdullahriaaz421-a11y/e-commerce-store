@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Repositories\Interfaces\ProductInterface;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -21,7 +20,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = $this->productRepo->allCategories();
-        $colors = $this->productRepo->getAllColors();
+        $colors     = $this->productRepo->getAllColors();
         return view('admin.products.create', compact('categories', 'colors'));
     }
 
@@ -38,7 +37,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = $this->productRepo->allCategories();
-        $colors = $this->productRepo->getAllColors();
+        $colors     = $this->productRepo->getAllColors();
         return view('admin.products.edit', compact('product', 'categories', 'colors'));
     }
 

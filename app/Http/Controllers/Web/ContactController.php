@@ -9,6 +9,7 @@ use App\Repositories\Interfaces\ContactInterface;
 class ContactController extends Controller
 {
     public function __construct(private ContactInterface $contactRepo) {}
+
     public function index()
     {
         return view('web.contact');

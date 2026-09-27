@@ -3,8 +3,8 @@
 namespace App\Repositories\Services;
 
 use App\Models\Category;
-use App\Models\Product;
 use App\Models\Color;
+use App\Models\Product;
 use App\Notifications\ProductNotification;
 use App\Repositories\Interfaces\ProductInterface;
 use Illuminate\Support\Facades\Cache;
@@ -18,7 +18,8 @@ class ProductService implements ProductInterface
         return Category::select('id', 'category_name', 'slug', 'status')->get();
     }
 
-    public function getAllColors(){
+    public function getAllColors()
+    {
         return Color::select('id', 'name', 'code')->get();
     }
 
@@ -78,6 +79,7 @@ class ProductService implements ProductInterface
 
         return redirect()->route('admin.products.index')->withSuccess('Product Created Successfully!');
     }
+
     public function updateProduct(Product $product, array $data)
     {
         $images = $data['images'] ?? [];

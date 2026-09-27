@@ -306,10 +306,12 @@
                                             @foreach ($product['colors'] as $color)
                                                 <li>
                                                     <div class="d-flex align-items-center">
-                                                        <div class="mr-2" style="width: 30px; height: 30px; 
+                                                        <div
+                                                            class="mr-2"
+                                                            style="width: 30px; height: 30px; 
                                                         background-color: {{ $color }}; 
-                                                        border: 1px solid #ccc; border-radius: 50%;"></div>
-                                                        
+                                                        border: 1px solid #ccc; border-radius: 50%;"
+                                                        ></div>
                                                     </div>
                                                 </li>
                                             @endforeach

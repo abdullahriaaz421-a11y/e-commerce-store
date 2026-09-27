@@ -1,5 +1,7 @@
-@extends('layouts.website');
-@section('title', 'Track Order');
+@extends('layouts.website')
+;
+@section('title', 'Track Order')
+;
 @section('head')
     <style>
         .order-tracking-card {
@@ -48,13 +50,11 @@
             white-space: nowrap;
         }
 
-
         /* Body */
 
         .order-card-body {
             padding: 32px;
         }
-
 
         /* Progress */
 
@@ -118,7 +118,6 @@
             font-weight: 600;
         }
 
-
         /* Items */
 
         .order-items-section {
@@ -162,7 +161,6 @@
             white-space: nowrap;
         }
 
-
         /* Total */
 
         .order-total {
@@ -178,7 +176,6 @@
         .order-total strong {
             font-weight: 500;
         }
-
 
         /* Buttons */
 
@@ -227,11 +224,9 @@
             color: #222;
         }
 
-
         /* Mobile */
 
         @media (max-width: 600px) {
-
             .order-card-header {
                 padding: 22px 18px;
                 align-items: flex-start;
@@ -253,28 +248,23 @@
             .order-btn {
                 width: 100%;
             }
-
         }
     </style>
 @endsection
 @section('content')
     <!-- Page Title -->
-    <section class="section-page-title text-center flat-spacing-2">
+    <section class="section-page-title flat-spacing-2 text-center">
         <div class="container">
             <div class="main-page-title">
                 <div class="breadcrumbs">
                     <a href="index-2.html" class="text-caption-01 cl-text-3 link">Home</a>
                     <i class="icon icon-CaretRightThin cl-text-3"></i>
-                    <P class="text-caption-01">
-                        Order Tracking
-                    </P>
+                    <p class="text-caption-01">Order Tracking</p>
                 </div>
-                <h3>
-                    Order Tracking
-                </h3>
+                <h3>Order Tracking</h3>
                 <p class="text-body-1 cl-text-2">
                     To track your order, please enter your order ID in the box below and press the "Track" button.
-                    <br class="d-none d-lg-block">
+                    <br class="d-none d-lg-block" />
                     The ID has been sent to you on your receipt and in the confirmation email you received.
                 </p>
             </div>
@@ -290,24 +280,33 @@
                         @csrf
                         <div class="form-content">
                             <fieldset>
-                                <input type="email" name="email" placeholder="Emaill Addess*"
-                                    class="@error('email') is-invalid @enderror" value="{{ old('email', $order['email'] ?? '') }}" required>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Emaill Addess*"
+                                    class="@error('email') is-invalid @enderror"
+                                    value="{{ old('email', $order['email'] ?? '') }}"
+                                    required
+                                />
                                 @error('email')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </fieldset>
                             <fieldset>
-                                <input type="text" name="order_number" placeholder="Order Number*"
-                                    class="@error('order_number') is-invalid @enderror" value="{{ old('order_number', $order['order_number'] ?? '') }}"
-                                    required>
+                                <input
+                                    type="text"
+                                    name="order_number"
+                                    placeholder="Order Number*"
+                                    class="@error('order_number') is-invalid @enderror"
+                                    value="{{ old('order_number', $order['order_number'] ?? '') }}"
+                                    required
+                                />
                                 @error('order_number')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </fieldset>
                         </div>
-                        <button type="submit" class="tf-btn animate-btn w-100">
-                            Track
-                        </button>
+                        <button type="submit" class="tf-btn animate-btn w-100">Track</button>
                     </form>
                 </div>
             </div>
@@ -315,35 +314,29 @@
     </div>
     <!-- /Order Tracking -->
     @if (session('error'))
-        <div class="mt-5" <div class="card border-0 shadow-sm text-center p-5">
+        <div class="mt-5"
+        <div class="card border-0 p-5 text-center shadow-sm">
             <div class="mb-3">
-                <span class="badge bg-danger px-3 py-2">
-                    Order Not Found
-                </span>
+                <span class="badge bg-danger px-3 py-2"> Order Not Found </span>
             </div>
-            <h4 class="mb-2">
-                No Order Found
-            </h4>
-            <p class="text-muted mb-0">
-                We couldn't find an order matching the provided
-                email and order number.
-            </p>
+            <h4 class="mb-2">No Order Found</h4>
+            <p class="text-muted mb-0">We couldn't find an order matching the provided email and order number.</p>
         </div>
         </div>
     @endif
     @if ($order)
         @php
             /*
-        |--------------------------------------------------------------------------
-        | Order Status Steps
-        |--------------------------------------------------------------------------
-        */
+            |--------------------------------------------------------------------------
+            | Order Status Steps
+            |--------------------------------------------------------------------------
+            */
             $statusSteps = [
-                'pending' => 'Pending',
+                'pending'    => 'Pending',
                 'processing' => 'In Process',
-                'processed' => 'Order Processed',
-                'shipped' => 'On The Way',
-                'completed' => 'Delivered',
+                'processed'  => 'Order Processed',
+                'shipped'    => 'On The Way',
+                'completed'  => 'Delivered',
             ];
             $currentStatus = strtolower($order['status']);
             // Current status ki position
@@ -361,12 +354,9 @@
                 {{-- ================= HEADER ================= --}}
                 <div class="order-card-header">
                     <div>
-                        <h4 class="order-number">
-                            Order #{{ $order['order_number'] }}
-                        </h4>
+                        <h4 class="order-number">Order #{{ $order['order_number'] }}</h4>
                         <p class="order-date">
-                            Placed on
-                            {{ \Carbon\Carbon::parse($order['created_at'])->format('d M Y') }}
+                            Placed on {{ \Carbon\Carbon::parse($order['created_at'])->format('d M Y') }}
                         </p>
                     </div>
                     <span class="order-status-badge">
@@ -377,16 +367,17 @@
                 <div class="order-card-body">
                     <div class="order-progress">
                         <div class="progress-line">
-                            <div class="progress-line-active"
+                            <div
+                                class="progress-line-active"
                                 style="width:
-                            {{ count($statusKeys) > 1 ? ($currentIndex / (count($statusKeys) - 1)) * 100 : 0 }}%;">
-                            </div>
+                            {{ count($statusKeys) > 1 ? ($currentIndex / (count($statusKeys) - 1)) * 100 : 0 }}%;"
+                            ></div>
                         </div>
                         <div class="progress-steps">
                             @foreach ($statusSteps as $key => $label)
                                 @php
                                     $stepIndex = array_search($key, $statusKeys);
-                                    $isActive = $stepIndex <= $currentIndex;
+                                    $isActive  = $stepIndex <= $currentIndex;
                                 @endphp
                                 <div class="progress-step">
                                     <div class="step-dot {{ $isActive ? 'active' : '' }}">
@@ -394,9 +385,7 @@
                                             ✓
                                         @endif
                                     </div>
-                                    <span class="{{ $isActive ? 'active-text' : '' }}">
-                                        {{ $label }}
-                                    </span>
+                                    <span class="{{ $isActive ? 'active-text' : '' }}"> {{ $label }} </span>
                                 </div>
                             @endforeach
                         </div>
@@ -409,40 +398,33 @@
                         </div>
                         @foreach ($order['details'] as $detail)
                             <div class="order-item">
-
                                 <div class="item-name">
                                     {{ $detail['product']['name'] ?? 'Product Not Found' }}
 
-                                    <span class="item-quantity">
-                                        × {{ $detail['qty'] }}
-                                    </span>
+                                    <span class="item-quantity"> × {{ $detail['qty'] }} </span>
                                 </div>
 
-                                <div class="item-price">
-                                    Rs. {{ number_format($detail['total_price'], 2) }}
-                                </div>
-
+                                <div class="item-price">Rs. {{ number_format($detail['total_price'], 2) }}</div>
                             </div>
                         @endforeach
                     </div>
                     {{-- ================= TOTAL ================= --}}
                     <div class="order-total">
                         <span>Total</span>
-                        <strong>
-                            Rs. {{ number_format($order['total_price'], 2) }}
-                        </strong>
+                        <strong> Rs. {{ number_format($order['total_price'], 2) }} </strong>
                     </div>
                     {{-- ================= BUTTONS ================= --}}
                     <div class="order-actions">
                         {{-- Invoice --}}
-                        <a href="{{ route('admin.invoice', ['orderId' => $order['order_number']]) }}"
-                            class="order-btn order-btn-dark" target="_blank">
+                        <a
+                            href="{{ route('admin.invoice', ['orderId' => $order['order_number']]) }}"
+                            class="order-btn order-btn-dark"
+                            target="_blank"
+                        >
                             View Invoice
                         </a>
                         {{-- Continue Shopping --}}
-                        <a href="{{ route('web.home') }}" class="order-btn order-btn-light">
-                            Continue Shopping
-                        </a>
+                        <a href="{{ route('web.home') }}" class="order-btn order-btn-light"> Continue Shopping </a>
                     </div>
                 </div>
             </div>

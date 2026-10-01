@@ -1,5 +1,8 @@
 @extends('admin.layouts.master')
 @section('title', 'Order List')
+@section('head')
+    <style></style>
+@endsection
 @section('content')
     <div class="wrapper" style="min-height: 100%; display: flex; flex-direction: column">
         <!-- Content Wrapper -->
@@ -67,7 +70,13 @@
                         <div class="col-12">
                             <div class="card rounded">
                                 <div class="card-header">
-                                    <h6 class="card-title">Order List</h6>
+                                    <h6 class="card-title mb-0">Order List</h6>
+                                    <span class="d-flex justify-content-end align-items-end">
+                                        <a href="{{ route('admin.orders.export') }}" class="btn btn-success btn-sm" style="border-radius: 10px">
+                                            <i class="fas fa-file-excel"></i>
+                                            Export to Excel
+                                        </a>
+                                    </span>
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-1">
@@ -128,23 +137,23 @@
                                                     <td>{{ $order->order_number }}</td>
                                                     <td>{{ $order->fname }} {{ $order->lname }}</td>
                                                     <td>{{ $order->total_price }}</td>
-                                                    <td>Cash On deliverytd</td>
+                                                    <td>{{ $order->payment_method }}</td>
                                                     <td>
-                                                        @if ($order->status == 'confirmed')
+                                                        @if ($order->status == \App\Enums\OrderStatusEnum::CONFIRMED)
                                                             <span class="badge bg-primary">Confirmed</span>
-                                                        @elseif ($order->status == 'in_process')
+                                                        @elseif ($order->status == \App\Enums\OrderStatusEnum::IN_PROCESS)
                                                             <span class="badge bg-warning text-dark">In Process</span>
-                                                        @elseif ($order->status == 'order_processed')
+                                                        @elseif ($order->status == \App\Enums\OrderStatusEnum::ORDER_PROCESSED)
                                                             <span class="badge bg-purple">Order Processed</span>
-                                                        @elseif ($order->status == 'on_the_way')
+                                                        @elseif ($order->status == \App\Enums\OrderStatusEnum::ON_THE_WAY)
                                                             <span class="badge bg-success">On The Way</span>
-                                                        @elseif ($order->status == 'hold')
+                                                        @elseif ($order->status == \App\Enums\OrderStatusEnum::HOLD)
                                                             <span class="badge bg-orange">Hold</span>
-                                                        @elseif ($order->status == 'delivered')
+                                                        @elseif ($order->status == \App\Enums\OrderStatusEnum::DELIVERED)
                                                             <span class="badge bg-success">Delivered</span>
-                                                        @elseif ($order->status == 'refund')
+                                                        @elseif ($order->status == \App\Enums\OrderStatusEnum::REFUND)
                                                             <span class="badge bg-secondary">Refund</span>
-                                                        @elseif ($order->status == 'cancelled')
+                                                        @elseif ($order->status == \App\Enums\OrderStatusEnum::CANCELLED)
                                                             <span class="badge bg-danger">Cancelled</span>
                                                         @else
                                                             <span class="badge bg-dark">{{ $order->status }}</span>
@@ -152,7 +161,7 @@
                                                     </td>
                                                     <td>{{ $order->created_at->format('d F Y') }}</td>
                                                     <td>
-                                                        <a href="" class="btn bg-purple"><i class="fa fa-eye"></i></a>
+                                                        <a href="{{ route('admin.order-detail', $order->order_number) }}" class="btn bg-purple"><i class="fa fa-eye"></i></a>
                                                         <a
                                                             href="{{ route('admin.invoice', $order->order_number) }}"
                                                             target="blank"

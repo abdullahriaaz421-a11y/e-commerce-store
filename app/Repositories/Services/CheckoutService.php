@@ -16,6 +16,7 @@ use Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Stripe;
 use Stripe\PaymentIntent;
 use Stripe\PaymentMethod;
@@ -92,6 +93,58 @@ class CheckoutService implements CheckoutInterface
             }
         }
 
+        // Paypal Payment
+        if ($data['payment_method'] === 'paypal') {
+            $provider = new PayPalClient();
+            $provider->setApiCredentials(config('paypal'));
+            $provider->getAccessToken();
+            // PayPal ke liye order data session mein save karo
+            session([
+                'paypal_order_data' => $data,
+                'paypal_order_number' => $orderNumber,
+                'paypal_total_price' => $totalPrice,
+            ]);
+            $paypalData = [
+                'intent' => 'CAPTURE',
+                'application_context' => [
+                    'return_url' => route('web.paypal-payment.success'),
+                    'cancel_url' => route('web.paypal-payment.cancel'),
+                ],
+                'purchase_units' => [
+                    [
+                        'reference_id' => $orderNumber,
+                        'description' => 'Order Payment for Order #' . $orderNumber,
+                        'amount' => [
+                            'currency_code' => 'USD',
+                            'value' => number_format($totalPrice, 2, '.', ''),
+                        ],
+                    ],
+                ],
+            ];
+            try {
+                $paypalOrder = $provider->createOrder($paypalData);
+                if (!isset($paypalOrder['id']) || !isset($paypalOrder['links'])) 
+                    {
+                        return redirect()->back()->withInput()->with('error', 'Unable to create PayPal payment.');
+                    }
+
+                $approveLink = collect($paypalOrder['links'])->firstWhere('rel', 'approve');
+
+                if (!$approveLink) {
+                    return redirect()->back()->withInput()->with('error', 'PayPal approval link not found.');
+                }
+
+                // PayPal Order ID save
+                session([
+                    'paypal_order_id' => $paypalOrder['id'],
+                ]);
+
+                return redirect()->away($approveLink['href']);
+            } catch (Throwable $e) {
+                return redirect()->back()->withInput()->with('error','PayPal payment failed: ' . $e->getMessage());
+            }
+        }
+
         // Order Create
         DB::beginTransaction();
         try {
@@ -122,7 +175,9 @@ class CheckoutService implements CheckoutInterface
                     'card_type' => $paymentMethod->card->brand ?? null,
                     'card_last4' => $paymentMethod->card->last4 ?? null,
                     'txn_id' => $paymentIntent->id,
-                    'amount' => $totalPrice,
+                    'amount' =>  $totalPrice,
+                    'status'     => $paymentIntent->status,
+                    'currency'   => $paymentIntent->currency,
                 ]);
             }
 

@@ -12,6 +12,8 @@ class TransactionHistories extends Model
         'card_last4',
         'txn_id',
         'amount',
+        'status',
+        'currency',
     ];
 
     public function order()

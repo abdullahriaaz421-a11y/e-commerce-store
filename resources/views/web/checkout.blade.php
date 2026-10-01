@@ -127,7 +127,8 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{ route('web.checkout.store') }}" method="POST" class="tf-checkout-cart-main" id="checkout-form">
+                        <form action="{{ route('web.checkout.store') }}" method="POST" class="tf-checkout-cart-main"
+                            id="checkout-form">
                             @csrf
                             <div class="box-ip-checkout estimate-shipping">
                                 <div class="h5 title">Information</div>
@@ -243,12 +244,25 @@
                             <div class="box-ip-payment">
                                 <h5 class="title">Choose Payment Option:</h5>
                                 <div class="payment-method-box" id="payment-method-box">
+                                    <!-- Cash On Delivery -->
+                                    <div class="payment_accordion type-2">
+                                        <label for="cash-on" class="payment_check checkbox-wrap">
+                                            <input type="radio" name="payment_method" value="cod" id="cash-on"
+                                                class="tf-check-rounded style-2 payment_method" checked>
+                                            <span class="pay-title fw-medium">
+                                                <i class="fa-solid fa-hand-holding-dollar" style="color: #3c6a9b; font-size: 20px;"></i>
+                                                Cash On Delivery
+                                            </span>
+                                        </label>
+                                    </div>
+                                    {{-- Stripe Payment --}}
                                     <div class="payment_accordion type-2">
                                         <label for="stripe-payment" class="payment_check checkbox-wrap">
                                             <input type="radio" name="payment_method" value="stripe"
                                                 class="tf-check-rounded style-2 payment_method" id="stripe-payment">
 
                                             <span class="pay-title fw-medium">
+                                                <i class="fa-brands fa-cc-stripe h5" style="color: #3c6a9b"></i>
                                                 Pay By Stripe
                                             </span>
                                         </label>
@@ -284,13 +298,36 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- PayPal -->
+                                    {{-- <div class="payment_accordion type-2">
+                                        <label for="paypal-payment" class="payment_check checkbox-wrap">
+                                            <input type="radio" name="payment_method" value="paypal"
+                                                id="paypal-payment" class="tf-check-rounded style-2 payment_method">
+                                            <span class="pay-title fw-medium">
+                                                Pay By PayPal
+                                            </span>
+                                        </label>
+                                        <div id="paypal-payment-fields" style="display: none;">
+                                            <div class="stripe-input-wrapper mb-3">
+                                                <div class="w-100">
+                                                    <div id="paypal-button-container">
+                                                        <button class="btn btn-warning w-100">
+                                                            <i class="fa-brands fa-paypal h3" style="color: rgb(61, 120, 165);"></i>
+                                                            <em class="h4 fw-bolder" style="font-style: italic;">Pay<em style="color: rgb(116, 192, 252);">Pal</em></em>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> --}}
                                     <!-- Cash On Delivery -->
                                     <div class="payment_accordion type-2">
                                         <label for="cash-on" class="payment_check checkbox-wrap">
-                                            <input type="radio" name="payment_method" value="cod" id="cash-on"
-                                                class="tf-check-rounded style-2 payment_method" checked>
+                                            <input type="radio" name="payment_method" value="paypal" id="cash-on"
+                                                class="tf-check-rounded style-2 payment_method">
                                             <span class="pay-title fw-medium">
-                                                Cash On Delivery
+                                                <i class="fa-brands fa-paypal h5" style="color: #3c6a9b"></i>
+                                                PayPal
                                             </span>
                                         </label>
                                     </div>
@@ -397,21 +434,30 @@
         $(document).ready(function() {
             $('.payment_method').change(function() {
                 var paymentMethod = $(this).val();
+                // Hide all payment fields first
+                $('#stripe-payment-fields').slideUp();
+                $('#paypal-payment-fields').slideUp();
+
+                // Stripe selected
                 if (paymentMethod === 'stripe') {
                     $('#stripe-payment-fields').slideDown();
-                } else {
-                    $('#stripe-payment-fields').slideUp();
-                    $('#stripe-token-id').val('');
+                    $('#pay-btn').removeClass('d-none');
                 }
-            });
-            $('#checkout-form').on('submit', function(e) {
-                var paymentMethod = $('input[name="payment_method"]:checked').val();
-                if (paymentMethod === 'stripe') {
-                    e.preventDefault();
-                    createToken();
+
+                // PayPal selected
+                // else if (paymentMethod === 'paypal') {
+                //     $('#paypal-payment-fields').slideDown();
+                //     $('#pay-btn').addClass('d-none');
+                // }
+
+                // Cash on Delivery selected
+                else if (paymentMethod === 'cod') {
+                    $('#stripe-token-id').val('');
+                    $('#pay-btn').removeClass('d-none');
                 }
             });
         });
+
         var stripe = Stripe('{{ config('services.stripe.key') }}');
         var elements = stripe.elements();
 
@@ -481,7 +527,7 @@
                 if (typeof result.token != 'undefined') {
                     document.getElementById("stripe-token-id").value = result.token.id;
                     // console.log(result.token.id);
-                    
+
                     document.getElementById('checkout-form').submit();
                 }
             });

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transaction_histories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('order_id')->constrained()->cascadeOnDelete();
-            $table->string('card_type');
+            $table->string('card_type')->nullable();
             $table->string('card_last4', 4)->nullable();
             $table->string('txn_id')->unique();
             $table->decimal('amount', 10, 2)->nullable();

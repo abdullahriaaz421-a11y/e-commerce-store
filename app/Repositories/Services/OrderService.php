@@ -2,9 +2,12 @@
 
 namespace App\Repositories\Services;
 
-use App\Interfaces\Interfaces\OrderInterface;
+use App\Repositories\Interfaces\OrderInterface;
 use App\Models\Order;
+use App\Models\TransactionHistories;
 use Illuminate\Http\Request;
+use App\Exports\OrdersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderService implements OrderInterface
 {
@@ -26,5 +29,17 @@ class OrderService implements OrderInterface
         $orders = $query->orderBy('created_at', 'desc')->paginate(config('app.pagination_limit'))->withQueryString();
         // return $orders;
         return view('admin.orders.index', compact('orders'));
+    }
+
+    public function ordertDetail($orderNumber){
+        $order = Order::with(['details.product'])->where('order_number', $orderNumber)->firstOrFail();
+        $transactions = TransactionHistories::where('order_id', $order->id)->latest()->get();
+
+        return view('admin.orders.order-detail', compact('order','transactions'));
+    }
+
+    public function export()
+    {
+        return Excel::download( new OrdersExport, 'orders.xlsx');
     }
 }

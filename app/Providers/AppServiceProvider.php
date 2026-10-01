@@ -2,13 +2,15 @@
 
 namespace App\Providers;
 
-use App\Interfaces\Interfaces\OrderInterface;
+// use App\Repositories\Interfaces\OrderInterface;
+
 use App\Repositories\Interfaces\CartInterface;
 use App\Repositories\Interfaces\CategoryInterface;
 use App\Repositories\Interfaces\CheckoutInterface;
 use App\Repositories\Interfaces\ColorInterface;
 use App\Repositories\Interfaces\ContactInterface;
 use App\Repositories\Interfaces\ProductInterface;
+use App\Repositories\Interfaces\OrderInterface;
 use App\Repositories\Services\CartService;
 use App\Repositories\Services\CategoryService;
 use App\Repositories\Services\CheckoutService;

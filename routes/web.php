@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CheckoutController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\PayPalController;
 use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\ShopCategoriesController;
 use App\Http\Controllers\Web\TrackOrderController;
@@ -34,6 +35,10 @@ Route::name('web.')->group(function () {
     Route::post('/tracking-order', [TrackOrderController::class, 'orderTracking'])->name('tracking-order');
 
     Route::post('/checkout/payment-intent', [CheckoutController::class, 'paymentIntent'])->name('web.checkout.payment-intent');
+
+    Route::get('paypal-payment', [CheckoutController::class, 'createOrder'])->name('paypal-payment');
+    Route::get('paypal-payment-success', [PayPalController::class, 'paypalSuccess'])->name('paypal-payment.success');
+    Route::get('paypal-payment-cancel', [PayPalController::class, 'paypalCancel'])->name('paypal-payment.cancel');
 });
 
 Route::get('/dashboard', function () {

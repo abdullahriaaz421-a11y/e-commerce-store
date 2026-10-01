@@ -18,4 +18,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
     Route::get('orders', [OrderController::class, 'index'])->name('orders.show');
     Route::get('invoive/{orderId}', [InvoiceController::class, 'index'])->name('invoice');
+
+    Route::get('order-details/{orderNumber}', [OrderController::class, 'ordertDetail'])->name('order-detail');
+
+    Route::get('orders/export', [OrderController::class, 'export'])->name('orders.export');
 });

@@ -267,7 +267,7 @@
                                             </span>
                                         </label>
                                         <!-- Stripe Fields -->
-                                        <div id="stripe-payment-fields" style="display: none;">
+                                        {{-- <div id="stripe-payment-fields" style="display: none;">
                                             <input type="hidden" name="stripe_token" id="stripe-token-id">
                                             <!-- Card Number -->
                                             <div class="mb-3">
@@ -296,7 +296,7 @@
                                                         placeholder="Name on card">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <!-- PayPal -->
                                     {{-- <div class="payment_accordion type-2">

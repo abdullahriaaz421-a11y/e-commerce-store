@@ -23,7 +23,7 @@ class CheckoutRequest extends FormRequest
             'postal_code'    => ['required', 'string', 'max:20'],
             'note'           => ['nullable', 'string', 'max:1000'],
             'payment_method' => ['required', 'in:stripe,paypal,cod'],
-            'stripe_token'   => ['required_if:payment_method,stripe'],
+            // 'stripe_token'   => ['required_if:payment_method,stripe'],
         ];
     }
 }

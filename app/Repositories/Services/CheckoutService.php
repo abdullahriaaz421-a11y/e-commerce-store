@@ -49,48 +49,99 @@ class CheckoutService implements CheckoutInterface
         $paymentIntent = null;
         $paymentMethod = null;
 
-        // Stripe Payment
+        // Stripe Payment Via Card Info
+        // if ($data['payment_method'] === 'stripe') {
+        //     Stripe\Stripe::setApiKey(config('services.stripe.secret'));
+        //     try {
+        //         $paymentIntent = PaymentIntent::create([
+        //             'amount' => (int) ($totalPrice * 100),
+        //             'currency' => 'usd',
+        //             'payment_method_data' => [
+        //                 'type' => 'card',
+        //                 'card' => [
+        //                     'token' => $data['stripe_token'],
+        //                 ],
+        //             ],
+        //             'automatic_payment_methods' => [
+        //                 'enabled' => true,
+        //                 'allow_redirects' => 'never',
+        //             ],
+        //             'confirm' => true,
+        //             'description' => 'Order Payment for Order #' . $orderNumber,
+        //         ]);
+
+        //         if ($paymentIntent->status !== 'succeeded') {
+        //             return redirect()
+        //                 ->back()
+        //                 ->withInput()
+        //                 ->with(
+        //                     'error',
+        //                     'Stripe payment was not completed.'
+        //                 );
+        //         }
+
+        //         $paymentMethod = PaymentMethod::retrieve(
+        //             $paymentIntent->payment_method
+        //         );
+        //     } catch (Throwable $e) {
+        //         return redirect()
+        //             ->back()
+        //             ->withInput()
+        //             ->with(
+        //                 'error',
+        //                 'Stripe payment failed: ' . $e->getMessage()
+        //             );
+        //     }
+        // }
+
+
+        // Stripe Payment Via Stripe Checkout By Directing to Stripe Checkout Page
         if ($data['payment_method'] === 'stripe') {
-            Stripe\Stripe::setApiKey(config('services.stripe.secret'));
+            $stripe = new \Stripe\StripeClient(config('services.stripe.secret'));
             try {
-                $paymentIntent = PaymentIntent::create([
-                    'amount' => (int) ($totalPrice * 100),
-                    'currency' => 'usd',
-                    'payment_method_data' => [
-                        'type' => 'card',
-                        'card' => [
-                            'token' => $data['stripe_token'],
-                        ],
-                    ],
-                    'automatic_payment_methods' => [
-                        'enabled' => true,
-                        'allow_redirects' => 'never',
-                    ],
-                    'confirm' => true,
-                    'description' => 'Order Payment for Order #' . $orderNumber,
+                // Checkout data session mein temporarily save
+                session([
+                    'stripe_order_data' => $data,
+                    'stripe_order_number' => $orderNumber,
+                    'stripe_total_price' => $totalPrice,
                 ]);
-
-                if ($paymentIntent->status !== 'succeeded') {
-                    return redirect()
-                        ->back()
-                        ->withInput()
-                        ->with(
-                            'error',
-                            'Stripe payment was not completed.'
-                        );
+                $lineItems = [];
+                foreach ($items as $item) {
+                    $lineItems[] = [
+                        'price_data' => [
+                            'currency' => 'usd',
+                            'product_data' => [
+                                'name' => $item->name,
+                            ],
+                            'unit_amount' => (int) ($item->price * 100),
+                        ],
+                        'quantity' => (int) $item->quantity,
+                    ];
                 }
-
-                $paymentMethod = PaymentMethod::retrieve(
-                    $paymentIntent->payment_method
-                );
+                // Shipping
+                $lineItems[] = [
+                    'price_data' => [
+                        'currency' => 'usd',
+                        'product_data' => [
+                            'name' => 'Shipping',
+                        ],
+                        'unit_amount' => (int) ($shipping * 100),
+                    ],
+                    'quantity' => 1,
+                ];
+                $session = $stripe->checkout->sessions->create([
+                    'mode' => 'payment',
+                    'success_url' => route('web.stripe-payment.success'). '?session_id={CHECKOUT_SESSION_ID}',
+                    'cancel_url' => route('web.stripe-payment.cancel'),
+                    'customer_email' => $data['email'],
+                    'line_items' => $lineItems,
+                    'metadata' => [
+                        'order_number' => $orderNumber,
+                    ],
+                ]);
+                return redirect()->away($session->url);
             } catch (Throwable $e) {
-                return redirect()
-                    ->back()
-                    ->withInput()
-                    ->with(
-                        'error',
-                        'Stripe payment failed: ' . $e->getMessage()
-                    );
+                return redirect()->back()->withInput()->with('error','Stripe payment failed: ' . $e->getMessage());
             }
         }
 
@@ -124,10 +175,9 @@ class CheckoutService implements CheckoutInterface
             ];
             try {
                 $paypalOrder = $provider->createOrder($paypalData);
-                if (!isset($paypalOrder['id']) || !isset($paypalOrder['links'])) 
-                    {
-                        return redirect()->back()->withInput()->with('error', 'Unable to create PayPal payment.');
-                    }
+                if (!isset($paypalOrder['id']) || !isset($paypalOrder['links'])) {
+                    return redirect()->back()->withInput()->with('error', 'Unable to create PayPal payment.');
+                }
 
                 $approveLink = collect($paypalOrder['links'])->firstWhere('rel', 'approve');
 
@@ -142,7 +192,7 @@ class CheckoutService implements CheckoutInterface
 
                 return redirect()->away($approveLink['href']);
             } catch (Throwable $e) {
-                return redirect()->back()->withInput()->with('error','PayPal payment failed: ' . $e->getMessage());
+                return redirect()->back()->withInput()->with('error', 'PayPal payment failed: ' . $e->getMessage());
             }
         }
 

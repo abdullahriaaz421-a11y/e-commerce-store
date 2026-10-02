@@ -280,27 +280,17 @@
                         @csrf
                         <div class="form-content">
                             <fieldset>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Emaill Addess*"
+                                <input type="email" name="email" placeholder="Email Address*"
                                     class="@error('email') is-invalid @enderror"
-                                    value="{{ old('email', $order['email'] ?? '') }}"
-                                    required
-                                />
+                                    value="{{ old('email', $order['email'] ?? '') }}" required />
                                 @error('email')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </fieldset>
                             <fieldset>
-                                <input
-                                    type="text"
-                                    name="order_number"
-                                    placeholder="Order Number*"
+                                <input type="text" name="order_number" placeholder="Order Number*"
                                     class="@error('order_number') is-invalid @enderror"
-                                    value="{{ old('order_number', $order['order_number'] ?? '') }}"
-                                    required
-                                />
+                                    value="{{ old('order_number', $order['order_number'] ?? '') }}" required />
                                 @error('order_number')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -314,40 +304,49 @@
     </div>
     <!-- /Order Tracking -->
     @if (session('error'))
-        <div class="mt-5"
-        <div class="card border-0 p-5 text-center shadow-sm">
-            <div class="mb-3">
-                <span class="badge bg-danger px-3 py-2"> Order Not Found </span>
+        <div class="mt-5 text-center">
+            <div class="card border-0 p-5 text-center shadow-sm">
+                <div class="mb-3">
+                    <span class="badge bg-danger px-3 py-2"> Order Not Found </span>
+                </div>
+                <h4 class="mb-2">No Order Found</h4>
+                <p class="text-muted mb-0">We couldn't find an order matching the provided email and order number.</p>
             </div>
-            <h4 class="mb-2">No Order Found</h4>
-            <p class="text-muted mb-0">We couldn't find an order matching the provided email and order number.</p>
-        </div>
         </div>
     @endif
     @if ($order)
         @php
-            /*
-            |--------------------------------------------------------------------------
-            | Order Status Steps
-            |--------------------------------------------------------------------------
-            */
+            // use App\Enums\OrderStatusEnum;
+
+            $currentStatus = $order['status'];
+
+            // Normal delivery progress
             $statusSteps = [
-                'pending'    => 'Pending',
-                'processing' => 'In Process',
-                'processed'  => 'Order Processed',
-                'shipped'    => 'On The Way',
-                'completed'  => 'Delivered',
+                App\Enums\OrderStatusEnum::CONFIRMED->value => 'Confirmed',
+                App\Enums\OrderStatusEnum::IN_PROCESS->value => 'In Process',
+                App\Enums\OrderStatusEnum::ORDER_PROCESSED->value => 'Order Processed',
+                App\Enums\OrderStatusEnum::ON_THE_WAY->value => 'On The Way',
+                App\Enums\OrderStatusEnum::DELIVERED->value => 'Delivered',
             ];
-            $currentStatus = strtolower($order['status']);
-            // Current status ki position
+
             $statusKeys = array_keys($statusSteps);
-            if ($currentStatus === 'confirmed') {
-                $currentStatus = 'pending';
-            }
+
+            // Special statuses
+            $specialStatuses = [
+                App\Enums\OrderStatusEnum::HOLD->value => 'On Hold',
+                App\Enums\OrderStatusEnum::REFUND->value => 'Refund',
+                App\Enums\OrderStatusEnum::CANCELLED->value => 'Cancelled',
+            ];
+
+            // Current status normal progress mein hai?
             $currentIndex = array_search($currentStatus, $statusKeys);
+
             if ($currentIndex === false) {
                 $currentIndex = 0;
             }
+
+            // Progress percentage
+            $progressPercentage = count($statusKeys) > 1 ? ($currentIndex / (count($statusKeys) - 1)) * 100 : 0;
         @endphp
         <div class="mb-5">
             <div class="order-tracking-card">
@@ -360,24 +359,23 @@
                         </p>
                     </div>
                     <span class="order-status-badge">
-                        {{ $statusSteps[$currentStatus] ?? ucfirst($order['status']) }}
+                        {{ $statusSteps[$currentStatus] ?? ($specialStatuses[$currentStatus] ?? ucfirst(str_replace('_', ' ', $currentStatus))) }}
                     </span>
                 </div>
                 {{-- ================= PROGRESS ================= --}}
                 <div class="order-card-body">
                     <div class="order-progress">
                         <div class="progress-line">
-                            <div
-                                class="progress-line-active"
+                            <div class="progress-line-active"
                                 style="width:
-                            {{ count($statusKeys) > 1 ? ($currentIndex / (count($statusKeys) - 1)) * 100 : 0 }}%;"
-                            ></div>
+                            {{ count($statusKeys) > 1 ? ($currentIndex / (count($statusKeys) - 1)) * 100 : 0 }}%;">
+                            </div>
                         </div>
                         <div class="progress-steps">
                             @foreach ($statusSteps as $key => $label)
                                 @php
                                     $stepIndex = array_search($key, $statusKeys);
-                                    $isActive  = $stepIndex <= $currentIndex;
+                                    $isActive = $stepIndex <= $currentIndex;
                                 @endphp
                                 <div class="progress-step">
                                     <div class="step-dot {{ $isActive ? 'active' : '' }}">
@@ -416,11 +414,8 @@
                     {{-- ================= BUTTONS ================= --}}
                     <div class="order-actions">
                         {{-- Invoice --}}
-                        <a
-                            href="{{ route('admin.invoice', ['orderId' => $order['order_number']]) }}"
-                            class="order-btn order-btn-dark"
-                            target="_blank"
-                        >
+                        <a href="{{ route('invoice', ['orderId' => $order['order_number']]) }}"
+                            class="order-btn order-btn-dark" target="_blank">
                             View Invoice
                         </a>
                         {{-- Continue Shopping --}}

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\Admin\EditOrderStatusController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\NotificationMarkAsRead;
 use App\Http\Controllers\Admin\OrderController;
@@ -17,9 +18,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::get('notifications/read', [NotificationMarkAsRead::class, 'markAsRead'])->name('notifications.read');
 
     Route::get('orders', [OrderController::class, 'index'])->name('orders.show');
-    Route::get('invoive/{orderId}', [InvoiceController::class, 'index'])->name('invoice');
 
     Route::get('order-details/{orderNumber}', [OrderController::class, 'ordertDetail'])->name('order-detail');
 
     Route::get('orders/export', [OrderController::class, 'export'])->name('orders.export');
+
+    Route::post('orders/{orderNumber}/update-status', [EditOrderStatusController::class, 'update'])->name('orders.update-status');
 });

@@ -27,7 +27,7 @@ return new class extends Migration
             $table->text('note')->nullable();
             $table->decimal('total_price', 12, 2);
             // $table->string('payment_method')->default('cod');
-            $table->string('status')->default('pending');
+            $table->string('status')->default('confirmed');
             $table->timestamps();
         });
     }

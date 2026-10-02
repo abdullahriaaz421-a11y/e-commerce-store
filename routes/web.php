@@ -1,6 +1,8 @@
 <?php
 
 // use App\Http\Controllers\Admin\ProductController;
+
+use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\AboutController;
 use App\Http\Controllers\Web\CartController;
@@ -39,7 +41,10 @@ Route::name('web.')->group(function () {
     Route::get('paypal-payment', [CheckoutController::class, 'createOrder'])->name('paypal-payment');
     Route::get('paypal-payment-success', [PayPalController::class, 'paypalSuccess'])->name('paypal-payment.success');
     Route::get('paypal-payment-cancel', [PayPalController::class, 'paypalCancel'])->name('paypal-payment.cancel');
+
 });
+
+Route::get('invoice/{orderId}', [InvoiceController::class, 'index'])->name('invoice');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

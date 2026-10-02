@@ -14,6 +14,6 @@ class InvoiceController extends Controller
             ->firstOrFail();
 
         // return $order;
-        return view('admin.invoices.order-invoice', compact('order'));
+        return view('order-invoice', compact('order'));
     }
 }

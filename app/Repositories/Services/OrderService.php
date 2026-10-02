@@ -5,6 +5,7 @@ namespace App\Repositories\Services;
 use App\Repositories\Interfaces\OrderInterface;
 use App\Models\Order;
 use App\Models\TransactionHistories;
+use App\Models\OrderStatues;
 use Illuminate\Http\Request;
 use App\Exports\OrdersExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -34,8 +35,9 @@ class OrderService implements OrderInterface
     public function ordertDetail($orderNumber){
         $order = Order::with(['details.product'])->where('order_number', $orderNumber)->firstOrFail();
         $transactions = TransactionHistories::where('order_id', $order->id)->latest()->get();
+        $statuses = OrderStatues::where('order_number', $orderNumber)->get();
 
-        return view('admin.orders.order-detail', compact('order','transactions'));
+        return view('admin.orders.order-detail', compact('order','transactions','statuses'));
     }
 
     public function export()

@@ -163,7 +163,7 @@
                                                     <td>
                                                         <a href="{{ route('admin.order-detail', $order->order_number) }}" class="btn bg-purple"><i class="fa fa-eye"></i></a>
                                                         <a
-                                                            href="{{ route('admin.invoice', $order->order_number) }}"
+                                                            href="{{ route('invoice', $order->order_number) }}"
                                                             target="blank"
                                                             class="btn bg-primary"
                                                             ><i class="fa fa-file"></i

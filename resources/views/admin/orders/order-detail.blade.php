@@ -8,15 +8,14 @@
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <a href="{{ route('admin.orders.show') }}"
-                               class="text-muted text-decoration-none">
+                            <a href="{{ route('admin.orders.show') }}" class="text-muted text-decoration-none">
                                 <i class="fa fa-arrow-left"></i>
                                 Back to Orders
                             </a>
                             <h1 class="mt-3 mb-1">
                                 Order #{{ $order->order_number }}
                                 <span class="bg-info text-lg p-1 pr-3 pl-3" style="border-radius: 10px">
-                                    {{ $order->status }}
+                                    {{ ucwords(str_replace('_', ' ', $order->status->value)) }}
                                 </span>
                             </h1>
                             <p class="text-muted mb-0">
@@ -24,8 +23,7 @@
                             </p>
                         </div>
                         <div>
-                            <a href="{{ route('admin.invoice', $order->order_number) }}"
-                               class="btn btn-secondary">
+                            <a href="{{ route('invoice', $order->order_number) }}" class="btn btn-secondary">
                                 <i class="fa fa-file-invoice"></i>
                                 View Invoice
                             </a>
@@ -33,6 +31,17 @@
                     </div>
                 </div>
             </div>
+            @if ($errors->any())
+                <div style="background: #ffe6e6; padding: 15px; margin-bottom: 20px">
+                    <h4>Errors:</h4>
+
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             {{-- Main Content --}}
             <section class="content">
                 <div class="container-fluid">
@@ -59,9 +68,12 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($order->details as $detail)
+                                                @foreach ($order->details as $detail)
                                                     @php
-                                                        $price = $detail->qty > 0 ? $detail->total_price / $detail->qty : $detail->total_price;
+                                                        $price =
+                                                            $detail->qty > 0
+                                                                ? $detail->total_price / $detail->qty
+                                                                : $detail->total_price;
                                                     @endphp
                                                     <tr>
                                                         <td>
@@ -134,7 +146,8 @@
                                                 @forelse($transactions as $transaction)
                                                     <tr>
                                                         <td>
-                                                            <span class=" p-1 pl-3 pr-3 bg-primary" style="border-radius: 10px">
+                                                            <span class=" p-1 pl-3 pr-3 bg-primary"
+                                                                style="border-radius: 10px">
                                                                 {{ ucfirst($order->payment_method ?? '') }}
                                                             </span>
                                                         </td>
@@ -160,11 +173,49 @@
                                                     </tr>
                                                 @empty
                                                     <tr>
-                                                        <td colspan="6"
-                                                            class="text-center text-muted py-4">
+                                                        <td colspan="6" class="text-center text-muted py-4">
                                                             No payment transaction found.
                                                         </td>
                                                     </tr>
+                                                @endforelse
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- Status History --}}
+                            <div class="card shadow-sm mt-4" style="border-radius: 20px">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fa fa-history text-info me-2"></i>
+                                        Status History
+                                    </h3>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-0">
+                                            <thead style="background:#eef4fb">
+                                                <tr>
+                                                    <th>STATUS</th>
+                                                    <th>UPDATED AT</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse($statuses as $status)
+                                                <tr>
+                                                        <td>
+                                                            {{ ucfirst(str_replace('_', ' ', $status->status->value)) }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $status->created_at->format('d M Y, h:i A') }}
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                <tr>
+                                                    <td colspan="2" class="text-center text-muted py-4">
+                                                        No status history found.
+                                                    </td>
+                                                </tr>
                                                 @endforelse
                                             </tbody>
                                         </table>
@@ -228,38 +279,63 @@
                                             Paid
                                         </span>
                                     </div>
-                                    <form action="" method="POST">
+                                    <form action="{{ route('admin.orders.update-status', $order->order_number) }}"
+                                        method="POST">
                                         @csrf
-                                        @method('PUT')
+                                        {{-- <input type="hidden" name="order_number" value="{{ $order->order_number }}"> --}}
+                                        @php
+                                            use App\Enums\OrderStatusEnum;
+                                            use App\Enums\CourierCompanyEnum;
+                                        @endphp
                                         <label class="form-label fw-bold">
                                             Update Status
                                         </label>
-                                        <select name="status" class="form-control mb-3">
-                                            <option value="pending"
-                                                {{ $order->status == 'pending' ? 'selected' : '' }}>
-                                                Pending
-                                            </option>
-                                            <option value="confirmed"
-                                                {{ $order->status == 'confirmed' ? 'selected' : '' }}>
-                                                Confirmed
-                                            </option>
-                                            <option value="processing"
-                                                {{ $order->status == 'processing' ? 'selected' : '' }}>
-                                                Processing
-                                            </option>
-                                            <option value="shipped"
-                                                {{ $order->status == 'shipped' ? 'selected' : '' }}>
-                                                Shipped
-                                            </option>
-                                            <option value="delivered"
-                                                {{ $order->status == 'delivered' ? 'selected' : '' }}>
-                                                Delivered
-                                            </option>
-                                            <option value="cancelled"
-                                                {{ $order->status == 'cancelled' ? 'selected' : '' }}>
-                                                Cancelled
-                                            </option>
+                                        <select name="status_update" id="status_update" class="form-control mb-3">
+                                            <option value="">Select Status</option>
+                                            @foreach (OrderStatusEnum::cases() as $status)
+                                                <option value="{{ $status->value }}"
+                                                    {{ $order->status === $status ? 'selected' : '' }}>
+                                                    {{ ucwords(str_replace('_', ' ', $status->value)) }}
+                                                </option>
+                                            @endforeach
+
                                         </select>
+                                        {{-- Tracking Number --}}
+                                        <div class="shipping-fields">
+                                            <label class="form-label fw-bold">
+                                                Tracking Number
+                                            </label>
+                                            <input type="text" name="tracking_number" class="form-control mb-3"
+                                                placeholder="Tracking Number">
+                                        </div>
+                                        {{-- Courier Company --}}
+                                        <div class="shipping-fields">
+                                            <label class="form-label fw-bold">
+                                                Courier Company
+                                            </label>
+                                            <select name="courier_company" id="courier_company"
+                                                class="form-control mb-3">
+                                                <option value="" selected disabled>Select Courier Company</option>
+                                                <option value="{{ CourierCompanyEnum::DHL->value }}">
+                                                    {{ CourierCompanyEnum::DHL->value }}</option>
+                                                <option value="{{ CourierCompanyEnum::FedEx->value }}">
+                                                    {{ CourierCompanyEnum::FedEx->value }}</option>
+                                                <option value="{{ CourierCompanyEnum::UPS->value }}">
+                                                    {{ CourierCompanyEnum::UPS->value }}</option>
+                                                <option value="{{ CourierCompanyEnum::USPS->value }}">
+                                                    {{ CourierCompanyEnum::USPS->value }}</option>
+                                                <option value="{{ CourierCompanyEnum::Aramex->value }}">
+                                                    {{ CourierCompanyEnum::Aramex->value }}</option>
+                                            </select>
+                                        </div>
+                                        {{-- Delivery Days --}}
+                                        <div class="shipping-fields">
+                                            <label class="form-label fw-bold">
+                                                Delivery Days
+                                            </label>
+                                            <input type="text" name="delivery_days" class="form-control mb-3"
+                                                placeholder="e.g. 5-7 business days">
+                                        </div>
                                         <button type="submit" class="btn w-100" style="background:#ff641f;color:white">
                                             Save Status
                                         </button>
@@ -272,4 +348,34 @@
             </section>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+
+            function toggleShippingFields() {
+
+                let status = $('#status_update').val();
+
+                if (status === 'on_the_way' || status === 'delivered') {
+                    $('.shipping-fields').show();
+                    // console.log('show');
+
+                } else {
+                    // console.log('hide');
+                    
+                    $('.shipping-fields').hide();
+                }
+            }
+
+            // Status change hone par
+            $('#status_update').on('change', function () {
+                toggleShippingFields();
+            });
+
+            // Page load par bhi check
+            toggleShippingFields();
+
+        });
+    </script>
 @endsection

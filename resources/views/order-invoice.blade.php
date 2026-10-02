@@ -4,6 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Invoice TB-260920-G3HBJ — Tenebrousa</title>
+    {{-- font awesome --}}
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
     <style>
         :root {
             --brand: #18181b;
@@ -405,7 +413,7 @@
                         <p>Invoice No: <b>#{{ $order->order_number }}</b></p>
                         <p>Date: <b>{{ $order->created_at->format('d M Y') }}</b></p>
                     </div>
-                    <span class="inv_status">{{ $order->status }}</span>
+                    <span class="inv_status">{{ ucwords(str_replace('_', ' ', $order->status->value)) }}</span>
                 </div>
             </div>
 
@@ -487,7 +495,7 @@
             <div class="inv_note">
                 <h4>Order Status</h4>
                 <ul>
-                    <li>{{ $order->status }} — thank you for shopping with Tenebrousa.</li>
+                    <li>{{ ucwords(str_replace('_', ' ', $order->status->value)) }} — thank you for shopping with Tenebrousa.</li>
                 </ul>
             </div>
 
@@ -554,6 +562,15 @@
                 </svg>
                 Download
             </button>
+            <form action="{{ route('web.tracking-order') }}" method="POST">
+                @csrf
+                <input type="hidden" name="order_number" value="{{ $order->order_number }}" />
+                <input type="hidden" name="email" value="{{ $order->email }}" />
+                <button type="submit" class="inv_btn inv_btn_outline" style="padding: 18px;">
+                    <i class="fa-regular fa-check-circle"></i>
+                    Track Order
+                </button>
+            </form>
         </div>
     </div>
     <script src="{{ asset('website/assets/js/jquery.min.js') }}"></script>

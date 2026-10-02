@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\OrderStatusEnum;
+use App\Enums\CourierCompanyEnum;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 
@@ -25,6 +26,9 @@ class Order extends Model
         'note',
         'total_price',
         'status',
+        'tracking_number',
+        'courier_company',
+        'delivery_days',
         'payment_method',
     ];
 
@@ -32,6 +36,7 @@ class Order extends Model
     {
         return [
             'status' => OrderStatusEnum::class,
+            'courier_company' => CourierCompanyEnum::class,
         ];
     }
 

@@ -24,7 +24,7 @@ class TrackOrderRequest extends FormRequest
     {
         return [
             'email'        => 'required|email',
-            'order_number' => 'required|max:5',
+            'order_number' => 'required',
         ];
     }
 }

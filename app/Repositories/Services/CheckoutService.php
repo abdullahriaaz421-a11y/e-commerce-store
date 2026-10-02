@@ -8,6 +8,7 @@ use App\Events\OrderCreatedEvent;
 use App\Mail\OrderMail;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\OrderStatues;
 use App\Models\TransactionHistories;
 use App\Models\User;
 use App\Notifications\OrderNotification;
@@ -166,6 +167,12 @@ class CheckoutService implements CheckoutInterface
                 'total_price'    => $totalPrice,
                 'status'         => OrderStatusEnum::CONFIRMED,
                 'payment_method' => $data['payment_method'],
+            ]);
+
+            // Order Statuses
+            OrderStatues::create([
+                'order_number' => $orderNumber,
+                'status'       => OrderStatusEnum::CONFIRMED,
             ]);
 
             // transaction History

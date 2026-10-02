@@ -69,10 +69,10 @@
         Total:
         Rs.{{ $order->total_price }}
     </h3>
-    {{-- <p>
+    <p>
         Payment Method:
         {{ $order->payment_method }}
-    </p> --}}
+    </p>
     @if ($order->note)
         <p>
             <strong>Note:</strong>

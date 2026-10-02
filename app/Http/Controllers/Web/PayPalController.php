@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\OrderMail;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\OrderStatues;
 use App\Models\TransactionHistories;
 use App\Models\User;
 use App\Notifications\OrderNotification;
@@ -76,6 +77,12 @@ class PayPalController extends Controller
                 'payment_method' => 'paypal',
             ]);
 
+            // Order Statuses
+            OrderStatues::create([
+                'order_number' => $orderNumber,
+                'status'       => OrderStatusEnum::CONFIRMED,
+            ]);
+            
             // Transaction History
             TransactionHistories::create([
                 'order_id' => $order->id,

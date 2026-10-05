@@ -35,7 +35,7 @@ class StripeController extends Controller
                 return redirect()->route('web.stripe-payment.cancel')->with('error', 'Stripe payment was not completed.');
             }
 
-            // Session se checkout data
+            // checkout data from Session
             $data = session('stripe_order_data');
             $orderNumber = session('stripe_order_number');
             $totalPrice = session('stripe_total_price');

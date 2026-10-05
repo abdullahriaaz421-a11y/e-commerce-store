@@ -6,10 +6,11 @@ use App\Observers\ProductObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-
-#[ObservedBy(ProductObserver::class)]
+use Laravel\Scout\Searchable;
 class Product extends Model
 {
+    use Searchable;
+
     protected $casts = [
         'sizes'  => 'array',
         'colors' => 'array',
@@ -30,6 +31,17 @@ class Product extends Model
         'details',
     ];
 
+    public function toSearchableArray()
+    {
+        return [
+            'name' => $this->name,
+            'description' => $this->description,
+            'details' => $this->details,
+            'slug' => $this->slug,
+            'price' => $this->price,
+            'sale_price' => $this->sale_price,
+        ];
+    }
     public function images(): MorphMany
     {
         return $this->morphMany(Image::class, 'imageable');

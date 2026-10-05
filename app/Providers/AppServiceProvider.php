@@ -12,6 +12,7 @@ use App\Repositories\Interfaces\ContactInterface;
 use App\Repositories\Interfaces\EditOrderStatusInterface;
 use App\Repositories\Interfaces\ProductInterface;
 use App\Repositories\Interfaces\OrderInterface;
+use App\Repositories\Interfaces\ShopInterface;
 use App\Repositories\Services\CartService;
 use App\Repositories\Services\CategoryService;
 use App\Repositories\Services\CheckoutService;
@@ -20,6 +21,7 @@ use App\Repositories\Services\ContactService;
 use App\Repositories\Services\EditOrderStatusService;
 use App\Repositories\Services\OrderService;
 use App\Repositories\Services\ProductService;
+use App\Repositories\Services\ShopService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -39,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(CheckoutInterface::class, CheckoutService::class);
         $this->app->bind(OrderInterface::class, OrderService::class);
         $this->app->bind(EditOrderStatusInterface::class, EditOrderStatusService::class);
+        $this->app->bind(ShopInterface::class, ShopService::class);
     }
 
     /**

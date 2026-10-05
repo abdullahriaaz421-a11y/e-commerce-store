@@ -7,20 +7,12 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="footer-infor d-flex flex-column align-items-start mb-lg-0">
                         <a href="index-2.html" class="logo-site mb-16">
-                            <img
-                                loading="lazy"
-                                width="150"
-                                height="30"
-                                src="{{ asset('website/assets/images/logo/logo.svg') }}"
-                                alt="Image"
-                            />
+                            <img loading="lazy" width="150" height="30"
+                                src="{{ asset('website/assets/images/logo/logo.svg') }}" alt="Image" />
                         </a>
                         <p class="lh-26 cl-text-2">600 N Michigan Ave, Chicago, IL 60611, USA</p>
-                        <a
-                            href="https://www.google.com/maps?q=600+N+Michigan+Ave+Chicago,+IL+60611+USA"
-                            target="_blank"
-                            class="text-decoration-underline text-primary lh-26 mb-16"
-                        >
+                        <a href="https://www.google.com/maps?q=600+N+Michigan+Ave+Chicago,+IL+60611+USA" target="_blank"
+                            class="text-decoration-underline text-primary lh-26 mb-16">
                             Open in Maps
                         </a>
                         <a href="mailto:hi.amere@gmail.com" class="cl-text-2 link mb-8"> hi.amere@gmail.com </a>
@@ -101,8 +93,8 @@
                                     Terms of Service
                                 </a>
                                 and
-                                <a href="privacy-policy.html" class="text-main link link-underline"> Privacy Policy </a
-                                >.
+                                <a href="privacy-policy.html" class="text-main link link-underline"> Privacy Policy
+                                </a>.
                             </p>
                         </div>
                     </div>
@@ -137,58 +129,28 @@
                 <p class="text-nocopy cl-text-2">©2026 Amerce. All Rights Reserved.</p>
                 <ul class="tf-list payment-list">
                     <li>
-                        <img
-                            loading="lazy"
-                            width="38"
-                            height="24"
-                            src="{{ asset('website/assets/images/payment/visa.svg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="38" height="24"
+                            src="{{ asset('website/assets/images/payment/visa.svg') }}" alt="Image" />
                     </li>
                     <li>
-                        <img
-                            loading="lazy"
-                            width="38"
-                            height="24"
-                            src="{{ asset('website/assets/images/payment/master-card.svg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="38" height="24"
+                            src="{{ asset('website/assets/images/payment/master-card.svg') }}" alt="Image" />
                     </li>
                     <li>
-                        <img
-                            loading="lazy"
-                            width="38"
-                            height="24"
-                            src="{{ asset('website/assets/images/payment/amex.svg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="38" height="24"
+                            src="{{ asset('website/assets/images/payment/amex.svg') }}" alt="Image" />
                     </li>
                     <li>
-                        <img
-                            loading="lazy"
-                            width="38"
-                            height="24"
-                            src="{{ asset('website/assets/images/payment/paypal.svg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="38" height="24"
+                            src="{{ asset('website/assets/images/payment/paypal.svg') }}" alt="Image" />
                     </li>
                     <li>
-                        <img
-                            loading="lazy"
-                            width="38"
-                            height="24"
-                            src="{{ asset('website/assets/images/payment/water.svg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="38" height="24"
+                            src="{{ asset('website/assets/images/payment/water.svg') }}" alt="Image" />
                     </li>
                     <li>
-                        <img
-                            loading="lazy"
-                            width="38"
-                            height="24"
-                            src="{{ asset('website/assets/images/payment/discover.svg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="38" height="24"
+                            src="{{ asset('website/assets/images/payment/discover.svg') }}" alt="Image" />
                     </li>
                 </ul>
             </div>
@@ -218,11 +180,8 @@
         <div class="need-help-wrap">
             <p class="nd-title h6 fw-medium mb-16">Need Help?</p>
             <p class="lh-26 cl-text-2 mb-4">600 N Michigan Ave, Chicago, IL 60611, USA</p>
-            <a
-                href="https://www.google.com/maps?q=600+N+Michigan+Ave+Chicago,+IL+60611+USA"
-                target="_blank"
-                class="text-decoration-underline text-primary lh-26 mb-16"
-            >
+            <a href="https://www.google.com/maps?q=600+N+Michigan+Ave+Chicago,+IL+60611+USA" target="_blank"
+                class="text-decoration-underline text-primary lh-26 mb-16">
                 Open in Maps
             </a>
             <a href="mailto:hi.amere@gmail.com" class="cl-text-2 link mb-8"> hi.amere@gmail.com </a>
@@ -318,7 +277,8 @@
                                 Username or email address
                                 <span class="text-primary">*</span>
                             </label>
-                            <input type="text" id="forgot-user" placeholder="Username or email address*" required />
+                            <input type="text" id="forgot-user" placeholder="Username or email address*"
+                                required />
                         </fieldset>
                     </div>
                     <div class="group-action">
@@ -421,13 +381,8 @@
                             </p>
                         </div>
                         <div>
-                            <img
-                                loading="lazy"
-                                width="270"
-                                height="270"
-                                src="{{ asset('website/assets/images/section/size-chart.jpg') }}"
-                                alt="Image"
-                            />
+                            <img loading="lazy" width="270" height="270"
+                                src="{{ asset('website/assets/images/section/size-chart.jpg') }}" alt="Image" />
                         </div>
                     </div>
                 </div>
@@ -563,13 +518,9 @@
                                 <div class="icon remove">
                                     <i class="icon-X2"></i>
                                 </div>
-                                <img
-                                    class="radius-3"
-                                    width="660"
-                                    height="880"
+                                <img class="radius-3" width="660" height="880"
                                     src="{{ asset('website/assets/images/product/product-1.jpg') }}"
-                                    alt="Image"
-                                />
+                                    alt="Image" />
                             </a>
                         </div>
                         <div class="tf-compare-item file-delete">
@@ -577,13 +528,9 @@
                                 <div class="icon remove">
                                     <i class="icon-X2"></i>
                                 </div>
-                                <img
-                                    class="radius-3"
-                                    width="660"
-                                    height="880"
+                                <img class="radius-3" width="660" height="880"
                                     src="{{ asset('website/assets/images/product/product-2.jpg') }}"
-                                    alt="Image"
-                                />
+                                    alt="Image" />
                             </a>
                         </div>
                         <div class="tf-compare-item file-delete">
@@ -591,13 +538,9 @@
                                 <div class="icon remove">
                                     <i class="icon-X2"></i>
                                 </div>
-                                <img
-                                    class="radius-3"
-                                    width="660"
-                                    height="880"
+                                <img class="radius-3" width="660" height="880"
                                     src="{{ asset('website/assets/images/product/product-3.jpg') }}"
-                                    alt="Image"
-                                />
+                                    alt="Image" />
                             </a>
                         </div>
                     </div>
@@ -626,13 +569,9 @@
             <div class="tf-product-quick_add tf-quick-prd_variant">
                 <div class="product-mini-view">
                     <a href="product-detail.html" class="prd-image">
-                        <img
-                            class="img-product"
-                            width="80"
-                            height="107"
+                        <img class="img-product" width="80" height="107"
                             src="{{ asset('website/assets/images/product/single/detail-1.jpg') }}"
-                            alt="Image Product"
-                        />
+                            alt="Image Product" />
                     </a>
                     <div class="prd-content">
                         <a href="product-detail.html" class="prd-name fw-medium link-underline link text-capitalize">
@@ -654,27 +593,19 @@
                     <div class="variant-picker_values">
                         <div class="hover-tooltip tooltip-bot color_btn style-image active">
                             <div class="img">
-                                <img
-                                    loading="lazy"
-                                    width="60"
-                                    height="60"
+                                <img loading="lazy" width="60" height="60"
                                     src="{{ asset('website/assets/images/product/single/img_square/detail-1_2.jpg') }}"
                                     data-src="{{ asset('website/assets/images/product/single/detail-1.jpg') }}"
-                                    alt="img"
-                                />
+                                    alt="img" />
                             </div>
                             <span class="tooltip color__label">Green</span>
                         </div>
                         <div class="hover-tooltip tooltip-bot color_btn style-image">
                             <div class="img">
-                                <img
-                                    loading="lazy"
-                                    width="60"
-                                    height="60"
+                                <img loading="lazy" width="60" height="60"
                                     src="{{ asset('website/assets/images/product/single/img_square/detail-1_5.jpg') }}"
                                     data-src="{{ asset('website/assets/images/product/single/detail-1_5.jpg') }}"
-                                    alt="img"
-                                />
+                                    alt="img" />
                             </div>
                             <span class="tooltip color__label">Gray</span>
                         </div>
@@ -686,11 +617,8 @@
                             Size:
                             <span class="variant__value text-capitalize fw-medium">L</span>
                         </div>
-                        <a
-                            href="#findSize"
-                            data-bs-toggle="modal"
-                            class="tf-btn-line-2 style-primary text-caption-01 fw-semibold"
-                        >
+                        <a href="#findSize" data-bs-toggle="modal"
+                            class="tf-btn-line-2 style-primary text-caption-01 fw-semibold">
                             Size Guide
                         </a>
                     </div>
@@ -714,11 +642,8 @@
                                 <i class="icon icon-plus"></i>
                             </button>
                         </div>
-                        <a
-                            href="#shoppingCart"
-                            data-bs-toggle="offcanvas"
-                            class="btn-action-price tf-btn type-xl animate-btn w-100"
-                        >
+                        <a href="#shoppingCart" data-bs-toggle="offcanvas"
+                            class="btn-action-price tf-btn type-xl animate-btn w-100">
                             Add to Cart
                             <span class="d-none d-sm-block d-md-none d-lg-block">&nbsp;-&nbsp;</span>
                             <span class="price-add d-none d-sm-block d-md-none d-lg-block">$79.99</span>
@@ -736,67 +661,32 @@
     <div class="mini-quick-image">
         <div class="wrap-quick wrapper-scroll-quickview">
             <div class="image item-scroll-quickview" data-scroll-quickview="Green">
-                <img
-                    loading="lazy"
-                    width="340"
-                    height="444"
-                    src="{{ asset('website/assets/images/product/single/detail-1.jpg') }}"
-                    alt="Image"
-                />
+                <img loading="lazy" width="340" height="444"
+                    src="{{ asset('website/assets/images/product/single/detail-1.jpg') }}" alt="Image" />
             </div>
             <div class="image item-scroll-quickview" data-scroll-quickview="Green">
-                <img
-                    loading="lazy"
-                    width="340"
-                    height="444"
-                    src="{{ asset('website/assets/images/product/single/detail-1_2.jpg') }}"
-                    alt="Image"
-                />
+                <img loading="lazy" width="340" height="444"
+                    src="{{ asset('website/assets/images/product/single/detail-1_2.jpg') }}" alt="Image" />
             </div>
             <div class="image item-scroll-quickview" data-scroll-quickview="Green">
-                <img
-                    loading="lazy"
-                    width="340"
-                    height="444"
-                    src="{{ asset('website/assets/images/product/single/detail-1_3.jpg') }}"
-                    alt="Image"
-                />
+                <img loading="lazy" width="340" height="444"
+                    src="{{ asset('website/assets/images/product/single/detail-1_3.jpg') }}" alt="Image" />
             </div>
             <div class="image item-scroll-quickview" data-scroll-quickview="Gray">
-                <img
-                    loading="lazy"
-                    width="340"
-                    height="444"
-                    src="{{ asset('website/assets/images/product/single/detail-1_5.jpg') }}"
-                    alt="Image"
-                />
+                <img loading="lazy" width="340" height="444"
+                    src="{{ asset('website/assets/images/product/single/detail-1_5.jpg') }}" alt="Image" />
             </div>
             <div class="image item-scroll-quickview" data-scroll-quickview="Gray">
-                <img
-                    loading="lazy"
-                    width="340"
-                    height="444"
-                    src="{{ asset('website/assets/images/product/single/detail-1_6.jpg') }}"
-                    alt="Image"
-                />
+                <img loading="lazy" width="340" height="444"
+                    src="{{ asset('website/assets/images/product/single/detail-1_6.jpg') }}" alt="Image" />
             </div>
             <div class="image item-scroll-quickview" data-scroll-quickview="Black">
-                <img
-                    loading="lazy"
-                    width="340"
-                    height="444"
-                    src="{{ asset('website/assets/images/product/single/detail-1_7.jpg') }}"
-                    alt="Image"
-                />
+                <img loading="lazy" width="340" height="444"
+                    src="{{ asset('website/assets/images/product/single/detail-1_7.jpg') }}" alt="Image" />
             </div>
             <div class="image item-scroll-quickview" data-scroll-quickview="Black">
-                <img
-                    loading="lazy"
-                    width="340"
-                    height="444"
-                    src="{{ asset('website/assets/images/product/single/detail-1_8.jpg') }}"
-                    alt="Image"
-                />
+                <img loading="lazy" width="340" height="444"
+                    src="{{ asset('website/assets/images/product/single/detail-1_8.jpg') }}" alt="Image" />
             </div>
         </div>
     </div>
@@ -841,18 +731,12 @@
                     </p>
                     <div class="product-infor-reality lh-24">
                         <div class="ic d-flex">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <rect width="24" height="24" rx="4" fill="#101010" />
                                 <path
                                     d="M19.4569 11.7975C19.435 11.7481 18.9056 10.5738 17.7287 9.39687C16.1606 7.82875 14.18 7 12 7C9.81999 7 7.83937 7.82875 6.27124 9.39687C5.09437 10.5738 4.56249 11.75 4.54312 11.7975C4.51469 11.8614 4.5 11.9306 4.5 12.0006C4.5 12.0706 4.51469 12.1398 4.54312 12.2037C4.56499 12.2531 5.09437 13.4269 6.27124 14.6038C7.83937 16.1713 9.81999 17 12 17C14.18 17 16.1606 16.1713 17.7287 14.6038C18.9056 13.4269 19.435 12.2531 19.4569 12.2037C19.4853 12.1398 19.5 12.0706 19.5 12.0006C19.5 11.9306 19.4853 11.8614 19.4569 11.7975ZM12 14.5C11.5055 14.5 11.0222 14.3534 10.6111 14.0787C10.1999 13.804 9.87951 13.4135 9.69029 12.9567C9.50107 12.4999 9.45157 11.9972 9.54803 11.5123C9.64449 11.0273 9.88259 10.5819 10.2322 10.2322C10.5819 9.8826 11.0273 9.6445 11.5123 9.54804C11.9972 9.45157 12.4999 9.50108 12.9567 9.6903C13.4135 9.87952 13.804 10.2 14.0787 10.6111C14.3534 11.0222 14.5 11.5055 14.5 12C14.5 12.663 14.2366 13.2989 13.7678 13.7678C13.2989 14.2366 12.663 14.5 12 14.5Z"
-                                    fill="white"
-                                />
+                                    fill="white" />
                             </svg>
                         </div>
                         28 people are viewing this right now
@@ -864,26 +748,20 @@
                         <div class="variant-picker-label">
                             <div>
                                 Colors:
-                                <span class="variant-picker-label-value value-currentColor text-capitalize fw-medium">Gray</span>
+                                <span
+                                    class="variant-picker-label-value value-currentColor text-capitalize fw-medium">Gray</span>
                             </div>
                         </div>
                         <div class="variant-picker-values">
                             <input class="d-none" id="values-green" type="radio" name="colorQuickAdd" checked />
                             <label
                                 class="hover-tooltip tooltip-bot color-btn color-btn_quick style-image btn-scroll-quickview active"
-                                for="values-green"
-                                data-color="Green"
-                                data-scroll-quickview="Green"
-                            >
+                                for="values-green" data-color="Green" data-scroll-quickview="Green">
                                 <span class="img">
-                                    <img
-                                        loading="lazy"
-                                        width="60"
-                                        height="60"
+                                    <img loading="lazy" width="60" height="60"
                                         src="{{ asset('website/assets/images/product/single/img_square/detail-1_2.jpg') }}"
                                         data-src="{{ asset('website/assets/images/product/single/img_square/detail-1_2.jpg') }}"
-                                        alt="img"
-                                    />
+                                        alt="img" />
                                 </span>
                                 <span class="tooltip">Green</span>
                             </label>
@@ -891,19 +769,12 @@
                             <input class="d-none" id="values-gray" type="radio" name="colorQuickAdd" />
                             <label
                                 class="hover-tooltip tooltip-bot color-btn color-btn_quick style-image btn-scroll-quickview"
-                                for="values-gray"
-                                data-color="Gray"
-                                data-scroll-quickview="Gray"
-                            >
+                                for="values-gray" data-color="Gray" data-scroll-quickview="Gray">
                                 <span class="img">
-                                    <img
-                                        loading="lazy"
-                                        width="60"
-                                        height="60"
+                                    <img loading="lazy" width="60" height="60"
                                         src="{{ asset('website/assets/images/product/single/img_square/detail-1_5.jpg') }}"
                                         data-src="{{ asset('website/assets/images/product/single/img_square/detail-1_5.jpg') }}"
-                                        alt="img"
-                                    />
+                                        alt="img" />
                                 </span>
                                 <span class="tooltip">Gray</span>
                             </label>
@@ -911,19 +782,12 @@
                             <input class="d-none" id="values-black" type="radio" name="colorQuickAdd" />
                             <label
                                 class="hover-tooltip tooltip-bot color-btn color-btn_quick style-image btn-scroll-quickview"
-                                for="values-black"
-                                data-color="Black"
-                                data-scroll-quickview="Black"
-                            >
+                                for="values-black" data-color="Black" data-scroll-quickview="Black">
                                 <span class="img">
-                                    <img
-                                        loading="lazy"
-                                        width="60"
-                                        height="60"
+                                    <img loading="lazy" width="60" height="60"
                                         src="{{ asset('website/assets/images/product/single/img_square/detail-1_7.jpg') }}"
                                         data-src="{{ asset('website/assets/images/product/single/img_square/detail-1_7.jpg') }}"
-                                        alt="img"
-                                    />
+                                        alt="img" />
                                 </span>
                                 <span class="tooltip">Black</span>
                             </label>
@@ -937,11 +801,8 @@
                                 <span class="variant__value text-capitalize fw-medium">M</span>
                             </div>
                             <div data-bs-dismiss="offcanvas">
-                                <a
-                                    href="#findSize"
-                                    data-bs-toggle="modal"
-                                    class="tf-btn-line-2 style-primary text-caption-01 fw-semibold"
-                                >
+                                <a href="#findSize" data-bs-toggle="modal"
+                                    class="tf-btn-line-2 style-primary text-caption-01 fw-semibold">
                                     Size Guide
                                 </a>
                             </div>
@@ -967,11 +828,8 @@
                                     <i class="icon icon-plus"></i>
                                 </button>
                             </div>
-                            <a
-                                href="#shoppingCart"
-                                data-bs-toggle="offcanvas"
-                                class="btn-action-price tf-btn type-xl animate-btn w-100"
-                            >
+                            <a href="#shoppingCart" data-bs-toggle="offcanvas"
+                                class="btn-action-price tf-btn type-xl animate-btn w-100">
                                 Add to Cart
                                 <span class="d-none d-sm-block d-md-none d-lg-block">&nbsp;-&nbsp;</span>
                                 <span class="price-add d-none d-sm-block d-md-none d-lg-block">$59.99</span>
@@ -1001,13 +859,8 @@
             <div class="list-cart">
                 <div class="list-cart-item">
                     <a href="#" class="image">
-                        <img
-                            loading="lazy"
-                            width="212"
-                            height="283"
-                            src="{{ asset('website/assets/images/product/product-4.jpg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="212" height="283"
+                            src="{{ asset('website/assets/images/product/product-4.jpg') }}" alt="Image" />
                     </a>
                     <div class="content">
                         <a class="name fw-medium link text-line-clamp-1" href="product-detail.html">
@@ -1021,13 +874,8 @@
                 </div>
                 <div class="list-cart-item">
                     <a href="#" class="image">
-                        <img
-                            loading="lazy"
-                            width="212"
-                            height="283"
-                            src="{{ asset('website/assets/images/product/product-3.jpg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="212" height="283"
+                            src="{{ asset('website/assets/images/product/product-3.jpg') }}" alt="Image" />
                     </a>
                     <div class="content">
                         <a class="name fw-medium link text-line-clamp-1" href="product-detail.html">
@@ -1041,13 +889,8 @@
                 </div>
                 <div class="list-cart-item">
                     <a href="#" class="image">
-                        <img
-                            loading="lazy"
-                            width="212"
-                            height="283"
-                            src="{{ asset('website/assets/images/product/product-10.jpg') }}"
-                            alt="Image"
-                        />
+                        <img loading="lazy" width="212" height="283"
+                            src="{{ asset('website/assets/images/product/product-10.jpg') }}" alt="Image" />
                     </a>
                     <div class="content">
                         <a class="name fw-medium link text-line-clamp-1" href="product-detail.html">
@@ -1101,13 +944,9 @@
                             </div>
                             <div class="tf-mini-cart-item file-delete">
                                 <div class="tf-mini-cart-image">
-                                    <img
-                                        loading="lazy"
-                                        width="100"
-                                        height="133"
+                                    <img loading="lazy" width="100" height="133"
                                         src="{{ asset('website/assets/images/product/product-3.jpg') }}"
-                                        alt="Image Product"
-                                    />
+                                        alt="Image Product" />
                                 </div>
                                 <div class="tf-mini-cart-info">
                                     <a href="product-detail.html" class="name fw-medium link text-line-clamp-1">
@@ -1150,13 +989,9 @@
                             </div>
                             <div class="tf-mini-cart-item file-delete">
                                 <div class="tf-mini-cart-image">
-                                    <img
-                                        loading="lazy"
-                                        width="100"
-                                        height="133"
+                                    <img loading="lazy" width="100" height="133"
                                         src="{{ asset('website/assets/images/product/product-8.jpg') }}"
-                                        alt="Image Product"
-                                    />
+                                        alt="Image Product" />
                                 </div>
                                 <div class="tf-mini-cart-info">
                                     <a href="product-detail.html" class="name fw-medium link text-line-clamp-1">
@@ -1199,13 +1034,9 @@
                             </div>
                             <div class="tf-mini-cart-item file-delete">
                                 <div class="tf-mini-cart-image">
-                                    <img
-                                        loading="lazy"
-                                        width="100"
-                                        height="133"
+                                    <img loading="lazy" width="100" height="133"
                                         src="{{ asset('website/assets/images/product/product-6.jpg') }}"
-                                        alt="Image Product"
-                                    />
+                                        alt="Image Product" />
                                 </div>
                                 <div class="tf-mini-cart-info">
                                     <a href="product-detail.html" class="name fw-medium link text-line-clamp-1">
@@ -1248,13 +1079,9 @@
                             </div>
                             <div class="tf-mini-cart-item file-delete">
                                 <div class="tf-mini-cart-image">
-                                    <img
-                                        loading="lazy"
-                                        width="100"
-                                        height="133"
+                                    <img loading="lazy" width="100" height="133"
                                         src="{{ asset('website/assets/images/product/product-1.jpg') }}"
-                                        alt="Image Product"
-                                    />
+                                        alt="Image Product" />
                                 </div>
                                 <div class="tf-mini-cart-info">
                                     <a href="product-detail.html" class="name fw-medium link text-line-clamp-1">
@@ -1333,7 +1160,8 @@
                             <a href="view-cart.html" class="tf-btn btn-stroke"> View cart </a>
                             <a href="checkout.html" class="tf-btn animate-btn"> Check Out </a>
                         </div>
-                        <a href="shop-default.html" class="d-flex justify-content-center fw-semibold link text-center">
+                        <a href="shop-default.html"
+                            class="d-flex justify-content-center fw-semibold link text-center">
                             Or Continue Shopping
                         </a>
                     </div>
@@ -1361,21 +1189,16 @@
                         </div>
                         <div class="form-content gap-10">
                             <div class="tf-select">
-                                <select
-                                    class="w-100"
-                                    id="shipping-country-form"
-                                    name="address[country]"
-                                    data-default=""
-                                >
-                                    <option
-                                        value="Australia"
-                                        data-provinces='[["Australian Capital Territory","Australian Capital Territory"],["New South Wales","New South Wales"],["Northern Territory","Northern Territory"],["Queensland","Queensland"],["South Australia","South Australia"],["Tasmania","Tasmania"],["Victoria","Victoria"],["Western Australia","Western Australia"]]'
-                                    >
+                                <select class="w-100" id="shipping-country-form" name="address[country]"
+                                    data-default="">
+                                    <option value="Australia"
+                                        data-provinces='[["Australian Capital Territory","Australian Capital Territory"],["New South Wales","New South Wales"],["Northern Territory","Northern Territory"],["Queensland","Queensland"],["South Australia","South Australia"],["Tasmania","Tasmania"],["Victoria","Victoria"],["Western Australia","Western Australia"]]'>
                                         Australia
                                     </option>
                                     <option value="Austria" data-provinces="[]">Austria</option>
                                     <option value="Belgium" data-provinces="[]">Belgium</option>
-                                    <option value="Canada" data-provinces='[["Ontario","Ontario"],["Quebec","Quebec"]]'>
+                                    <option value="Canada"
+                                        data-provinces='[["Ontario","Ontario"],["Quebec","Quebec"]]'>
                                         Canada
                                     </option>
                                     <option value="Czech Republic" data-provinces="[]">Czechia</option>
@@ -1383,17 +1206,12 @@
                                     <option value="Finland" data-provinces="[]">Finland</option>
                                     <option value="France" data-provinces="[]">France</option>
                                     <option value="Germany" data-provinces="[]">Germany</option>
-                                    <option
-                                        selected
-                                        value="United States"
-                                        data-provinces='[["Alabama","Alabama"],["California","California"],["Florida","Florida"]]'
-                                    >
+                                    <option selected value="United States"
+                                        data-provinces='[["Alabama","Alabama"],["California","California"],["Florida","Florida"]]'>
                                         United States
                                     </option>
-                                    <option
-                                        value="United Kingdom"
-                                        data-provinces='[["England","England"],["Scotland","Scotland"],["Wales","Wales"],["Northern Ireland","Northern Ireland"]]'
-                                    >
+                                    <option value="United Kingdom"
+                                        data-provinces='[["England","England"],["Scotland","Scotland"],["Wales","Wales"],["Northern Ireland","Northern Ireland"]]'>
                                         United Kingdom
                                     </option>
                                     <option value="India" data-provinces="[]">India</option>
@@ -1402,25 +1220,18 @@
                                     <option value="South Korea" data-provinces="[]">South Korea</option>
                                     <option value="Spain" data-provinces="[]">Spain</option>
                                     <option value="Italy" data-provinces="[]">Italy</option>
-                                    <option
-                                        value="Vietnam"
-                                        data-provinces='[["Ha Noi","Ha Noi"],["Da Nang","Da Nang"],["Ho Chi Minh","Ho Chi Minh"]]'
-                                    >
+                                    <option value="Vietnam"
+                                        data-provinces='[["Ha Noi","Ha Noi"],["Da Nang","Da Nang"],["Ho Chi Minh","Ho Chi Minh"]]'>
                                         Vietnam
                                     </option>
                                 </select>
                             </div>
                             <div class="tf-select">
-                                <select id="shipping-province-form" name="address[province]" data-default=""></select>
+                                <select id="shipping-province-form" name="address[province]"
+                                    data-default=""></select>
                             </div>
-                            <input
-                                type="text"
-                                placeholder="Postal code"
-                                data-opend-focus
-                                id="zipcode"
-                                name="address[zip]"
-                                value=""
-                            />
+                            <input type="text" placeholder="Postal code" data-opend-focus id="zipcode"
+                                name="address[zip]" value="" />
                             <div id="zipcode-message" class="error" style="display: none">
                                 We found one shipping rate available for undefined.
                             </div>
@@ -1467,493 +1278,37 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="d-flex align-items-center justify-content-between gap-10">
-                <h3>Search</h3>
+                <h3>
+                    Search
+                </h3>
                 <span class="icon-close-popup flex-shrink-0" data-bs-dismiss="modal">
                     <i class="icon-X2"></i>
                 </span>
             </div>
             <form action="https://tfamerce.vercel.app/search-result.html" class="form-search-nav style-2">
                 <fieldset>
-                    <input type="text" placeholder="Searching..." required />
+                    <input type="text" name="global_search" id="global_search" placeholder="Searching..."
+                        required>
                 </fieldset>
                 <button type="submit" class="btn-action">
                     <i class="icon icon-MagnifyingGlass"></i>
                 </button>
             </form>
-            <div class="search-feature">
-                <p class="h5 mb-16">Feature Keywords Today</p>
-                <div class="tf-list-tag">
-                    <a href="#" class="link-tag">Dresses</a>
-                    <a href="#" class="link-tag">Dresses women</a>
-                    <a href="#" class="link-tag">Dresses midi</a>
-                    <a href="#" class="link-tag">Dress summer</a>
+            <div class="search_no_result mt-4 mb-4 d-none text-center">
+                    <p class="h5 mb-16">
+                        No results for "<span class="search_value"></span>"
+                    </p>
                 </div>
-            </div>
-            <div class="recently-view">
-                <p class="h5 mb-16">Recently Viewed Products</p>
-                <div
-                    dir="ltr"
-                    class="swiper tf-swiper mb-24"
-                    data-preview="4"
-                    data-tablet="3"
-                    data-mobile-sm="2"
-                    data-mobile="2"
-                    data-space-lg="30"
-                    data-space-md="20"
-                    data-space="10"
-                    data-pagination="2"
-                    data-pagination-sm="2"
-                    data-pagination-md="3"
-                    data-pagination-lg="4"
-                >
-                    <div class="swiper-wrapper">
-                        <!-- slide 1 -->
-                        <div class="swiper-slide">
-                            <div class="card-product">
-                                <div class="card-product_wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img
-                                            class="img-product"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
-                                            src="{{ asset('website/assets/images/product/product-1.jpg') }}"
-                                            alt="Product"
-                                        />
-                                        <img
-                                            class="img-hover"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
-                                            src="{{ asset('website/assets/images/product/product-1_2.jpg') }}"
-                                            alt="Product"
-                                        />
-                                    </a>
-                                    <ul class="product-action_list">
-                                        <li class="wishlist">
-                                            <a href="#;" class="hover-tooltip tooltip-left box-icon">
-                                                <span class="icon icon-heart"></span>
-                                                <span class="tooltip">Add to Wishlist</span>
-                                            </a>
-                                        </li>
-                                        <li class="compare">
-                                            <a
-                                                href="#compare"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
-                                                <span class="icon icon-ArrowsLeftRight"></span>
-                                                <span class="tooltip">Compare</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#quickView"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
-                                                <span class="icon icon-Eye"></span>
-                                                <span class="tooltip">Quick view</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <ul class="product-badge_list">
-                                        <li class="product-badge_item text-caption-01 new">NEW</li>
-                                    </ul>
-                                    <div class="product-action_bot">
-                                        <a href="#quickAdd" data-bs-toggle="modal" class="tf-btn btn-white small w-100">
-                                            Quick Add
-                                        </a>
-                                    </div>
-                                    <div class="product-marquee_sale">
-                                        <div class="marquee-wrapper">
-                                            <div class="initial-child-container">
-                                                <!-- 1 -->
-                                                <div class="marquee-child-item">HOT SALE 25% OFF</div>
-                                                <i class="icon icon-Star2"></i>
-                                                <!-- 2 -->
-                                                <div class="marquee-child-item">HOT SALE 25% OFF</div>
-                                                <i class="icon icon-Star2"></i>
-                                                <!-- 3 -->
-                                                <div class="marquee-child-item">HOT SALE 25% OFF</div>
-                                                <i class="icon icon-Star2"></i>
-                                                <!-- 4 -->
-                                                <div class="marquee-child-item">HOT SALE 25% OFF</div>
-                                                <i class="icon icon-Star2"></i>
-                                                <!-- 5 -->
-                                                <div class="marquee-child-item">HOT SALE 25% OFF</div>
-                                                <i class="icon icon-Star2"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-product_info">
-                                    <a
-                                        href="product-detail.html"
-                                        class="name-product lh-24 fw-medium link-underline-text"
-                                    >
-                                        Lyocell wrap top
-                                    </a>
-                                    <div class="star-wrap d-flex align-items-center">
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                    </div>
-                                    <div class="price-wrap">
-                                        <span class="price-new text-primary fw-semibold">$69,99</span>
-                                        <span class="price-old text-caption-01 cl-text-3">$99,99</span>
-                                    </div>
-                                    <ul class="product-color_list">
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
-                                            <span class="tooltip color-filter">Brown</span>
-                                            <span class="swatch-value bg-warm-beige"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-1.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-1.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
-                                            <span class="tooltip color-filter">Dark Blue</span>
-                                            <span class="swatch-value bg-midnight-blue"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-1_3.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-1_3.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
-                                            <span class="tooltip color-filter">White</span>
-                                            <span class="swatch-value bg-white"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-1_4.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-1_4.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+            <div class="searched_data" style="display: none;">
+                <div class="recently-view">
+                    <p class="h5 mb-16">Recently Added Products</p>
+                    <div dir="ltr" class="swiper tf-swiper mb-24" data-preview="4" data-tablet="3"
+                        data-mobile-sm="2" data-mobile="2" data-space-lg="30" data-space-md="20" data-space="10"
+                        data-pagination="2" data-pagination-sm="2" data-pagination-md="3" data-pagination-lg="4">
+                        <div class="swiper-wrapper">
                         </div>
-                        <!-- slide 2 -->
-                        <div class="swiper-slide">
-                            <div class="card-product">
-                                <div class="card-product_wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img
-                                            class="img-product"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
-                                            src="{{ asset('website/assets/images/product/product-2.jpg') }}"
-                                            alt="Product"
-                                        />
-                                        <img
-                                            class="img-hover"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
-                                            src="{{ asset('website/assets/images/product/product-2_2.jpg') }}"
-                                            alt="Product"
-                                        />
-                                    </a>
-                                    <ul class="product-action_list">
-                                        <li class="wishlist">
-                                            <a href="#;" class="hover-tooltip tooltip-left box-icon">
-                                                <span class="icon icon-heart"></span>
-                                                <span class="tooltip">Add to Wishlist</span>
-                                            </a>
-                                        </li>
-                                        <li class="compare">
-                                            <a
-                                                href="#compare"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
-                                                <span class="icon icon-ArrowsLeftRight"></span>
-                                                <span class="tooltip">Compare</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#quickView"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
-                                                <span class="icon icon-Eye"></span>
-                                                <span class="tooltip">Quick view</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <ul class="product-badge_list">
-                                        <li class="product-badge_item text-caption-01 sale">-25%</li>
-                                    </ul>
-                                    <div class="product-action_bot">
-                                        <a href="#quickAdd" data-bs-toggle="modal" class="tf-btn btn-white small w-100">
-                                            Quick Add
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-product_info">
-                                    <a
-                                        href="product-detail.html"
-                                        class="name-product lh-24 fw-medium link-underline-text"
-                                    >
-                                        Buttons cotton top
-                                    </a>
-                                    <div class="star-wrap d-flex align-items-center">
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                    </div>
-                                    <div class="price-wrap">
-                                        <span class="price-new text-primary fw-semibold">$29,99</span>
-                                        <span class="price-old text-caption-01 cl-text-3">$49,99</span>
-                                    </div>
-                                    <ul class="product-color_list">
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
-                                            <span class="tooltip color-filter">Brown</span>
-                                            <span class="swatch-value bg-warm-brown"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-2.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-2.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
-                                            <span class="tooltip color-filter">Beige</span>
-                                            <span class="swatch-value bg-beige"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-2_3.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-2_3.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- slide 3 -->
-                        <div class="swiper-slide">
-                            <div class="card-product has-size">
-                                <div class="card-product_wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img
-                                            class="img-product"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
-                                            src="{{ asset('website/assets/images/product/product-3.jpg') }}"
-                                            alt="Product"
-                                        />
-                                        <img
-                                            class="img-hover"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
-                                            src="{{ asset('website/assets/images/product/product-3_2.jpg') }}"
-                                            alt="Product"
-                                        />
-                                    </a>
-                                    <ul class="product-action_list">
-                                        <li class="wishlist">
-                                            <a href="#;" class="hover-tooltip tooltip-left box-icon">
-                                                <span class="icon icon-heart"></span>
-                                                <span class="tooltip">Add to Wishlist</span>
-                                            </a>
-                                        </li>
-                                        <li class="compare">
-                                            <a
-                                                href="#compare"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
-                                                <span class="icon icon-ArrowsLeftRight"></span>
-                                                <span class="tooltip">Compare</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#quickView"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
-                                                <span class="icon icon-Eye"></span>
-                                                <span class="tooltip">Quick view</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <ul class="product-badge_list">
-                                        <li class="product-badge_item text-caption-01 sale">-25%</li>
-                                        <li class="product-badge_item text-caption-01 trend">TREND</li>
-                                    </ul>
-                                    <div class="variant-box">
-                                        <ul class="product-size_list">
-                                            <li class="size-item text-caption-01">XS</li>
-                                            <li class="size-item text-caption-01">S</li>
-                                            <li class="size-item text-caption-01">M</li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-action_bot">
-                                        <a href="#quickAdd" data-bs-toggle="modal" class="tf-btn btn-white small w-100">
-                                            Quick Add
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-product_info">
-                                    <a
-                                        href="product-detail.html"
-                                        class="name-product lh-24 fw-medium link-underline-text"
-                                    >
-                                        Wool Midi Coat
-                                    </a>
-                                    <div class="star-wrap d-flex align-items-center">
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                    </div>
-                                    <div class="price-wrap">
-                                        <span class="price-new text-primary fw-semibold">$15,99</span>
-                                        <span class="price-old text-caption-01 cl-text-3">$25,99</span>
-                                    </div>
-                                    <ul class="product-color_list">
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
-                                            <span class="tooltip color-filter">Brown</span>
-                                            <span class="swatch-value bg-olive-brown"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-3.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-3.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
-                                            <span class="tooltip color-filter">Blue</span>
-                                            <span class="swatch-value bg-dark-blue"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-3_3.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-3_3.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
-                                            <span class="tooltip color-filter">Light</span>
-                                            <span class="swatch-value bg-warm-beige"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-3_4.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-3_4.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- slide 4 -->
-                        <div class="swiper-slide">
-                            <div class="card-product">
-                                <div class="card-product_wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img
-                                            class="img-product"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
-                                            src="{{ asset('website/assets/images/product/product-4.jpg') }}"
-                                            alt="Product"
-                                        />
-                                        <img
-                                            class="img-hover"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
-                                            src="{{ asset('website/assets/images/product/product-4_2.jpg') }}"
-                                            alt="Product"
-                                        />
-                                    </a>
-                                    <ul class="product-action_list">
-                                        <li class="wishlist">
-                                            <a href="#;" class="hover-tooltip tooltip-left box-icon">
-                                                <span class="icon icon-heart"></span>
-                                                <span class="tooltip">Add to Wishlist</span>
-                                            </a>
-                                        </li>
-                                        <li class="compare">
-                                            <a
-                                                href="#compare"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
-                                                <span class="icon icon-ArrowsLeftRight"></span>
-                                                <span class="tooltip">Compare</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#quickView"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
-                                                <span class="icon icon-Eye"></span>
-                                                <span class="tooltip">Quick view</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <ul class="product-badge_list">
-                                        <li class="product-badge_item text-caption-01 new">NEW</li>
-                                    </ul>
-                                    <div class="product-action_bot">
-                                        <a href="#quickAdd" data-bs-toggle="modal" class="tf-btn btn-white small w-100">
-                                            Quick Add
-                                        </a>
-                                    </div>
-                                    <div class="product-countdown">
-                                        <div
-                                            class="js-countdown cd-has-zero"
-                                            data-timer="1093120"
-                                            data-labels="D : ,H : ,M : ,S"
-                                        ></div>
-                                    </div>
-                                </div>
-                                <div class="card-product_info">
-                                    <a
-                                        href="product-detail.html"
-                                        class="name-product lh-24 fw-medium link-underline-text"
-                                    >
-                                        linen slim-fit shirt
-                                    </a>
-                                    <div class="star-wrap d-flex align-items-center">
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                        <i class="icon icon-Star"></i>
-                                    </div>
-                                    <div class="price-wrap">
-                                        <span class="price-new text-primary fw-semibold">$45,99</span>
-                                        <span class="price-old text-caption-01 cl-text-3">$79,99</span>
-                                    </div>
-                                    <ul class="product-color_list">
-                                        <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
-                                            <span class="tooltip color-filter">Blue</span>
-                                            <span class="swatch-value bg-dark-blue-2"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-4.jpg') }}"
-                                                data-src="{{ asset('website/assets/images/product/product-4.jpg') }}"
-                                                alt="Image"
-                                            />
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="sw-dot-default tf-sw-pagination"></div>
                     </div>
-                    <div class="sw-dot-default tf-sw-pagination"></div>
                 </div>
             </div>
         </div>
@@ -1975,9 +1330,10 @@
                 <form action="https://tfamerce.vercel.app/account-page.html" class="form-log">
                     <div class="form-content">
                         <fieldset class="tf-field">
-                            <label for="user-name" class="tf-lable fw-medium"
-                                >Username or email address <span class="text-primary">*</span></label>
-                            <input type="text" id="user-name" placeholder="Username or email address*" required />
+                            <label for="user-name" class="tf-lable fw-medium">Username or email address <span
+                                    class="text-primary">*</span></label>
+                            <input type="text" id="user-name" placeholder="Username or email address*"
+                                required />
                         </fieldset>
                         <fieldset class="tf-field password-wrapper">
                             <label for="register-password" class="tf-lable fw-medium">
@@ -1986,13 +1342,8 @@
                             </label>
                             <div class="password-wrapper w-100">
                                 <span class="toggle-pass icon-EyeSlash fs-20 cl-text-3"></span>
-                                <input
-                                    class="password-field"
-                                    type="password"
-                                    id="register-password"
-                                    placeholder="Password"
-                                    required
-                                />
+                                <input class="password-field" type="password" id="register-password"
+                                    placeholder="Password" required />
                             </div>
                         </fieldset>
                         <fieldset class="tf-field password-wrapper">
@@ -2002,13 +1353,8 @@
                             </label>
                             <div class="password-wrapper w-100">
                                 <span class="toggle-pass icon-EyeSlash fs-20 cl-text-3"></span>
-                                <input
-                                    class="password-field"
-                                    type="password"
-                                    id="register-password-confirm"
-                                    placeholder="Confirm Password"
-                                    required
-                                />
+                                <input class="password-field" type="password" id="register-password-confirm"
+                                    placeholder="Confirm Password" required />
                             </div>
                         </fieldset>
                     </div>
@@ -2039,9 +1385,10 @@
                 <form action="https://tfamerce.vercel.app/account-page.html" class="form-log">
                     <div class="form-content">
                         <fieldset class="tf-field">
-                            <label for="user-name-log" class="tf-lable fw-medium"
-                                >Username or email address <span class="text-primary">*</span></label>
-                            <input type="text" id="user-name-log" placeholder="Username or email address*" required />
+                            <label for="user-name-log" class="tf-lable fw-medium">Username or email address <span
+                                    class="text-primary">*</span></label>
+                            <input type="text" id="user-name-log" placeholder="Username or email address*"
+                                required />
                         </fieldset>
                         <fieldset class="tf-field password-wrapper">
                             <label for="password" class="tf-lable fw-medium">
@@ -2050,13 +1397,8 @@
                             </label>
                             <div class="password-wrapper w-100">
                                 <span class="toggle-pass icon-EyeSlash fs-20 cl-text-3"></span>
-                                <input
-                                    class="password-field"
-                                    type="password"
-                                    id="password"
-                                    placeholder="Password"
-                                    required
-                                />
+                                <input class="password-field" type="password" id="password"
+                                    placeholder="Password" required />
                             </div>
                         </fieldset>
                         <fieldset class="field-bottom">
@@ -2115,3 +1457,127 @@
     </div>
 </div> --}}
 <!-- /Newsletter -->
+@section('scripts')
+    <script>
+        $('#global_search').on('input', function() {
+            let searchValue = $(this).val().trim();
+            // Agar search empty hai to section hide kar do
+            if (searchValue === '') {
+                $('.searched_data').hide();
+                $('.searched_data .swiper-wrapper').html('');
+                return;
+            }
+            $.ajax({
+                url: "{{ route('web.search') }}",
+                method: 'GET',
+                data: {
+                    global_search: searchValue
+                },
+                success: function(response) {
+                    let wrapper = $('.searched_data .swiper-wrapper');
+                    // Pehle old results remove karo
+                    wrapper.html('');
+                    // Agar products nahi mile
+                    if (!response.status) {
+                        $('.searched_data').hide();
+                        $('.search_no_result').removeClass('d-none');
+                        $('.search_value').text(searchValue);
+                        return;
+                    }
+                    // Products loop
+                    $('.search_no_result').addClass('d-none');
+                    $('.search_value').text('');
+                    response.data.forEach(function(product) {
+                        let image = product.images.length > 0
+                            ? "{{ asset('storage/uploads') }}/" + product.images[0].image_name
+                            : "{{ asset('assets/images/product/product-1.jpg') }}";
+
+                        let imageHover = product.images.length > 1
+                            ? "{{ asset('storage/uploads') }}/" + product.images[1].image_name
+                            : "{{ asset('storage/uploads') }}/" + product.images[0].image_name;
+                        let html = `
+                        <div class="swiper-slide">
+                            <div class="card-product">
+                                <div class="card-product_wrapper">
+                                    <a href="/product/${product.slug}" class="product-img">
+                                        <img class="img-product"
+                                            loading="lazy"
+                                            width="330"
+                                            height="440"
+                                            src="${image}"
+                                            alt="${product.name}">
+                                        <img class="img-hover"
+                                            loading="lazy"
+                                            width="330"
+                                            height="440"
+                                            src="${imageHover}"
+                                            alt="${product.name}">
+                                    </a>
+                                    <ul class="product-action_list">
+                                        <li class="wishlist">
+                                            <a href="#;"
+                                                class="hover-tooltip tooltip-left box-icon">
+                                                <span class="icon icon-heart"></span>
+                                                <span class="tooltip">
+                                                    Add to Wishlist
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="compare">
+                                            <a href="#compare"
+                                                data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
+                                                <span class="icon icon-ArrowsLeftRight"></span>
+                                                <span class="tooltip">
+                                                    Compare
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#quickView"
+                                                data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
+                                                <span class="icon icon-Eye"></span>
+                                                <span class="tooltip">
+                                                    Quick view
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-product_info">
+                                    <a href="/product/${product.slug}"
+                                        class="name-product lh-24 fw-medium link-underline-text">
+                                        ${product.name}
+                                    </a>
+                                    <div class="star-wrap d-flex align-items-center">
+                                        <i class="icon icon-Star"></i>
+                                        <i class="icon icon-Star"></i>
+                                        <i class="icon icon-Star"></i>
+                                        <i class="icon icon-Star"></i>
+                                        <i class="icon icon-Star"></i>
+                                    </div>
+                                    <div class="price-wrap">
+                                        <span class="price-new text-primary fw-semibold">
+                                            $${product.price}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                        wrapper.append(html);
+                    });
+                    // Results show karo
+                    $('.searched_data').show();
+                },
+                error: function(xhr) {
+                    $('#empty_search_data').removeClass('d-none');
+                    $('#search-term').text(searchValue);
+                    console.log(xhr);
+                    $('.searched_data').hide();
+                }
+            });
+        });
+    </script>
+@endsection

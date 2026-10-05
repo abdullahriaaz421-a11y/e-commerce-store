@@ -11,7 +11,9 @@ use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\PayPalController;
 use App\Http\Controllers\Web\ProductController;
+use App\Http\Controllers\Web\SearchController;
 use App\Http\Controllers\Web\ShopCategoriesController;
+use App\Http\Controllers\Web\ShopController;
 use App\Http\Controllers\Web\StripeController;
 use App\Http\Controllers\Web\TrackOrderController;
 use Illuminate\Support\Facades\Route;
@@ -47,7 +49,9 @@ Route::name('web.')->group(function () {
     Route::get('/paypal-payment-success', [PayPalController::class, 'paypalSuccess'])->name('paypal-payment.success');
     Route::get('/paypal-payment-cancel', [PayPalController::class, 'paypalCancel'])->name('paypal-payment.cancel');
     
+    Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 
+    Route::get('/search', [SearchController::class, 'search'])->name('search');
 });
 
 Route::get('/invoice/{orderId}', [InvoiceController::class, 'index'])->name('invoice');

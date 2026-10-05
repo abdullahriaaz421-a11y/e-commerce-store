@@ -313,7 +313,7 @@
                             </div> --}}
                         </li>
                         <li class="menu-item">
-                            <a href="#" class="item-link">
+                            <a href="{{ route('web.shop') }}" class="item-link">
                                 <span class="text cus-text"> Shop </span>
                                 {{-- <i class="icon icon-CaretDown"></i> --}}
                             </a>

@@ -21,6 +21,11 @@ class Category extends Model
         return $this->morphOne(Image::class, 'imageable');
     }
 
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'category_id');
+    }
+
     public function scopeActive($query)
     {
         return $query->where('status', 1);

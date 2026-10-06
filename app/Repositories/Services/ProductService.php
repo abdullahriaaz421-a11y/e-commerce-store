@@ -5,6 +5,7 @@ namespace App\Repositories\Services;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
+use App\Models\Wishlist;
 use App\Notifications\ProductNotification;
 use App\Repositories\Interfaces\ProductInterface;
 use Illuminate\Support\Facades\Cache;
@@ -115,5 +116,17 @@ class ProductService implements ProductInterface
         ));
 
         return redirect()->route('admin.products.index')->with('Product Deleted Successfully');
+    }
+
+    public function wishlistProducts()
+    {
+       $wishlistProductIds = [];
+        if (auth()->check()) {
+            $wishlistProductIds = Wishlist::where('user_id', auth()->id())
+                ->pluck('product_id')
+                ->toArray();
+        }
+
+        return $wishlistProductIds;
     }
 }

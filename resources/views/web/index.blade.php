@@ -4,26 +4,16 @@
     <main id="wrapper">
         <!-- Slide Show -->
         <div class="tf-slideshow tf-btn-swiper-main hover-sw-nav">
-            <div
-                dir="ltr"
-                class="swiper tf-swiper sw-slide-show slider_effect_fade"
-                data-loop="true"
-                data-effect="fade"
-                data-delay="3000"
-            >
+            <div dir="ltr" class="swiper tf-swiper sw-slide-show slider_effect_fade" data-loop="true" data-effect="fade"
+                data-delay="3000">
                 <!-- data-auto="true" -->
                 <div class="swiper-wrapper">
                     <!-- item 1 -->
                     <div class="swiper-slide">
                         <div class="slideshow-wrap">
                             <div class="sld_image">
-                                <img
-                                    loading="lazy"
-                                    width="1920"
-                                    height="730"
-                                    src="{{ asset('website/assets/images/slider/slider-1.jpg') }}"
-                                    alt="Image"
-                                />
+                                <img loading="lazy" width="1920" height="730"
+                                    src="{{ asset('website/assets/images/slider/slider-1.jpg') }}" alt="Image" />
                             </div>
                             <div class="sld_content pst-5">
                                 <div class="container">
@@ -49,13 +39,8 @@
                     <div class="swiper-slide">
                         <div class="slideshow-wrap">
                             <div class="sld_image">
-                                <img
-                                    loading="lazy"
-                                    width="1920"
-                                    height="730"
-                                    src="{{ asset('website/assets/images/slider/slider-2.jpg') }}"
-                                    alt="Image"
-                                />
+                                <img loading="lazy" width="1920" height="730"
+                                    src="{{ asset('website/assets/images/slider/slider-2.jpg') }}" alt="Image" />
                             </div>
                             <div class="sld_content pst-5">
                                 <div class="container">
@@ -81,13 +66,8 @@
                     <div class="swiper-slide">
                         <div class="slideshow-wrap">
                             <div class="sld_image">
-                                <img
-                                    loading="lazy"
-                                    width="1920"
-                                    height="730"
-                                    src="{{ asset('website/assets/images/slider/slider-3.jpg') }}"
-                                    alt="Image"
-                                />
+                                <img loading="lazy" width="1920" height="730"
+                                    src="{{ asset('website/assets/images/slider/slider-3.jpg') }}" alt="Image" />
                             </div>
                             <div class="sld_content pst-5">
                                 <div class="container">
@@ -133,37 +113,19 @@
                     <h3 class="s-title">Shop By Categories</h3>
                     <p class="s-desc text-body-1 cl-text-2">Top styles everyone’s talking about.</p>
                 </div>
-                <div
-                    dir="ltr"
-                    class="swiper tf-swiper"
-                    data-preview="6"
-                    data-tablet="4"
-                    data-mobile-sm="3"
-                    data-mobile="2"
-                    data-space-lg="30"
-                    data-space-md="15"
-                    data-space="10"
-                    data-pagination="2"
-                    data-pagination-sm="3"
-                    data-pagination-md="4"
-                    data-pagination-lg="6"
-                >
+                <div dir="ltr" class="swiper tf-swiper" data-preview="6" data-tablet="4" data-mobile-sm="3"
+                    data-mobile="2" data-space-lg="30" data-space-md="15" data-space="10" data-pagination="2"
+                    data-pagination-sm="3" data-pagination-md="4" data-pagination-lg="6">
                     <div class="swiper-wrapper">
                         <!-- slide 1 -->
                         @foreach ($categories as $category)
                             <div class="swiper-slide wow fadeInUp">
-                                <a
-                                    href="{{ route('web.shop-by-categories', $category->slug) }}"
-                                    class="category-v01 hover-img"
-                                >
+                                <a href="{{ route('web.shop-by-categories', $category->slug) }}"
+                                    class="category-v01 hover-img">
                                     <div class="cate-image img-style">
-                                        <img
-                                            loading="lazy"
-                                            width="210"
-                                            height="210"
-                                            src="{{ asset('storage/uploads/'. $category->image->image_name) }}"
-                                            alt="Image"
-                                        />
+                                        <img loading="lazy" width="210" height="210"
+                                            src="{{ asset('storage/uploads/' . $category->image->image_name) }}"
+                                            alt="Image" />
                                     </div>
                                     <p class="cate-name h5 link link-underline text-center">
                                         {{ $category->category_name }}
@@ -184,21 +146,9 @@
                     <h3 class="s-title">Top Picks</h3>
                     <p class="s-desc text-body-1 cl-text-2">Fresh styles just in! Elevate your look.</p>
                 </div>
-                <div
-                    dir="ltr"
-                    class="swiper tf-swiper wrap-sw-over"
-                    data-preview="4"
-                    data-tablet="3"
-                    data-mobile-sm="2"
-                    data-mobile="2"
-                    data-space-lg="30"
-                    data-space-md="20"
-                    data-space="10"
-                    data-pagination="2"
-                    data-pagination-sm="2"
-                    data-pagination-md="3"
-                    data-pagination-lg="4"
-                >
+                <div dir="ltr" class="swiper tf-swiper wrap-sw-over" data-preview="4" data-tablet="3"
+                    data-mobile-sm="2" data-mobile="2" data-space-lg="30" data-space-md="20" data-space="10"
+                    data-pagination="2" data-pagination-sm="2" data-pagination-md="3" data-pagination-lg="4">
                     <div class="swiper-wrapper">
                         @foreach ($products as $product)
                             <div class="swiper-slide wow fadeInUp">
@@ -207,54 +157,43 @@
                                         {{-- Product Image --}}
                                         {{-- @dd($product['images']) --}}
                                         @if (count($product['images']) > 0)
-                                            <a
-                                                href="{{ route('web.product.show', $product['slug']) }}"
-                                                class="product-img"
-                                            >
-                                                <img
-                                                    class="img-product"
-                                                    loading="lazy"
-                                                    width="330"
-                                                    height="440"
+                                            <a href="{{ route('web.product.show', $product['slug']) }}"
+                                                class="product-img">
+                                                <img class="img-product" loading="lazy" width="330" height="440"
                                                     src="{{ asset('storage/uploads/' . $product['images'][0]['image_name']) }}"
-                                                    alt="{{ $product['name'] }}"
-                                                />
+                                                    alt="{{ $product['name'] }}" />
 
                                                 {{-- Same image on hover --}}
-                                                <img
-                                                    class="img-hover"
-                                                    loading="lazy"
-                                                    width="330"
-                                                    height="440"
+                                                <img class="img-hover" loading="lazy" width="330" height="440"
                                                     src="{{ asset('storage/uploads/' . ($product['images'][1]['image_name'] ?? $product['images'][0]['image_name'])) }}"
-                                                    alt="{{ $product['name'] }}"
-                                                />
+                                                    alt="{{ $product['name'] }}" />
                                             </a>
                                         @endif
                                         {{-- Product Actions --}}
                                         <ul class="product-action_list">
-                                            <li class="wishlist">
-                                                <a href="#;" class="hover-tooltip tooltip-left box-icon">
-                                                    <span class="icon icon-heart"></span>
-                                                    <span class="tooltip"> Add to Wishlist </span>
+                                            @php
+                                                $isWishlisted = auth()->check() && in_array($product['id'], $wishlistProductIds);
+                                            @endphp
+                                            <li class="wishlist {{ $isWishlisted ? 'addwishlist' : '' }}">
+                                                <a href="javascript:void(0);"
+                                                    class="hover-tooltip tooltip-left box-icon wishlist-btn"
+                                                    data-product-id="{{ $product['id'] }}">
+                                                    <span class="icon {{ $isWishlisted ? 'icon-trash' : 'icon-heart' }}"></span>
+                                                    <span class="tooltip wishlist-tooltip">
+                                                        {{ $isWishlisted ? 'Remove Wishlist' : 'Add to Wishlist' }}
+                                                    </span>
                                                 </a>
                                             </li>
                                             <li class="compare">
-                                                <a
-                                                    href="#compare"
-                                                    data-bs-toggle="offcanvas"
-                                                    class="hover-tooltip tooltip-left box-icon"
-                                                >
+                                                <a href="#compare" data-bs-toggle="offcanvas"
+                                                    class="hover-tooltip tooltip-left box-icon">
                                                     <span class="icon icon-ArrowsLeftRight"></span>
                                                     <span class="tooltip"> Compare </span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a
-                                                    href="#quickView"
-                                                    data-bs-toggle="offcanvas"
-                                                    class="hover-tooltip tooltip-left box-icon"
-                                                >
+                                                <a href="#quickView" data-bs-toggle="offcanvas"
+                                                    class="hover-tooltip tooltip-left box-icon">
                                                     <span class="icon icon-Eye"></span>
                                                     <span class="tooltip"> Quick view </span>
                                                 </a>
@@ -266,21 +205,16 @@
                                         </ul>
                                         {{-- Quick Add --}}
                                         <div class="product-action_bot">
-                                            <a
-                                                href="#quickAdd"
-                                                data-bs-toggle="modal"
-                                                class="tf-btn btn-white small w-100"
-                                            >
+                                            <a href="#quickAdd" data-bs-toggle="modal"
+                                                class="tf-btn btn-white small w-100">
                                                 Quick Add
                                             </a>
                                         </div>
                                     </div>
                                     {{-- Product Information --}}
                                     <div class="card-product_info">
-                                        <a
-                                            href="{{ route('web.product.show', $product['slug']) }}"
-                                            class="name-product lh-24 fw-medium link-underline-text"
-                                        >
+                                        <a href="{{ route('web.product.show', $product['slug']) }}"
+                                            class="name-product lh-24 fw-medium link-underline-text">
                                             {{ $product['name'] }}
                                         </a>
                                         {{-- Rating --}}
@@ -306,12 +240,11 @@
                                             @foreach ($product['colors'] as $color)
                                                 <li>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="mr-2"
+                                                        <div class="mr-2"
                                                             style="width: 30px; height: 30px; 
                                                         background-color: {{ $color }}; 
-                                                        border: 1px solid #ccc; border-radius: 50%;"
-                                                        ></div>
+                                                        border: 1px solid #ccc; border-radius: 50%;">
+                                                        </div>
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -353,19 +286,12 @@
                 <div class="tf-grid-layout sm-col-2 gap-10">
                     <div class="box-image_v01">
                         <a href="shop-default.html" class="box-image_img img-style">
-                            <img
-                                loading="lazy"
-                                width="700"
-                                height="933"
-                                src="{{ asset('website/assets/images/collection/cls-6.jpg') }}"
-                                alt="Image"
-                            />
+                            <img loading="lazy" width="700" height="933"
+                                src="{{ asset('website/assets/images/collection/cls-6.jpg') }}" alt="Image" />
                         </a>
                         <div class="box-image_content">
-                            <a
-                                href="shop-default.html"
-                                class="title h3 fw-medium link-underline-white text-decoration-thickness text-white"
-                            >
+                            <a href="shop-default.html"
+                                class="title h3 fw-medium link-underline-white text-decoration-thickness text-white">
                                 Shop Women
                             </a>
                         </div>
@@ -373,38 +299,24 @@
                     <div class="d-flex flex-column gap-10">
                         <div class="box-image_v01 h-100">
                             <a href="shop-default.html" class="box-image_img img-style">
-                                <img
-                                    loading="lazy"
-                                    width="700"
-                                    height="461"
-                                    src="{{ asset('website/assets/images/collection/cls-7.jpg') }}"
-                                    alt="Image"
-                                />
+                                <img loading="lazy" width="700" height="461"
+                                    src="{{ asset('website/assets/images/collection/cls-7.jpg') }}" alt="Image" />
                             </a>
                             <div class="box-image_content">
-                                <a
-                                    href="shop-default.html"
-                                    class="title h3 fw-medium link-underline-white text-decoration-thickness text-white"
-                                >
+                                <a href="shop-default.html"
+                                    class="title h3 fw-medium link-underline-white text-decoration-thickness text-white">
                                     Shop Men
                                 </a>
                             </div>
                         </div>
                         <div class="box-image_v01 h-100">
                             <a href="shop-default.html" class="box-image_img img-style">
-                                <img
-                                    loading="lazy"
-                                    width="700"
-                                    height="461"
-                                    src="{{ asset('website/assets/images/collection/cls-8.jpg') }}"
-                                    alt="Image"
-                                />
+                                <img loading="lazy" width="700" height="461"
+                                    src="{{ asset('website/assets/images/collection/cls-8.jpg') }}" alt="Image" />
                             </a>
                             <div class="box-image_content">
-                                <a
-                                    href="shop-default.html"
-                                    class="title h3 fw-medium link-underline-white text-decoration-thickness text-white"
-                                >
+                                <a href="shop-default.html"
+                                    class="title h3 fw-medium link-underline-white text-decoration-thickness text-white">
                                     Shop Essentials
                                 </a>
                             </div>
@@ -421,43 +333,21 @@
                     <h3 class="s-title">Top Trending</h3>
                     <p class="s-desc text-body-1 cl-text-2">Browse our Top Trending picks loved by all.</p>
                 </div>
-                <div
-                    dir="ltr"
-                    class="swiper tf-swiper wrap-sw-over"
-                    data-preview="4"
-                    data-tablet="3"
-                    data-mobile-sm="2"
-                    data-mobile="2"
-                    data-space-lg="30"
-                    data-space-md="20"
-                    data-space="10"
-                    data-pagination="2"
-                    data-pagination-sm="2"
-                    data-pagination-md="3"
-                    data-pagination-lg="4"
-                >
+                <div dir="ltr" class="swiper tf-swiper wrap-sw-over" data-preview="4" data-tablet="3"
+                    data-mobile-sm="2" data-mobile="2" data-space-lg="30" data-space-md="20" data-space="10"
+                    data-pagination="2" data-pagination-sm="2" data-pagination-md="3" data-pagination-lg="4">
                     <div class="swiper-wrapper">
                         <!-- slide 1 -->
                         <div class="swiper-slide">
                             <div class="card-product wow fadeInUp">
                                 <div class="card-product_wrapper">
                                     <a href="product-detail.html" class="product-img">
-                                        <img
-                                            class="img-product"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
+                                        <img class="img-product" loading="lazy" width="330" height="440"
                                             src="{{ asset('website/assets/images/product/product-5.jpg') }}"
-                                            alt="Product"
-                                        />
-                                        <img
-                                            class="img-hover"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
+                                            alt="Product" />
+                                        <img class="img-hover" loading="lazy" width="330" height="440"
                                             src="{{ asset('website/assets/images/product/product-5_2.jpg') }}"
-                                            alt="Product"
-                                        />
+                                            alt="Product" />
                                     </a>
                                     <ul class="product-action_list">
                                         <li class="wishlist">
@@ -467,21 +357,15 @@
                                             </a>
                                         </li>
                                         <li class="compare">
-                                            <a
-                                                href="#compare"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
+                                            <a href="#compare" data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
                                                 <span class="icon icon-ArrowsLeftRight"></span>
                                                 <span class="tooltip">Compare</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a
-                                                href="#quickView"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
+                                            <a href="#quickView" data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
                                                 <span class="icon icon-Eye"></span>
                                                 <span class="tooltip">Quick view</span>
                                             </a>
@@ -497,10 +381,8 @@
                                     </div>
                                 </div>
                                 <div class="card-product_info">
-                                    <a
-                                        href="product-detail.html"
-                                        class="name-product lh-24 fw-medium link-underline-text"
-                                    >
+                                    <a href="product-detail.html"
+                                        class="name-product lh-24 fw-medium link-underline-text">
                                         High neck midi wool coat
                                     </a>
                                     <div class="star-wrap d-flex align-items-center">
@@ -518,29 +400,23 @@
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
                                             <span class="tooltip color-filter">Brown</span>
                                             <span class="swatch-value bg-olive-brown"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-5.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-5.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-5.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
                                             <span class="tooltip color-filter">Blue</span>
                                             <span class="swatch-value bg-dark-blue"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-5_3.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-5_3.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-5_3.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
                                             <span class="tooltip color-filter">Beige</span>
                                             <span class="swatch-value bg-beige"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-5_4.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-5_4.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-5_4.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                     </ul>
                                 </div>
@@ -551,22 +427,12 @@
                             <div class="card-product has-size wow fadeInUp">
                                 <div class="card-product_wrapper">
                                     <a href="product-detail.html" class="product-img">
-                                        <img
-                                            class="img-product"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
+                                        <img class="img-product" loading="lazy" width="330" height="440"
                                             src="{{ asset('website/assets/images/product/product-6.jpg') }}"
-                                            alt="Product"
-                                        />
-                                        <img
-                                            class="img-hover"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
+                                            alt="Product" />
+                                        <img class="img-hover" loading="lazy" width="330" height="440"
                                             src="{{ asset('website/assets/images/product/product-6_2.jpg') }}"
-                                            alt="Product"
-                                        />
+                                            alt="Product" />
                                     </a>
                                     <ul class="product-action_list">
                                         <li class="wishlist">
@@ -576,21 +442,15 @@
                                             </a>
                                         </li>
                                         <li class="compare">
-                                            <a
-                                                href="#compare"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
+                                            <a href="#compare" data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
                                                 <span class="icon icon-ArrowsLeftRight"></span>
                                                 <span class="tooltip">Compare</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a
-                                                href="#quickView"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
+                                            <a href="#quickView" data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
                                                 <span class="icon icon-Eye"></span>
                                                 <span class="tooltip">Quick view</span>
                                             </a>
@@ -613,10 +473,8 @@
                                     </div>
                                 </div>
                                 <div class="card-product_info">
-                                    <a
-                                        href="product-detail.html"
-                                        class="name-product lh-24 fw-medium link-underline-text"
-                                    >
+                                    <a href="product-detail.html"
+                                        class="name-product lh-24 fw-medium link-underline-text">
                                         Square metallic frame sunglasses
                                     </a>
                                     <div class="star-wrap d-flex align-items-center">
@@ -634,20 +492,16 @@
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
                                             <span class="tooltip color-filter">Brown</span>
                                             <span class="swatch-value bg-warm-brown-2"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-6.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-6.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-6.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
                                             <span class="tooltip color-filter">Blue</span>
                                             <span class="swatch-value bg-cool-gray"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-6_3.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-6_3.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-6_3.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                     </ul>
                                 </div>
@@ -658,22 +512,12 @@
                             <div class="card-product wow fadeInUp">
                                 <div class="card-product_wrapper">
                                     <a href="product-detail.html" class="product-img">
-                                        <img
-                                            class="img-product"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
+                                        <img class="img-product" loading="lazy" width="330" height="440"
                                             src="{{ asset('website/assets/images/product/product-7.jpg') }}"
-                                            alt="Product"
-                                        />
-                                        <img
-                                            class="img-hover"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
+                                            alt="Product" />
+                                        <img class="img-hover" loading="lazy" width="330" height="440"
                                             src="{{ asset('website/assets/images/product/product-7_2.jpg') }}"
-                                            alt="Product"
-                                        />
+                                            alt="Product" />
                                     </a>
                                     <ul class="product-action_list">
                                         <li class="wishlist">
@@ -683,21 +527,15 @@
                                             </a>
                                         </li>
                                         <li class="compare">
-                                            <a
-                                                href="#compare"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
+                                            <a href="#compare" data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
                                                 <span class="icon icon-ArrowsLeftRight"></span>
                                                 <span class="tooltip">Compare</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a
-                                                href="#quickView"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
+                                            <a href="#quickView" data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
                                                 <span class="icon icon-Eye"></span>
                                                 <span class="tooltip">Quick view</span>
                                             </a>
@@ -734,10 +572,8 @@
                                     </div>
                                 </div>
                                 <div class="card-product_info">
-                                    <a
-                                        href="product-detail.html"
-                                        class="name-product lh-24 fw-medium link-underline-text"
-                                    >
+                                    <a href="product-detail.html"
+                                        class="name-product lh-24 fw-medium link-underline-text">
                                         Leather shopper bag with stitching
                                     </a>
                                     <div class="star-wrap d-flex align-items-center">
@@ -755,29 +591,23 @@
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
                                             <span class="tooltip color-filter">Brown</span>
                                             <span class="swatch-value bg-warm-beige"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-7.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-7.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-7.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
                                             <span class="tooltip color-filter">Warm Brown</span>
                                             <span class="swatch-value bg-caramel"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-7_3.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-7_3.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-7_3.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
                                             <span class="tooltip color-filter">Beige</span>
                                             <span class="swatch-value bg-sand-beige"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-7_4.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-7_4.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-7_4.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                     </ul>
                                 </div>
@@ -788,22 +618,12 @@
                             <div class="card-product wow fadeInUp">
                                 <div class="card-product_wrapper">
                                     <a href="product-detail.html" class="product-img">
-                                        <img
-                                            class="img-product"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
+                                        <img class="img-product" loading="lazy" width="330" height="440"
                                             src="{{ asset('website/assets/images/product/product-8.jpg') }}"
-                                            alt="Product"
-                                        />
-                                        <img
-                                            class="img-hover"
-                                            loading="lazy"
-                                            width="330"
-                                            height="440"
+                                            alt="Product" />
+                                        <img class="img-hover" loading="lazy" width="330" height="440"
                                             src="{{ asset('website/assets/images/product/product-8_2.jpg') }}"
-                                            alt="Product"
-                                        />
+                                            alt="Product" />
                                     </a>
                                     <ul class="product-action_list">
                                         <li class="wishlist">
@@ -813,21 +633,15 @@
                                             </a>
                                         </li>
                                         <li class="compare">
-                                            <a
-                                                href="#compare"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
+                                            <a href="#compare" data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
                                                 <span class="icon icon-ArrowsLeftRight"></span>
                                                 <span class="tooltip">Compare</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a
-                                                href="#quickView"
-                                                data-bs-toggle="offcanvas"
-                                                class="hover-tooltip tooltip-left box-icon"
-                                            >
+                                            <a href="#quickView" data-bs-toggle="offcanvas"
+                                                class="hover-tooltip tooltip-left box-icon">
                                                 <span class="icon icon-Eye"></span>
                                                 <span class="tooltip">Quick view</span>
                                             </a>
@@ -839,18 +653,13 @@
                                         </a>
                                     </div>
                                     <div class="product-countdown">
-                                        <div
-                                            class="js-countdown cd-has-zero"
-                                            data-timer="1093120"
-                                            data-labels="D : ,H : ,M : ,S"
-                                        ></div>
+                                        <div class="js-countdown cd-has-zero" data-timer="1093120"
+                                            data-labels="D : ,H : ,M : ,S"></div>
                                     </div>
                                 </div>
                                 <div class="card-product_info">
-                                    <a
-                                        href="product-detail.html"
-                                        class="name-product lh-24 fw-medium link-underline-text"
-                                    >
+                                    <a href="product-detail.html"
+                                        class="name-product lh-24 fw-medium link-underline-text">
                                         Leather shopper bag with stitching
                                     </a>
                                     <div class="star-wrap d-flex align-items-center">
@@ -868,29 +677,23 @@
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot active">
                                             <span class="tooltip color-filter">Pink</span>
                                             <span class="swatch-value bg-rose-taupe"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-8.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-8.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-8.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
                                             <span class="tooltip color-filter">Blue</span>
                                             <span class="swatch-value bg-dark-blue-2"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-8_3.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-8_3.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-8_3.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                         <li class="product-color-item color-swatch hover-tooltip tooltip-bot">
                                             <span class="tooltip color-filter">Pink</span>
                                             <span class="swatch-value bg-blush-pink"></span>
-                                            <img
-                                                src="{{ asset('website/assets/images/product/product-8_4.jpg') }}"
+                                            <img src="{{ asset('website/assets/images/product/product-8_4.jpg') }}"
                                                 data-src="{{ asset('website/assets/images/product/product-8_4.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </li>
                                     </ul>
                                 </div>
@@ -906,40 +709,24 @@
         <div class="themesFlat">
             <div class="tf-grid-layout xl-col-2 mb-10 gap-10">
                 <div class="banner-lookbook wrap-lookbook_hover">
-                    <img
-                        class="img-banner"
-                        loading="lazy"
-                        width="955"
-                        height="640"
-                        src="{{ asset('website/assets/images/section/banner-lookbook-1.jpg') }}"
-                        alt="Image"
-                    />
+                    <img class="img-banner" loading="lazy" width="955" height="640"
+                        src="{{ asset('website/assets/images/section/banner-lookbook-1.jpg') }}" alt="Image" />
                     <div class="lookbook-item position1">
                         <div class="dropdown dropup-center dropdown-custom dropend">
-                            <div
-                                role="dialog"
-                                class="tf-pin-btn bundle-pin-item swiper-button"
-                                data-slide="0"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
+                            <div role="dialog" class="tf-pin-btn bundle-pin-item swiper-button" data-slide="0"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <span></span>
                             </div>
                             <div class="dropdown-menu">
                                 <div class="lookbook-product">
                                     <a href="product-detail.html" class="image">
-                                        <img
-                                            width="88"
-                                            height="88"
+                                        <img width="88" height="88"
                                             src="{{ asset('website/assets/images/product/square/product-10.jpg') }}"
-                                            alt="Product"
-                                        />
+                                            alt="Product" />
                                     </a>
                                     <div class="content">
-                                        <a
-                                            href="product-detail.html"
-                                            class="name-prd link fw-medium lh-24 text-line-clamp-2"
-                                        >
+                                        <a href="product-detail.html"
+                                            class="name-prd link fw-medium lh-24 text-line-clamp-2">
                                             High neck midi wool coat
                                         </a>
                                         <div class="price-wrap">
@@ -953,31 +740,20 @@
                     </div>
                     <div class="lookbook-item position2">
                         <div class="dropdown dropup-center dropdown-custom dropstart">
-                            <div
-                                role="dialog"
-                                class="tf-pin-btn bundle-pin-item swiper-button"
-                                data-slide="0"
-                                id="pin2"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
+                            <div role="dialog" class="tf-pin-btn bundle-pin-item swiper-button" data-slide="0"
+                                id="pin2" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span></span>
                             </div>
                             <div class="dropdown-menu">
                                 <div class="lookbook-product">
                                     <a href="product-detail.html" class="image">
-                                        <img
-                                            width="88"
-                                            height="88"
+                                        <img width="88" height="88"
                                             src="{{ asset('website/assets/images/product/square/product-3_3.jpg') }}"
-                                            alt="Product"
-                                        />
+                                            alt="Product" />
                                     </a>
                                     <div class="content">
-                                        <a
-                                            href="product-detail.html"
-                                            class="name-prd link fw-medium lh-24 text-line-clamp-2"
-                                        >
+                                        <a href="product-detail.html"
+                                            class="name-prd link fw-medium lh-24 text-line-clamp-2">
                                             High neck midi wool coat
                                         </a>
                                         <div class="price-wrap">
@@ -991,40 +767,24 @@
                     </div>
                 </div>
                 <div class="banner-lookbook wrap-lookbook_hover">
-                    <img
-                        class="img-banner"
-                        loading="lazy"
-                        width="955"
-                        height="640"
-                        src="{{ asset('website/assets/images/section/banner-lookbook-2.jpg') }}"
-                        alt="Image"
-                    />
+                    <img class="img-banner" loading="lazy" width="955" height="640"
+                        src="{{ asset('website/assets/images/section/banner-lookbook-2.jpg') }}" alt="Image" />
                     <div class="lookbook-item position3">
                         <div class="dropdown dropup-center dropdown-custom dropstart">
-                            <div
-                                role="dialog"
-                                class="tf-pin-btn bundle-pin-item swiper-button"
-                                data-slide="0"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
+                            <div role="dialog" class="tf-pin-btn bundle-pin-item swiper-button" data-slide="0"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <span></span>
                             </div>
                             <div class="dropdown-menu">
                                 <div class="lookbook-product">
                                     <a href="product-detail.html" class="image">
-                                        <img
-                                            width="88"
-                                            height="88"
+                                        <img width="88" height="88"
                                             src="{{ asset('website/assets/images/product/square/product-11.jpg') }}"
-                                            alt="Product"
-                                        />
+                                            alt="Product" />
                                     </a>
                                     <div class="content">
-                                        <a
-                                            href="product-detail.html"
-                                            class="name-prd link fw-medium lh-24 text-line-clamp-2"
-                                        >
+                                        <a href="product-detail.html"
+                                            class="name-prd link fw-medium lh-24 text-line-clamp-2">
                                             High neck midi wool coat
                                         </a>
                                         <div class="price-wrap">
@@ -1045,13 +805,8 @@
                             <a href="shop-default.html" class="cls-wrap">
                                 <h4>Style in Motion</h4>
                                 <div class="img-cls">
-                                    <img
-                                        loading="lazy"
-                                        width="80"
-                                        height="80"
-                                        src="{{ asset('website/assets/images/collection/cls-1.jpg') }}"
-                                        alt="Image"
-                                    />
+                                    <img loading="lazy" width="80" height="80"
+                                        src="{{ asset('website/assets/images/collection/cls-1.jpg') }}" alt="Image" />
                                 </div>
                             </a>
                         </div>
@@ -1059,13 +814,8 @@
                             <a href="shop-default.html" class="cls-wrap">
                                 <h4>Own Your Look</h4>
                                 <div class="img-cls">
-                                    <img
-                                        loading="lazy"
-                                        width="80"
-                                        height="80"
-                                        src="{{ asset('website/assets/images/collection/cls-2.jpg') }}"
-                                        alt="Image"
-                                    />
+                                    <img loading="lazy" width="80" height="80"
+                                        src="{{ asset('website/assets/images/collection/cls-2.jpg') }}" alt="Image" />
                                 </div>
                             </a>
                         </div>
@@ -1073,13 +823,8 @@
                             <a href="shop-default.html" class="cls-wrap">
                                 <h4>Chic by Nature</h4>
                                 <div class="img-cls">
-                                    <img
-                                        loading="lazy"
-                                        width="80"
-                                        height="80"
-                                        src="{{ asset('website/assets/images/collection/cls-3.jpg') }}"
-                                        alt="Image"
-                                    />
+                                    <img loading="lazy" width="80" height="80"
+                                        src="{{ asset('website/assets/images/collection/cls-3.jpg') }}" alt="Image" />
                                 </div>
                             </a>
                         </div>
@@ -1087,13 +832,8 @@
                             <a href="shop-default.html" class="cls-wrap">
                                 <h4>Effortless Elegance</h4>
                                 <div class="img-cls">
-                                    <img
-                                        loading="lazy"
-                                        width="80"
-                                        height="80"
-                                        src="{{ asset('website/assets/images/collection/cls-4.jpg') }}"
-                                        alt="Image"
-                                    />
+                                    <img loading="lazy" width="80" height="80"
+                                        src="{{ asset('website/assets/images/collection/cls-4.jpg') }}" alt="Image" />
                                 </div>
                             </a>
                         </div>
@@ -1101,13 +841,8 @@
                             <a href="shop-default.html" class="cls-wrap">
                                 <h4>Made to Stand Out</h4>
                                 <div class="img-cls">
-                                    <img
-                                        loading="lazy"
-                                        width="80"
-                                        height="80"
-                                        src="{{ asset('website/assets/images/collection/cls-5.jpg') }}"
-                                        alt="Image"
-                                    />
+                                    <img loading="lazy" width="80" height="80"
+                                        src="{{ asset('website/assets/images/collection/cls-5.jpg') }}" alt="Image" />
                                 </div>
                             </a>
                         </div>
@@ -1115,13 +850,8 @@
                             <a href="shop-default.html" class="cls-wrap">
                                 <h4>Confidence in Every Step</h4>
                                 <div class="img-cls">
-                                    <img
-                                        loading="lazy"
-                                        width="80"
-                                        height="80"
-                                        src="{{ asset('website/assets/images/collection/cls-3.jpg') }}"
-                                        alt="Image"
-                                    />
+                                    <img loading="lazy" width="80" height="80"
+                                        src="{{ asset('website/assets/images/collection/cls-3.jpg') }}" alt="Image" />
                                 </div>
                             </a>
                         </div>
@@ -1139,33 +869,17 @@
                         Our customers adore our products, and we constantly aim to delight them.
                     </p>
                 </div>
-                <div
-                    dir="ltr"
-                    class="swiper tf-swiper"
-                    data-preview="2"
-                    data-tablet="2"
-                    data-mobile-sm="1"
-                    data-mobile="1"
-                    data-space-lg="60"
-                    data-space-md="30"
-                    data-space="15"
-                    data-pagination="1"
-                    data-pagination-sm="2"
-                    data-pagination-md="2"
-                    data-pagination-lg="2"
-                >
+                <div dir="ltr" class="swiper tf-swiper" data-preview="2" data-tablet="2" data-mobile-sm="1"
+                    data-mobile="1" data-space-lg="60" data-space-md="30" data-space="15" data-pagination="1"
+                    data-pagination-sm="2" data-pagination-md="2" data-pagination-lg="2">
                     <div class="swiper-wrapper">
                         <!-- slide 1 -->
                         <div class="swiper-slide">
                             <div class="testimonial-v01 style-1 style-def wow fadeInLeft">
                                 <div class="tes-image">
-                                    <img
-                                        loading="lazy"
-                                        width="285"
-                                        height="380"
+                                    <img loading="lazy" width="285" height="380"
                                         src="{{ asset('website/assets/images/testimonial/tes-1.jpg') }}"
-                                        alt="Image"
-                                    />
+                                        alt="Image" />
                                 </div>
                                 <div class="tes-content">
                                     <div class="star-wrap d-flex align-items-center">
@@ -1190,14 +904,10 @@
                                     </p>
                                     <div class="tes_product">
                                         <div class="product-image">
-                                            <img
-                                                class="aspect-ratio-1 object-fit-cover"
-                                                loading="lazy"
-                                                width="60"
+                                            <img class="aspect-ratio-1 object-fit-cover" loading="lazy" width="60"
                                                 height="60"
                                                 src="{{ asset('website/assets/images/product/product-4.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </div>
                                         <div class="product-infor">
                                             <a href="product-detail.html" class="link fw-medium lh-24">
@@ -1213,13 +923,9 @@
                         <div class="swiper-slide">
                             <div class="testimonial-v01 style-1 style-def wow fadeInLeft" data-wow-delay="0.1s">
                                 <div class="tes-image">
-                                    <img
-                                        loading="lazy"
-                                        width="285"
-                                        height="380"
+                                    <img loading="lazy" width="285" height="380"
                                         src="{{ asset('website/assets/images/testimonial/tes-2.jpg') }}"
-                                        alt="Image"
-                                    />
+                                        alt="Image" />
                                 </div>
                                 <div class="tes-content">
                                     <div class="star-wrap d-flex align-items-center">
@@ -1244,14 +950,10 @@
                                     </p>
                                     <div class="tes_product">
                                         <div class="product-image">
-                                            <img
-                                                class="aspect-ratio-1 object-fit-cover"
-                                                loading="lazy"
-                                                width="60"
+                                            <img class="aspect-ratio-1 object-fit-cover" loading="lazy" width="60"
                                                 height="60"
                                                 src="{{ asset('website/assets/images/product/product-6.jpg') }}"
-                                                alt="Image"
-                                            />
+                                                alt="Image" />
                                         </div>
                                         <div class="product-infor">
                                             <a href="product-detail.html" class="link fw-medium lh-24">
@@ -1276,31 +978,17 @@
                     <h3 class="s-title">Shop Instagram</h3>
                     <p class="s-desc text-body-1 cl-text-2">Elevate your wardrobe with fresh finds today!</p>
                 </div>
-                <div
-                    dir="ltr"
-                    class="swiper tf-swiper"
-                    data-preview="5"
-                    data-tablet="3"
-                    data-mobile-sm="3"
-                    data-mobile="2"
-                    data-space="10"
-                    data-pagination="2"
-                    data-pagination-sm="3"
-                    data-pagination-md="4"
-                    data-pagination-lg="5"
-                >
+                <div dir="ltr" class="swiper tf-swiper" data-preview="5" data-tablet="3" data-mobile-sm="3"
+                    data-mobile="2" data-space="10" data-pagination="2" data-pagination-sm="3" data-pagination-md="4"
+                    data-pagination-lg="5">
                     <div class="swiper-wrapper">
                         <!-- slide 1 -->
                         <div class="swiper-slide">
                             <div class="gallery-item hover-img hover-overlay wow fadeInUp">
                                 <div class="image img-style">
-                                    <img
-                                        loading="lazy"
-                                        width="274"
-                                        height="274"
+                                    <img loading="lazy" width="274" height="274"
                                         src="{{ asset('website/assets/images/gallery/gallery-1.jpg') }}"
-                                        alt="Image"
-                                    />
+                                        alt="Image" />
                                 </div>
                                 <a href="product-detail.html" class="box-icon hover-tooltip">
                                     <span class="icon icon-Eye"></span>
@@ -1312,13 +1000,9 @@
                         <div class="swiper-slide">
                             <div class="gallery-item hover-img hover-overlay wow fadeInUp">
                                 <div class="image img-style">
-                                    <img
-                                        loading="lazy"
-                                        width="274"
-                                        height="274"
+                                    <img loading="lazy" width="274" height="274"
                                         src="{{ asset('website/assets/images/gallery/gallery-2.jpg') }}"
-                                        alt="Image"
-                                    />
+                                        alt="Image" />
                                 </div>
                                 <a href="product-detail.html" class="box-icon hover-tooltip">
                                     <span class="icon icon-Eye"></span>
@@ -1330,13 +1014,9 @@
                         <div class="swiper-slide">
                             <div class="gallery-item hover-img hover-overlay wow fadeInUp">
                                 <div class="image img-style">
-                                    <img
-                                        loading="lazy"
-                                        width="274"
-                                        height="274"
+                                    <img loading="lazy" width="274" height="274"
                                         src="{{ asset('website/assets/images/gallery/gallery-3.jpg') }}"
-                                        alt="Image"
-                                    />
+                                        alt="Image" />
                                 </div>
                                 <a href="product-detail.html" class="box-icon hover-tooltip">
                                     <span class="icon icon-Eye"></span>
@@ -1348,13 +1028,9 @@
                         <div class="swiper-slide">
                             <div class="gallery-item hover-img hover-overlay wow fadeInUp">
                                 <div class="image img-style">
-                                    <img
-                                        loading="lazy"
-                                        width="274"
-                                        height="274"
+                                    <img loading="lazy" width="274" height="274"
                                         src="{{ asset('website/assets/images/gallery/gallery-4.jpg') }}"
-                                        alt="Image"
-                                    />
+                                        alt="Image" />
                                 </div>
                                 <a href="product-detail.html" class="box-icon hover-tooltip">
                                     <span class="icon icon-Eye"></span>
@@ -1366,13 +1042,9 @@
                         <div class="swiper-slide">
                             <div class="gallery-item hover-img hover-overlay wow fadeInUp">
                                 <div class="image img-style">
-                                    <img
-                                        loading="lazy"
-                                        width="274"
-                                        height="274"
+                                    <img loading="lazy" width="274" height="274"
                                         src="{{ asset('website/assets/images/gallery/gallery-5.jpg') }}"
-                                        alt="Image"
-                                    />
+                                        alt="Image" />
                                 </div>
                                 <a href="product-detail.html" class="box-icon hover-tooltip">
                                     <span class="icon icon-Eye"></span>
@@ -1389,21 +1061,9 @@
         <!-- Box Icon -->
         <div class="flat-spacing">
             <div class="container">
-                <div
-                    dir="ltr"
-                    class="swiper tf-swiper"
-                    data-preview="4"
-                    data-tablet="3"
-                    data-mobile-sm="2"
-                    data-mobile="1"
-                    data-space-lg="30"
-                    data-space-md="20"
-                    data-space="10"
-                    data-pagination="1"
-                    data-pagination-sm="2"
-                    data-pagination-md="3"
-                    data-pagination-lg="4"
-                >
+                <div dir="ltr" class="swiper tf-swiper" data-preview="4" data-tablet="3" data-mobile-sm="2"
+                    data-mobile="1" data-space-lg="30" data-space-md="20" data-space="10" data-pagination="1"
+                    data-pagination-sm="2" data-pagination-md="3" data-pagination-lg="4">
                     <div class="swiper-wrapper">
                         <!-- slide 1 -->
                         <div class="swiper-slide">
@@ -1460,4 +1120,52 @@
         </div>
         <!-- /Box Icon -->
     </main>
+@endsection
+@section('scripts')
+    <script>
+        $(document).on('click', '.wishlist-btn', function(e) {
+
+            // console.log('Wishlist button clicked');
+
+            e.preventDefault();
+
+            let button = $(this);
+            let productId = button.data('product-id');
+
+            // console.log('Product ID:', productId);
+
+            $.ajax({
+
+                url: "{{ url('/wishlist') }}/" + productId + "/toggle",
+
+                type: "POST",
+
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+
+                success: function(response) {
+                    // console.log('Response:', response);
+                    if (response.status) {
+                        if (response.action === 'added') {
+                            button.find('.icon-heart')
+                                .addClass('active');
+                            button.find('.wishlist-tooltip')
+                                .text('Remove from Wishlist');
+                        } else {
+                            button.find('.icon-heart')
+                                .removeClass('active');
+                            button.find('.wishlist-tooltip')
+                                .text('Add to Wishlist');
+                        }
+                        // Update Header Wishlist Count
+                        $('.wishlist-count').text(response.count);
+                    }
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    </script>
 @endsection

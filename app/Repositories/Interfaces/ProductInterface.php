@@ -25,4 +25,6 @@ interface ProductInterface
     public function updateProduct(Product $product, array $data);
 
     public function deleteProduct(Product $product);
+
+    public function wishlistProducts();
 }

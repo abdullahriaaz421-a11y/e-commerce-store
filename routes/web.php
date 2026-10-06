@@ -16,6 +16,7 @@ use App\Http\Controllers\Web\ShopCategoriesController;
 use App\Http\Controllers\Web\ShopController;
 use App\Http\Controllers\Web\StripeController;
 use App\Http\Controllers\Web\TrackOrderController;
+use App\Http\Controllers\Web\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 Route::name('web.')->group(function () {
@@ -64,6 +65,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    Route::get('/wishlist', [WishlistController::class, 'index'])->name('web.wishlist');
+    Route::post('/wishlist/{product}/toggle', [WishlistController::class, 'toggle'])->name('web.wishlist.toggle');
+    Route::delete('/wishlist/{id}', [WishlistController::class, 'remove'])->name('web.wishlist.remove');
 });
 
 require __DIR__ . '/auth.php';

@@ -82,14 +82,8 @@
             </div>
             <div class="col-sm-10 col-md-8 col-lg-6">
                 <div class="text-center">
-                    <div
-                        dir="ltr"
-                        class="swiper tf-swiper"
-                        data-auto="true"
-                        data-loop="true"
-                        data-speed="1500"
-                        data-delay="1500"
-                    >
+                    <div dir="ltr" class="swiper tf-swiper" data-auto="true" data-loop="true" data-speed="1500"
+                        data-delay="1500">
                         <div class="swiper-wrapper">
                             <!-- slide 1 -->
                             <div class="swiper-slide">
@@ -1516,13 +1510,8 @@
             </div>
             <div class="header-center">
                 <a href="index-2.html" class="logo-site">
-                    <img
-                        loading="lazy"
-                        width="150"
-                        height="30"
-                        src="{{ asset('website/assets/images/logo/logo.svg') }}"
-                        alt="Image"
-                    />
+                    <img loading="lazy" width="150" height="30"
+                        src="{{ asset('website/assets/images/logo/logo.svg') }}" alt="Image" />
                 </a>
             </div>
             <div class="header-right">
@@ -1555,9 +1544,41 @@
                             <i class="icon icon-User"></i>
                         </a>
                     </li>
-                    <li class="d-none d-sm-block">
-                        <a href="wishlist.html" class="nav-icon-item link">
+                    {{-- @section('head')
+                        <style>
+                            .wishlist-header-icon {
+                                position: relative;
+                            }
+                            .wishlist-count {
+                                position: absolute;
+                                top: -5px;
+                                right: -8px;
+
+                                min-width: 18px;
+                                height: 18px;
+
+                                padding: 0 4px;
+
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                border-radius: 50%;
+
+                                background: #c80d0d;
+                                color: #fff;
+
+                                font-size: 10px;
+                                line-height: 1;
+                            }
+                        </style>
+                    @endsection --}}
+                    <li class=" d-sm-block">
+                        <a href="{{ route('web.wishlist') }}" class="nav-icon-item link wishlist-header-icon">
                             <i class="icon icon-HeartStraight"></i>
+                            <span class="wishlist-count" style="background-color: #e04848; color: #fff; font-size: 10px; line-height: 1; border-radius: 50%; padding: 0 4px; min-width: 18px; height: 18px; display: flex; align-items: center; justify-content: center;">
+                                {{ auth()->check() ? auth()->user()->wishlists()->count() : 0 }}
+                            </span>
                         </a>
                     </li>
                     <li>

@@ -13,6 +13,7 @@
         </title>
         <meta name="author" content="themesflat.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta
             name="description"
             content="Themesflat Amerce - A modern and elegant Multipurpose eCommerce HTML Template, perfect for online stores selling rings, necklaces, watches, and other accessories. SEO-optimized, fast-loading, and fully customizable."

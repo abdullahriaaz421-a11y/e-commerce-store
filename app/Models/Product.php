@@ -51,4 +51,9 @@ class Product extends Model
     {
         return $query->where('status', 1);
     }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
 }

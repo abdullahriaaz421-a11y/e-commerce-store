@@ -19,6 +19,7 @@ class HomeController extends Controller
     {
         $products   = $this->productRepo->getHomeProducts();
         $categories = $this->productRepo->allCategories();
-        return view($this->modelName . 'index', compact('products', 'categories'));
+        $wishlistProductIds = $this->productRepo->wishlistProducts();
+        return view($this->modelName . 'index', compact('products', 'categories', 'wishlistProductIds'));
     }
 }

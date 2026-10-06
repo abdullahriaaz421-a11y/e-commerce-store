@@ -1475,9 +1475,9 @@
                 },
                 success: function(response) {
                     let wrapper = $('.searched_data .swiper-wrapper');
-                    // Pehle old results remove karo
+                    // old results remove 
                     wrapper.html('');
-                    // Agar products nahi mile
+                    // if products not found
                     if (!response.status) {
                         $('.searched_data').hide();
                         $('.search_no_result').removeClass('d-none');
@@ -1568,7 +1568,7 @@
                     `;
                         wrapper.append(html);
                     });
-                    // Results show karo
+                    // Results show 
                     $('.searched_data').show();
                 },
                 error: function(xhr) {
